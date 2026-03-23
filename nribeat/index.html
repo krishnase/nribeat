@@ -87,11 +87,9 @@
 
   <!-- VISA BULLETIN TRACKER -->
   <section class="vb-section">
-    <div class="section-header"><div class="section-label"><span>🛂</span> Visa Bulletin Tracker — Nov 2025</div><a href="visa-bulletin.html" class="see-all">Full dashboard →</a></div>
-    <div class="vb-grid">
-      <div class="vb-card fade-up"><div class="vb-label">EB-2 India · Final Action</div><div class="vb-date">01 JAN 2013</div><div class="vb-move up">↑ +15 days</div><div class="vb-sub">Previously Dec 17, 2012. Avg. movement: <strong style="color:var(--white)">11 days/month</strong></div></div>
-      <div class="vb-card fade-up"><div class="vb-label">EB-3 India · Final Action</div><div class="vb-date">15 FEB 2013</div><div class="vb-move up">↑ +22 days</div><div class="vb-sub">Faster than EB-2 this month. New FY surge expected Oct–Dec.</div></div>
-      <div class="vb-card fade-up"><div class="vb-label">EB-2 India · Dates for Filing</div><div class="vb-date">01 APR 2022</div><div class="vb-move same">→ No change</div><div class="vb-sub">Unchanged for 2nd consecutive month. USCIS discretion applies.</div></div>
+    <div class="section-header"><div class="section-label" id="vbHeader"><span>🛂</span> Visa Bulletin Tracker</div><a href="visa-bulletin.html" class="see-all">Full dashboard →</a></div>
+    <div class="vb-grid" id="vbGrid">
+      <div class="vb-card fade-up" style="grid-column:1/4;text-align:center;color:var(--white-muted)">Loading visa bulletin data...</div>
       <div class="vb-predict fade-up"><div class="vb-predict-label">🔮 AI Prediction Tool</div><div class="vb-predict-title">When will your priority date become current?</div><div class="vb-predict-body">Enter your EB-2 India priority date for an AI-powered estimate.</div><input type="month" id="priorityDate" style="margin-bottom:8px" min="2010-01" max="2023-12"/><button class="predict-btn" onclick="predictDate()">Calculate My Wait Time</button><div id="predict-result"></div></div>
     </div>
   </section>
@@ -107,8 +105,8 @@
 
   <!-- TWO COL -->
   <div class="two-col">
-    <div><div class="section-header"><div class="section-label" style="font-size:18px"><span>🏏</span> Cricket Corner</div><a href="cricket.html" class="see-all">All cricket →</a></div><div class="col-list"><div class="col-card"><div class="col-num">01</div><div><div class="col-cat">IPL 2026 Auction</div><div class="col-title">RCB Signs Shubman Gill for ₹22.5 Crore in Mega Auction Blockbuster</div><div class="col-time">2 hours ago</div></div></div><div class="col-card"><div class="col-num">02</div><div><div class="col-cat">India vs Australia</div><div class="col-title">Bumrah Takes 5/34 as India Bowls Out Australia for 189 in First Test</div><div class="col-time">5 hours ago</div></div></div><div class="col-card"><div class="col-num">03</div><div><div class="col-cat">T20 World Cup 2026</div><div class="col-title">ICC Announces T20 World Cup 2026 Schedule — India's Group Stage Fixtures</div><div class="col-time">Yesterday</div></div></div><div class="col-card"><div class="col-num">04</div><div><div class="col-cat">WPL 2025</div><div class="col-title">Smriti Mandhana Wins Player of the Tournament After RCB's WPL Title</div><div class="col-time">2 days ago</div></div></div></div></div>
-    <div><div class="section-header"><div class="section-label" style="font-size:18px"><span>📋</span> Immigration Updates</div><a href="immigration.html" class="see-all">All immigration →</a></div><div class="col-list"><div class="col-card"><div class="col-num">01</div><div><div class="col-cat">USCIS Alert</div><div class="col-title">STEM OPT Processing Times Drop to 3 Weeks — Fastest Since 2019</div><div class="col-time">3 hours ago</div></div></div><div class="col-card"><div class="col-num">02</div><div><div class="col-cat">Green Card</div><div class="col-title">EB-1C Priority Workers See Historic 6-Month Surge — What Changed?</div><div class="col-time">7 hours ago</div></div></div><div class="col-card"><div class="col-num">03</div><div><div class="col-cat">F1 Visa</div><div class="col-title">US Consulates in India Reduce F1 Wait Times to Under 30 Days in 4 Cities</div><div class="col-time">Yesterday</div></div></div><div class="col-card"><div class="col-num">04</div><div><div class="col-cat">Policy Update</div><div class="col-title">USCIS Proposes New Premium Processing for Certain Green Card Stages</div><div class="col-time">2 days ago</div></div></div></div></div>
+    <div><div class="section-header"><div class="section-label" style="font-size:18px"><span>🏏</span> Cricket Corner</div><a href="cricket.html" class="see-all">All cricket →</a></div><div class="col-list" id="cricketCol"><div class="col-card" style="color:var(--white-muted)">Loading...</div></div></div>
+    <div><div class="section-header"><div class="section-label" style="font-size:18px"><span>📋</span> Immigration Updates</div><a href="immigration.html" class="see-all">All immigration →</a></div><div class="col-list" id="immigrationCol"><div class="col-card" style="color:var(--white-muted)">Loading...</div></div></div>
   </div>
 
   <!-- AI TOOLS -->
@@ -128,12 +126,12 @@
     <h2 class="nl-title">Your morning <em>beat</em>,<br>delivered before 7 AM</h2>
     <p class="nl-sub">Visa Bulletin · AI tools · Cricket scores · OTT releases · Layoff alerts — in 2 minutes.</p>
     <div class="nl-form"><input class="nl-input" type="email" placeholder="your@email.com" id="emailInput"/><button class="nl-btn" onclick="subscribe()">Subscribe Free</button></div>
-    <p class="nl-note" id="subMsg"><span>✓ 12,400 NRIs</span> reading every morning · No spam, ever</p>
+    <p class="nl-note" id="subMsg"><span>Free forever</span> · No spam, ever</p>
   </section>
 </main>
 
 <!-- FOOTER -->
-<footer><div class="footer-inner"><div class="footer-top"><div><div class="footer-logo">NRI<span>Beat</span></div><p class="footer-tagline">The daily pulse for Indian Americans — immigration, AI, cricket, and everything in between.</p><div class="social-links"><a href="#" class="social-link">𝕏</a><a href="#" class="social-link">in</a><a href="#" class="social-link">▶</a><a href="#" class="social-link">📸</a></div></div><div><div class="footer-col-title">Immigration</div><ul class="footer-links"><li><a href="visa-bulletin.html">Visa Bulletin Dashboard</a></li><li><a href="immigration.html">H1B Guide 2025</a></li><li><a href="immigration.html">OPT & STEM OPT</a></li><li><a href="visa-bulletin.html">Priority Date Calculator</a></li></ul></div><div><div class="footer-col-title">Categories</div><ul class="footer-links"><li><a href="ai-tools.html">AI & Tech News</a></li><li><a href="cricket.html">Cricket Hub</a></li><li><a href="movies.html">Movies & OTT</a></li><li><a href="layoffs.html">Tech Layoffs</a></li><li><a href="ai-tools.html">AI Tools Finder</a></li></ul></div><div><div class="footer-col-title">Company</div><ul class="footer-links"><li><a href="#">About NRIBeat</a></li><li><a href="#">Advertise With Us</a></li><li><a href="#newsletter">Newsletter</a></li><li><a href="#">Contact</a></li><li><a href="#">Privacy Policy</a></li></ul></div></div><div class="footer-bottom"><span>© 2025 NRIBeat.com · All rights reserved</span><span>Made with ❤️ for the Indian-American community</span></div></div></footer>
+<footer><div class="footer-inner"><div class="footer-top"><div><div class="footer-logo">NRI<span>Beat</span></div><p class="footer-tagline">The daily pulse for Indian Americans — immigration, AI, cricket, and everything in between.</p><div class="social-links"><a href="#" class="social-link">𝕏</a><a href="#" class="social-link">in</a><a href="#" class="social-link">▶</a><a href="#" class="social-link">📸</a></div></div><div><div class="footer-col-title">Immigration</div><ul class="footer-links"><li><a href="visa-bulletin.html">Visa Bulletin Dashboard</a></li><li><a href="immigration.html">H1B Guide 2025</a></li><li><a href="immigration.html">OPT & STEM OPT</a></li><li><a href="visa-bulletin.html">Priority Date Calculator</a></li></ul></div><div><div class="footer-col-title">Categories</div><ul class="footer-links"><li><a href="ai-tools.html">AI & Tech News</a></li><li><a href="cricket.html">Cricket Hub</a></li><li><a href="movies.html">Movies & OTT</a></li><li><a href="layoffs.html">Tech Layoffs</a></li><li><a href="ai-tools.html">AI Tools Finder</a></li></ul></div><div><div class="footer-col-title">Company</div><ul class="footer-links"><li><a href="#">About NRIBeat</a></li><li><a href="#">Advertise With Us</a></li><li><a href="#newsletter">Newsletter</a></li><li><a href="#">Contact</a></li><li><a href="#">Privacy Policy</a></li></ul></div></div><div class="footer-bottom"><span>© <span id="yr"></span> NRIBeat.com · All rights reserved</span><span>Made with ❤️ for the Indian-American community</span></div></div></footer>
 <script>
 function toggleNav(){document.getElementById('mobileNav').classList.toggle('open')}
 
@@ -174,12 +172,38 @@ fetch('data/latest-articles.json').then(r=>r.json()).then(data=>{
     </div>`;
   }).join('');
 }).catch(()=>{document.getElementById('articlesGrid').innerHTML='<div class="article-card" style="grid-column:1/-1;text-align:center;color:var(--white-muted);padding:40px">Unable to load articles.</div>';});
+// Load visa bulletin tracker
+fetch('data/visa-bulletin.json').then(r=>r.json()).then(d=>{
+  document.getElementById('vbHeader').innerHTML=`<span>🛂</span> Visa Bulletin Tracker — ${d.month_year||''}`;
+  document.getElementById('vbGrid').innerHTML=`
+    <div class="vb-card fade-up"><div class="vb-label">EB-2 India · Final Action</div><div class="vb-date">${d.eb2_india_final||'—'}</div><div class="vb-move up">Latest</div><div class="vb-sub">Check <a href="visa-bulletin.html" style="color:var(--saffron)">full dashboard</a> for movement details.</div></div>
+    <div class="vb-card fade-up"><div class="vb-label">EB-3 India · Final Action</div><div class="vb-date">${d.eb3_india_final||'—'}</div><div class="vb-move up">Latest</div><div class="vb-sub">Compare with EB-2 if you have both options available.</div></div>
+    <div class="vb-card fade-up"><div class="vb-label">EB-1 India · Final Action</div><div class="vb-date">${d.eb1_india_final||'Current'}</div><div class="vb-move up">✓ Current</div><div class="vb-sub">EB-1A/EB-1B India. Premium processing available.</div></div>
+    <div class="vb-predict fade-up"><div class="vb-predict-label">🔮 AI Prediction Tool</div><div class="vb-predict-title">When will your priority date become current?</div><div class="vb-predict-body">Enter your EB-2 India priority date for an AI-powered estimate.</div><input type="month" id="priorityDate" style="margin-bottom:8px" min="2010-01" max="2023-12"/><button class="predict-btn" onclick="predictDate()">Calculate My Wait Time</button><div id="predict-result"></div></div>`;
+}).catch(()=>{});
+
+// Load cricket and immigration two-col from article index
+fetch('data/article-index.json').then(r=>r.json()).then(data=>{
+  const all=data.articles||[];
+  const cricket=all.filter(a=>a.category==='cricket').slice(0,4);
+  const immig=all.filter(a=>a.category==='immigration'||a.category==='visa_bulletin').slice(0,4);
+  const renderCol=(items)=>items.length
+    ? items.map((a,i)=>`<div class="col-card" onclick="location.href='${a.url}'"><div class="col-num">0${i+1}</div><div><div class="col-cat">Cricket</div><div class="col-title">${a.title}</div><div class="col-time">${a.date||''}</div></div></div>`).join('')
+    : '<div class="col-card" style="color:var(--white-muted);padding:20px">No articles yet.</div>';
+  const renderImmig=(items)=>items.length
+    ? items.map((a,i)=>`<div class="col-card" onclick="location.href='${a.url}'"><div class="col-num">0${i+1}</div><div><div class="col-cat">Immigration</div><div class="col-title">${a.title}</div><div class="col-time">${a.date||''}</div></div></div>`).join('')
+    : '<div class="col-card" style="color:var(--white-muted);padding:20px">No articles yet.</div>';
+  document.getElementById('cricketCol').innerHTML=renderCol(cricket);
+  document.getElementById('immigrationCol').innerHTML=renderImmig(immig);
+}).catch(()=>{});
+
 function predictDate(){const val=document.getElementById('priorityDate').value,res=document.getElementById('predict-result');if(!val){res.style.display='block';res.style.color='var(--amber)';res.textContent='Please enter your priority date.';return}const[yr,mo]=val.split('-').map(Number);const totalMonths=(2013-yr)*12+(1-mo);if(totalMonths<=0){res.style.display='block';res.style.color='var(--green)';res.innerHTML='✅ Your date is already current or very close!';return}const avg=11,months=Math.ceil((totalMonths*30)/avg),yrs=(months/12).toFixed(1);res.style.display='block';res.style.color='var(--green)';res.innerHTML=`📊 <strong>~${yrs} years</strong> (${months} months) based on avg ${avg} days/month movement.<br><span style="color:var(--white-muted);font-size:11px">Estimate only — subscribe for monthly updates.</span>`}
 function subscribe(){const e=document.getElementById('emailInput').value,m=document.getElementById('subMsg');if(!e||!e.includes('@')){m.innerHTML='<span style="color:var(--amber)">⚠ Please enter a valid email.</span>';return}m.innerHTML='<span style="color:var(--green)">✓ You\'re in! Check your inbox.</span>';document.getElementById('emailInput').value=''}
 document.querySelectorAll('.chip').forEach(c=>c.addEventListener('click',function(){document.querySelectorAll('.chip').forEach(x=>x.classList.remove('active'));this.classList.add('active')}));
 const obs=new IntersectionObserver(e=>e.forEach(x=>{if(x.isIntersecting){x.target.style.opacity='1';x.target.style.transform='translateY(0)'}}),{threshold:.1});
 document.querySelectorAll('.vb-card,.article-card,.tool-card,.col-card').forEach(el=>{el.style.opacity='0';el.style.transform='translateY(16px)';el.style.transition='opacity .4s ease,transform .4s ease';obs.observe(el)});
 </script>
+<script>document.getElementById("yr").textContent=new Date().getFullYear();</script>
 <script id="tickerScript">
 fetch('data/latest-articles.json').then(r=>r.json()).then(data=>{
   const items=(data.articles||[]).slice(0,8).map(a=>a.title);
