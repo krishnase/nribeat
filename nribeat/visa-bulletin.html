@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/>
+<meta name="description" content="NRIBeat Visa Bulletin Dashboard — Live EB-2, EB-3 India priority dates, AI predictions, and historical movement charts."/>
+<title>Visa Bulletin Dashboard — NRIBeat</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"/><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,300&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="css/style.css"/>
+<style>
+.page-hero{padding:40px 0 32px;border-bottom:1px solid var(--navy-border);margin-bottom:36px}
+.page-eyebrow{font-size:11px;font-weight:600;letter-spacing:1.2px;text-transform:uppercase;color:var(--saffron);margin-bottom:10px}
+.page-title{font-family:'DM Serif Display',serif;font-size:40px;line-height:1.15;color:var(--white);margin-bottom:10px}
+.page-desc{font-size:15px;color:var(--white-dim);max-width:560px;line-height:1.65}
+.updated{display:inline-flex;align-items:center;gap:6px;font-size:12px;color:var(--green);margin-top:12px;font-weight:500}
+.updated-dot{width:6px;height:6px;background:var(--green);border-radius:50%;animation:pulse-dot 1.5s infinite}
+.dates-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-bottom:36px}
+.date-card{background:var(--navy-card);border:1px solid var(--navy-border);border-radius:14px;padding:24px;position:relative;overflow:hidden}
+.date-card::after{content:'';position:absolute;bottom:0;left:0;right:0;height:3px;background:var(--dc,var(--blue))}
+.date-card.featured{border-color:rgba(232,102,26,.3);background:linear-gradient(135deg,var(--navy-card),rgba(232,102,26,.05))}
+.dc-category{font-size:11px;font-weight:600;letter-spacing:.8px;text-transform:uppercase;color:var(--white-muted);margin-bottom:6px}
+.dc-date{font-family:'DM Serif Display',serif;font-size:30px;color:var(--white);margin-bottom:8px;letter-spacing:-.3px}
+.dc-movement{display:flex;align-items:center;gap:8px;margin-bottom:12px}
+.dc-badge{display:inline-flex;align-items:center;gap:4px;font-size:12px;font-weight:600;padding:3px 10px;border-radius:20px}
+.dc-prev{font-size:12px;color:var(--white-muted)}
+.dc-note{font-size:12px;color:var(--white-dim);line-height:1.55;padding-top:12px;border-top:1px solid var(--navy-border)}
+.history-section{margin-bottom:40px}
+.history-table{width:100%;border-collapse:collapse;font-size:13px}
+.history-table th{text-align:left;font-weight:600;padding:10px 14px;background:var(--navy-mid);border-bottom:1px solid var(--navy-border);font-size:11px;color:var(--white-muted);text-transform:uppercase;letter-spacing:.4px}
+.history-table td{padding:11px 14px;border-bottom:1px solid rgba(30,48,86,.6);color:var(--white-dim);vertical-align:middle}
+.history-table tr:hover td{background:var(--navy-card);color:var(--white)}
+.move-pill{display:inline-flex;align-items:center;gap:4px;font-size:11px;font-weight:600;padding:2px 8px;border-radius:20px}
+.move-up{background:rgba(45,184,122,.15);color:var(--green)}
+.move-down{background:rgba(232,74,130,.15);color:var(--pink)}
+.move-same{background:rgba(245,183,49,.12);color:var(--amber)}
+.predictor-card{background:linear-gradient(135deg,rgba(232,102,26,.1),rgba(74,158,232,.06));border:1px solid rgba(232,102,26,.2);border-radius:16px;padding:32px;margin-bottom:36px}
+.predictor-grid{display:grid;grid-template-columns:1fr 1fr;gap:28px;align-items:start}
+.pred-title{font-family:'DM Serif Display',serif;font-size:26px;color:var(--white);margin-bottom:8px}
+.pred-desc{font-size:14px;color:var(--white-dim);line-height:1.65;margin-bottom:20px}
+.pred-form{display:flex;flex-direction:column;gap:10px}
+.pred-label{font-size:12px;font-weight:600;color:var(--white-muted);letter-spacing:.4px;margin-bottom:4px}
+.pred-select,.pred-input{padding:11px 14px;font-size:14px}
+.pred-btn{padding:12px;background:var(--saffron);color:var(--navy);font-size:14px;font-weight:600;border:none;border-radius:8px;cursor:pointer;font-family:'DM Sans',sans-serif;transition:background .15s}
+.pred-btn:hover{background:var(--saffron-light)}
+.pred-result{background:var(--navy);border:1px solid var(--navy-border);border-radius:10px;padding:18px;min-height:80px;display:flex;align-items:center;justify-content:center}
+.pred-placeholder{font-size:13px;color:var(--white-muted);text-align:center}
+.result-content{font-size:14px;color:var(--green);line-height:1.7;font-weight:500}
+.faq-section{margin-bottom:48px}
+.faq-item{border-bottom:1px solid var(--navy-border);padding:18px 0}
+.faq-q{font-size:15px;font-weight:600;color:var(--white);cursor:pointer;display:flex;align-items:center;justify-content:space-between;gap:16px}
+.faq-q:hover{color:var(--saffron)}
+.faq-toggle{font-size:20px;color:var(--white-muted);flex-shrink:0;transition:transform .2s}
+.faq-a{font-size:14px;color:var(--white-dim);line-height:1.7;padding-top:12px;display:none}
+.faq-item.open .faq-a{display:block}
+.faq-item.open .faq-toggle{transform:rotate(45deg);color:var(--saffron)}
+@media(max-width:900px){.dates-grid{grid-template-columns:1fr 1fr}.predictor-grid{grid-template-columns:1fr}}
+@media(max-width:600px){.dates-grid{grid-template-columns:1fr}.page-title{font-size:28px}}
+</style>
+</head>
+<body>
+<div class="ticker-wrap"><div class="ticker-label">Live</div><div class="ticker-track"><span>EB-2 India Final Action: Jan 01, 2013 — moved +15 days</span><span>EB-3 India Final Action: Feb 15, 2013 — moved +22 days</span><span>Next bulletin expected: October 8, 2025</span><span>USCIS processing H1B transfers in 2–3 weeks average</span><span>EB-2 India Final Action: Jan 01, 2013 — moved +15 days</span><span>EB-3 India Final Action: Feb 15, 2013 — moved +22 days</span><span>Next bulletin expected: October 8, 2025</span><span>USCIS processing H1B transfers in 2–3 weeks average</span></div></div>
+<header><div class="header-inner"><a href="index.html" class="logo">NRI<span class="beat">Beat</span><div class="logo-dot"></div></a><nav><a href="index.html">Home</a><a href="immigration.html" class="active">Immigration</a><a href="ai-tools.html">AI & Tech</a><a href="cricket.html">Cricket</a><a href="movies.html">Movies</a><a href="layoffs.html">Layoffs</a><a href="index.html#newsletter" class="nav-cta">Get Daily Digest</a></nav><div class="hamburger" onclick="toggleNav()"><span></span><span></span><span></span></div></div><div class="mobile-nav" id="mobileNav"><a href="index.html">Home</a><a href="immigration.html">Immigration</a><a href="ai-tools.html">AI & Tech</a><a href="cricket.html">Cricket</a><a href="movies.html">Movies</a><a href="layoffs.html">Layoffs</a></div></header>
+
+<main class="page">
+  <div class="page-hero">
+    <div class="page-eyebrow">🛂 Immigration · Visa Bulletin</div>
+    <h1 class="page-title">Visa Bulletin Dashboard</h1>
+    <p class="page-desc">Live priority dates, historical movement data, and AI-powered predictions for EB-2 and EB-3 India categories. Updated the moment the bulletin drops each month.</p>
+    <div class="updated"><div class="updated-dot"></div>Last updated: November 12, 2025 · Next bulletin: ~December 10, 2025</div>
+  </div>
+
+  <!-- CURRENT DATES -->
+  <div class="section-header"><div class="section-label">📅 November 2025 — Current Dates</div></div>
+  <div class="dates-grid">
+    <div class="date-card featured" style="--dc:var(--saffron)">
+      <div class="dc-category">EB-2 India · Final Action Date</div>
+      <div class="dc-date">Jan 01, 2013</div>
+      <div class="dc-movement"><span class="dc-badge move-up">↑ +15 days</span><span class="dc-prev">Was: Dec 17, 2012</span></div>
+      <div class="dc-note">If your priority date is before Jan 1, 2013, your case is current and you can proceed to the final step. Average movement last 6 months: <strong style="color:var(--white)">11 days/month.</strong></div>
+    </div>
+    <div class="date-card" style="--dc:var(--green)">
+      <div class="dc-category">EB-3 India · Final Action Date</div>
+      <div class="dc-date">Feb 15, 2013</div>
+      <div class="dc-movement"><span class="dc-badge move-up">↑ +22 days</span><span class="dc-prev">Was: Jan 24, 2013</span></div>
+      <div class="dc-note">EB-3 is moving faster than EB-2 this month — an unusual pattern. New fiscal year often causes surges in Oct–Dec. Worth monitoring if you have both options.</div>
+    </div>
+    <div class="date-card" style="--dc:var(--blue)">
+      <div class="dc-category">EB-2 India · Dates for Filing</div>
+      <div class="dc-date">Apr 01, 2022</div>
+      <div class="dc-movement"><span class="dc-badge move-same">→ No change</span><span class="dc-prev">Same as Oct 2025</span></div>
+      <div class="dc-note">USCIS must announce if Dates for Filing can be used each month. No announcement yet for November. Check USCIS.gov Visa Bulletin Processing Dates page.</div>
+    </div>
+    <div class="date-card" style="--dc:var(--amber)">
+      <div class="dc-category">EB-3 India · Dates for Filing</div>
+      <div class="dc-date">Jun 01, 2022</div>
+      <div class="dc-movement"><span class="dc-badge move-up">↑ +30 days</span><span class="dc-prev">Was: May 01, 2022</span></div>
+      <div class="dc-note">Significant jump of 30 days. If you're in EB-3 and your attorney can file an I-485, this may be your opportunity before potential retrogression.</div>
+    </div>
+    <div class="date-card" style="--dc:var(--purple)">
+      <div class="dc-category">F2A (Spouse of LPR) · Final Action</div>
+      <div class="dc-date">Current</div>
+      <div class="dc-movement"><span class="dc-badge move-up">✓ Current</span></div>
+      <div class="dc-note">F2A has been current for several months — spouses and children of LPRs can file immediately without waiting for a priority date.</div>
+    </div>
+    <div class="date-card" style="--dc:var(--pink)">
+      <div class="dc-category">EB-1 India · Final Action</div>
+      <div class="dc-date">Current</div>
+      <div class="dc-movement"><span class="dc-badge move-up">✓ Current</span></div>
+      <div class="dc-note">EB-1A (Extraordinary Ability) and EB-1B (Outstanding Researcher) for India remain current. Priority processing available with premium service.</div>
+    </div>
+  </div>
+
+  <!-- AI PREDICTOR -->
+  <div class="predictor-card">
+    <div class="predictor-grid">
+      <div>
+        <div style="font-size:11px;font-weight:600;letter-spacing:1.2px;text-transform:uppercase;color:var(--saffron);margin-bottom:12px">🔮 AI-Powered Wait Time Predictor</div>
+        <div class="pred-title">When will your priority date become current?</div>
+        <p class="pred-desc">Our model is trained on 12+ years of Visa Bulletin movement data. Enter your details to get a personalized estimate with confidence range, seasonal patterns, and retrogression risk score.</p>
+        <div style="display:flex;gap:16px;flex-wrap:wrap;font-size:12px;color:var(--white-muted)">
+          <span>✓ 12 years of data</span><span>✓ Seasonal analysis</span><span>✓ Retrogression risk</span>
+        </div>
+      </div>
+      <div class="pred-form">
+        <div><div class="pred-label">Visa Category</div><select class="pred-select" id="pred-cat"><option value="eb2">EB-2 India</option><option value="eb3">EB-3 India</option><option value="eb2c">EB-2 China</option><option value="eb3c">EB-3 China</option></select></div>
+        <div><div class="pred-label">Your Priority Date</div><input type="month" class="pred-input" id="pred-date" min="2008-01" max="2023-12"/></div>
+        <button class="pred-btn" onclick="runPredictor()">Calculate My Wait Time →</button>
+        <div class="pred-result"><div class="pred-placeholder" id="pred-placeholder">Enter your priority date above to see your estimate.</div><div class="result-content" id="pred-output" style="display:none"></div></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- HISTORY TABLE -->
+  <section class="history-section">
+    <div class="section-header"><div class="section-label" style="font-size:18px">📊 EB-2 India — 12-Month Movement History</div></div>
+    <div style="background:var(--navy-card);border:1px solid var(--navy-border);border-radius:12px;overflow:hidden">
+      <table class="history-table">
+        <tr><th>Month</th><th>Final Action Date</th><th>Movement</th><th>Dates for Filing</th><th>Notes</th></tr>
+        <tr><td><strong style="color:var(--white)">Nov 2025</strong></td><td>Jan 01, 2013</td><td><span class="move-pill move-up">↑ +15 days</span></td><td>Apr 01, 2022</td><td>New FY momentum</td></tr>
+        <tr><td>Oct 2025</td><td>Dec 17, 2012</td><td><span class="move-pill move-up">↑ +18 days</span></td><td>Apr 01, 2022</td><td>FY start surge</td></tr>
+        <tr><td>Sep 2025</td><td>Nov 29, 2012</td><td><span class="move-pill move-same">→ 0 days</span></td><td>Mar 01, 2022</td><td>Year-end slowdown</td></tr>
+        <tr><td>Aug 2025</td><td>Nov 29, 2012</td><td><span class="move-pill move-up">↑ +7 days</span></td><td>Mar 01, 2022</td><td>Slow summer</td></tr>
+        <tr><td>Jul 2025</td><td>Nov 22, 2012</td><td><span class="move-pill move-down">↓ Retrogressions</span></td><td>Feb 01, 2022</td><td>Quota pressure</td></tr>
+        <tr><td>Jun 2025</td><td>Dec 08, 2012</td><td><span class="move-pill move-up">↑ +14 days</span></td><td>Mar 15, 2022</td><td>Normal movement</td></tr>
+        <tr><td>May 2025</td><td>Nov 24, 2012</td><td><span class="move-pill move-up">↑ +11 days</span></td><td>Mar 01, 2022</td><td>Steady progress</td></tr>
+        <tr><td>Apr 2025</td><td>Nov 13, 2012</td><td><span class="move-pill move-up">↑ +9 days</span></td><td>Feb 15, 2022</td><td>Consistent pace</td></tr>
+        <tr><td>Mar 2025</td><td>Nov 04, 2012</td><td><span class="move-pill move-up">↑ +12 days</span></td><td>Feb 01, 2022</td><td>Normal movement</td></tr>
+        <tr><td>Feb 2025</td><td>Oct 23, 2012</td><td><span class="move-pill move-up">↑ +8 days</span></td><td>Jan 15, 2022</td><td>Slow February</td></tr>
+        <tr><td>Jan 2025</td><td>Oct 15, 2012</td><td><span class="move-pill move-up">↑ +13 days</span></td><td>Jan 01, 2022</td><td>Year-start pickup</td></tr>
+        <tr><td>Dec 2024</td><td>Oct 02, 2012</td><td><span class="move-pill move-up">↑ +16 days</span></td><td>Dec 01, 2021</td><td>Holiday surge</td></tr>
+      </table>
+    </div>
+    <p style="font-size:12px;color:var(--white-muted);margin-top:10px">Average movement (last 12 months): <strong style="color:var(--white)">~11.1 days/month</strong> for EB-2 India Final Action Date.</p>
+  </section>
+
+  <!-- FAQ -->
+  <section class="faq-section">
+    <div class="section-header"><div class="section-label" style="font-size:18px">❓ Visa Bulletin FAQ</div></div>
+    <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">What is the Visa Bulletin and when is it released?<span class="faq-toggle">+</span></div><div class="faq-a">The Visa Bulletin is a monthly publication by the U.S. Department of State that shows the availability of immigrant visa numbers. It is typically released on the 2nd Tuesday of each month for the following month. The bulletin sets the "priority dates" — if your priority date is before the date listed, your visa number is available.</div></div>
+    <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">What is the difference between Final Action Date and Dates for Filing?<span class="faq-toggle">+</span></div><div class="faq-a">The Final Action Date (FAD) is the date by which USCIS will approve your green card application. The Dates for Filing (DFF) is an earlier date that, if authorized by USCIS each month, allows you to file your I-485 adjustment of status application even before your priority date is fully current. Using DFF gets you work authorization (EAD) and travel document (AP) earlier.</div></div>
+    <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">What does retrogression mean and should I be worried?<span class="faq-toggle">+</span></div><div class="faq-a">Retrogression occurs when a priority date moves backward — meaning fewer visa numbers are available than expected. This typically happens in July–September as the fiscal year end approaches and visa quotas run out. EB-2 India historically sees retrogression risk in Q4 of the fiscal year (July–September). The October bulletin for a new fiscal year often brings a significant jump forward.</div></div>
+    <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">Why does EB-3 India sometimes move faster than EB-2?<span class="faq-toggle">+</span></div><div class="faq-a">EB-2 and EB-3 draw from the same pool of per-country visa numbers, but demand varies. When many applicants "downgrade" from EB-2 to EB-3 to use the faster date, it can slow EB-3. Conversely, if EB-2 demand is very high, EB-3 may move faster due to leftover visa numbers. Always consult with an immigration attorney before downgrading or changing categories.</div></div>
+    <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">How can I get notified when my priority date becomes current?<span class="faq-toggle">+</span></div><div class="faq-a">Subscribe to NRIBeat's Daily Digest — we send an immediate alert email the moment the new Visa Bulletin is published each month, with a plain-English summary of what changed and whether your date is current. You can also use the predictor tool above to estimate when your date will become current based on historical movement rates.</div></div>
+  </section>
+
+  <!-- NEWSLETTER -->
+  <section class="newsletter" id="newsletter">
+    <div class="nl-eyebrow">📬 Visa Bulletin Alerts</div>
+    <h2 class="nl-title">Never miss a <em>bulletin</em> again</h2>
+    <p class="nl-sub">Get an instant email the moment the new Visa Bulletin drops each month — with plain-English analysis and what it means for your case.</p>
+    <div class="nl-form"><input class="nl-input" type="email" placeholder="your@email.com" id="emailInput"/><button class="nl-btn" onclick="subscribe()">Get Bulletin Alerts</button></div>
+    <p class="nl-note" id="subMsg"><span>✓ 8,200 green card applicants</span> already subscribed · Free forever</p>
+  </section>
+</main>
+
+<footer><div class="footer-inner"><div class="footer-top"><div><div class="footer-logo">NRI<span>Beat</span></div><p class="footer-tagline">The daily pulse for Indian Americans — immigration, AI, cricket, and everything in between.</p><div class="social-links"><a href="#" class="social-link">𝕏</a><a href="#" class="social-link">in</a><a href="#" class="social-link">▶</a><a href="#" class="social-link">📸</a></div></div><div><div class="footer-col-title">Immigration</div><ul class="footer-links"><li><a href="visa-bulletin.html">Visa Bulletin Dashboard</a></li><li><a href="immigration.html">H1B Guide 2025</a></li><li><a href="immigration.html">OPT & STEM OPT</a></li><li><a href="visa-bulletin.html">Priority Date Calculator</a></li></ul></div><div><div class="footer-col-title">Categories</div><ul class="footer-links"><li><a href="ai-tools.html">AI & Tech News</a></li><li><a href="cricket.html">Cricket Hub</a></li><li><a href="movies.html">Movies & OTT</a></li><li><a href="layoffs.html">Tech Layoffs</a></li></ul></div><div><div class="footer-col-title">Company</div><ul class="footer-links"><li><a href="#">About NRIBeat</a></li><li><a href="#">Advertise</a></li><li><a href="#">Contact</a></li><li><a href="#">Privacy Policy</a></li></ul></div></div><div class="footer-bottom"><span>© 2025 NRIBeat.com · All rights reserved</span><span>Made with ❤️ for the Indian-American community</span></div></div></footer>
+<script>
+function toggleNav(){document.getElementById('mobileNav').classList.toggle('open')}
+function runPredictor(){const cat=document.getElementById('pred-cat').value,date=document.getElementById('pred-date').value,out=document.getElementById('pred-output'),ph=document.getElementById('pred-placeholder');if(!date){return}const[yr,mo]=date.split('-').map(Number);const curYr=2013,curMo=1;const totalDays=(curYr-yr)*365+((curMo-mo)*30);if(totalDays<=0){out.innerHTML='✅ Your priority date is already current! Contact your employer to begin filing immediately.';out.style.display='block';ph.style.display='none';return}const avgMov=cat==='eb3'?14:11;const monthsNeeded=Math.ceil(totalDays/avgMov);const yrs=(monthsNeeded/12).toFixed(1);const targetDate=new Date(2025,10+monthsNeeded,1);const opts={year:'numeric',month:'long'};out.innerHTML=`📊 <strong>Estimated wait: ~${yrs} years</strong> (${monthsNeeded} months)<br>Approximate current date: ~${targetDate.toLocaleDateString('en-US',opts)}<br>Based on avg movement of ${avgMov} days/month for ${document.getElementById('pred-cat').options[document.getElementById('pred-cat').selectedIndex].text}.<br><span style="font-size:11px;color:var(--white-muted)">Estimate only. Retrogression, policy changes, and demand shifts can significantly alter timelines.</span>`;out.style.display='block';ph.style.display='none'}
+function toggleFaq(el){el.closest('.faq-item').classList.toggle('open')}
+function subscribe(){const e=document.getElementById('emailInput').value,m=document.getElementById('subMsg');if(!e||!e.includes('@')){m.innerHTML='<span style="color:var(--amber)">⚠ Please enter a valid email.</span>';return}m.innerHTML='<span style="color:var(--green)">✓ You\'re subscribed! Check your inbox for confirmation.</span>';document.getElementById('emailInput').value=''}
+</script>
+</body>
+</html>

@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/>
+<meta name="description" content="NRIBeat — Daily pulse for Indian Americans. Visa Bulletin updates, H1B news, AI tools, cricket scores, Bollywood OTT news and more."/>
+<title>NRIBeat — Daily Pulse for Indian Americans</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,300&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="css/style.css"/>
+<style>
+.hero{padding:36px 0 0}
+.hero-grid{display:grid;grid-template-columns:1fr 360px;gap:2px;border-radius:16px;overflow:hidden;background:var(--navy-border)}
+.hero-main{background:var(--navy-card);padding:36px;position:relative;cursor:pointer;transition:background .2s}
+.hero-main:hover{background:#1a2d4e}
+.hero-eyebrow{display:inline-flex;align-items:center;gap:8px;background:rgba(232,102,26,.15);border:1px solid rgba(232,102,26,.3);border-radius:20px;padding:4px 12px;margin-bottom:18px}
+.hero-eyebrow .cat{font-size:11px;font-weight:600;color:var(--saffron);letter-spacing:.8px;text-transform:uppercase}
+.live-dot{width:6px;height:6px;background:var(--green);border-radius:50%;animation:pulse-dot 1.2s ease-in-out infinite}
+.hero-title{font-family:'DM Serif Display',serif;font-size:38px;line-height:1.15;color:var(--white);margin-bottom:14px;letter-spacing:-.5px}
+.hero-title em{color:var(--saffron);font-style:normal}
+.hero-excerpt{font-size:15px;color:var(--white-dim);line-height:1.65;margin-bottom:22px;max-width:520px}
+.hero-meta{display:flex;align-items:center;gap:14px;font-size:12px;color:var(--white-muted)}
+.hero-side{display:flex;flex-direction:column;gap:2px}
+.hero-card{flex:1;background:var(--navy-card);padding:22px 24px;cursor:pointer;transition:background .2s;position:relative}
+.hero-card:hover{background:#1a2d4e}
+.hc-cat{font-size:10px;font-weight:600;letter-spacing:1px;text-transform:uppercase;margin-bottom:10px}
+.hc-cat.cricket{color:var(--green)}.hc-cat.ai{color:var(--blue)}.hc-cat.movies{color:var(--pink)}
+.hc-title{font-family:'DM Serif Display',serif;font-size:18px;line-height:1.3;color:var(--white);margin-bottom:8px}
+.hc-time{font-size:11px;color:var(--white-muted)}
+.hc-arrow{position:absolute;bottom:20px;right:20px;width:28px;height:28px;border:1px solid var(--navy-border);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:12px;color:var(--white-muted);transition:all .15s}
+.hero-card:hover .hc-arrow{border-color:var(--saffron);color:var(--saffron)}
+.vb-section{padding:40px 0}
+.vb-grid{display:grid;grid-template-columns:1fr 1fr 1fr 300px;gap:12px}
+.vb-card{background:var(--navy-card);border:1px solid var(--navy-border);border-radius:12px;padding:20px 22px}
+.vb-label{font-size:11px;font-weight:600;letter-spacing:.8px;text-transform:uppercase;color:var(--white-muted);margin-bottom:6px}
+.vb-date{font-family:'DM Serif Display',serif;font-size:26px;color:var(--white);margin-bottom:4px}
+.vb-move{display:inline-flex;align-items:center;gap:5px;font-size:12px;font-weight:600;padding:3px 10px;border-radius:20px;margin-bottom:14px}
+.vb-move.up{background:rgba(45,184,122,.15);color:var(--green)}
+.vb-move.same{background:rgba(245,183,49,.12);color:var(--amber)}
+.vb-sub{font-size:12px;color:var(--white-muted);line-height:1.5}
+.vb-predict{background:linear-gradient(135deg,rgba(232,102,26,.12),rgba(74,158,232,.08));border:1px solid rgba(232,102,26,.25);border-radius:12px;padding:20px 22px;position:relative;overflow:hidden}
+.vb-predict::before{content:'';position:absolute;top:-30px;right:-30px;width:100px;height:100px;background:radial-gradient(circle,rgba(232,102,26,.15),transparent 70%)}
+.vb-predict-label{font-size:10px;font-weight:600;letter-spacing:1.2px;text-transform:uppercase;color:var(--saffron);margin-bottom:10px}
+.vb-predict-title{font-size:15px;font-weight:600;color:var(--white);margin-bottom:8px;line-height:1.4}
+.vb-predict-body{font-size:13px;color:var(--white-dim);line-height:1.6;margin-bottom:14px}
+.predict-btn{width:100%;padding:10px;background:var(--saffron);color:var(--navy);font-size:13px;font-weight:600;border:none;border-radius:8px;cursor:pointer;font-family:'DM Sans',sans-serif;transition:all .15s}
+.predict-btn:hover{background:var(--saffron-light)}
+#predict-result{margin-top:10px;font-size:12px;color:var(--green);display:none;font-weight:500;line-height:1.5}
+.articles-section{padding:8px 0 40px}
+.articles-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:2px;border-radius:16px;overflow:hidden;background:var(--navy-border)}
+.two-col{display:grid;grid-template-columns:1fr 1fr;gap:28px;padding:0 0 40px}
+.col-list{display:flex;flex-direction:column;gap:2px;border-radius:12px;overflow:hidden;background:var(--navy-border)}
+.col-card{background:var(--navy-card);padding:18px 20px;cursor:pointer;transition:background .2s;display:flex;gap:14px;align-items:flex-start}
+.col-card:hover{background:#1a2d4e}
+.col-num{font-family:'JetBrains Mono',monospace;font-size:11px;font-weight:500;color:var(--white-muted);width:18px;flex-shrink:0;padding-top:3px}
+.col-cat{font-size:10px;font-weight:600;letter-spacing:.8px;text-transform:uppercase;color:var(--saffron);margin-bottom:5px}
+.col-title{font-size:14px;font-weight:500;color:var(--white);line-height:1.4;margin-bottom:4px}
+.col-time{font-size:11px;color:var(--white-muted)}
+.tools-section{padding:0 0 40px}
+.tools-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
+.tool-card{background:var(--navy-card);border:1px solid var(--navy-border);border-radius:12px;padding:20px;cursor:pointer;transition:all .2s;position:relative;overflow:hidden}
+.tool-card:hover{border-color:var(--saffron);transform:translateY(-2px)}
+.tool-card::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:var(--tc,var(--blue));opacity:0;transition:opacity .2s}
+.tool-card:hover::before{opacity:1}
+.tool-icon{width:44px;height:44px;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:22px;margin-bottom:14px;background:rgba(255,255,255,.06)}
+.tool-name{font-size:15px;font-weight:600;color:var(--white);margin-bottom:4px}
+.tool-desc{font-size:12px;color:var(--white-muted);line-height:1.5;margin-bottom:14px}
+.tool-footer{display:flex;align-items:center;justify-content:space-between}
+.tool-link{font-size:12px;font-weight:600;color:var(--saffron);text-decoration:none}
+.tool-link:hover{color:var(--saffron-light)}
+@media(max-width:900px){.hero-grid{grid-template-columns:1fr}.hero-side{flex-direction:row}.vb-grid{grid-template-columns:1fr 1fr}.articles-grid{grid-template-columns:1fr 1fr}.two-col{grid-template-columns:1fr}.tools-grid{grid-template-columns:1fr 1fr}}
+@media(max-width:600px){.hero-title{font-size:26px}.vb-grid{grid-template-columns:1fr}.articles-grid{grid-template-columns:1fr}.hero-side{flex-direction:column}.tools-grid{grid-template-columns:1fr}.hero-main{padding:24px}}
+</style>
+</head>
+<body>
+<!-- TICKER -->
+<div class="ticker-wrap"><div class="ticker-label">Live</div><div class="ticker-track"><span>EB-2 India moves forward 15 days in November 2025 Visa Bulletin</span><span>India beats Australia by 6 wickets — Kohli scores 89</span><span>OpenAI launches GPT-5 with real-time web access for all users</span><span>H1B cap reached in record 5 days — USCIS begins lottery selection</span><span>Stree 3 officially confirmed — Shraddha Kapoor returning</span><span>Meta announces 3,600 layoffs — H1B workers advised to check status</span><span>STEM OPT processing times drop to 3 weeks: USCIS update</span><span>IPL 2026 mega auction: RCB buys Shubman Gill for ₹22.5 crore</span><span>EB-2 India moves forward 15 days in November 2025 Visa Bulletin</span><span>India beats Australia by 6 wickets — Kohli scores 89</span><span>OpenAI launches GPT-5 with real-time web access for all users</span><span>H1B cap reached in record 5 days — USCIS begins lottery selection</span><span>Stree 3 officially confirmed — Shraddha Kapoor returning</span><span>Meta announces 3,600 layoffs — H1B workers advised to check status</span><span>STEM OPT processing times drop to 3 weeks: USCIS update</span><span>IPL 2026 mega auction: RCB buys Shubman Gill for ₹22.5 crore</span></div></div>
+<!-- HEADER -->
+<header><div class="header-inner"><a href="index.html" class="logo">NRI<span class="beat">Beat</span><div class="logo-dot"></div></a><nav><a href="index.html" class="active">Home</a><a href="immigration.html">Immigration</a><a href="ai-tools.html">AI & Tech</a><a href="cricket.html">Cricket</a><a href="movies.html">Movies</a><a href="layoffs.html">Layoffs</a><a href="#newsletter" class="nav-cta">Get Daily Digest</a></nav><div class="hamburger" onclick="toggleNav()"><span></span><span></span><span></span></div></div><div class="mobile-nav" id="mobileNav"><a href="index.html">Home</a><a href="immigration.html">Immigration</a><a href="ai-tools.html">AI & Tech</a><a href="cricket.html">Cricket</a><a href="movies.html">Movies</a><a href="layoffs.html">Layoffs</a><a href="#newsletter" style="color:var(--saffron);font-weight:600">Get Daily Digest →</a></div></header>
+
+<main class="page">
+  <!-- CHIPS -->
+  <div class="cat-chips"><div class="chip active"><span class="chip-dot"></span>All</div><a href="visa-bulletin.html" class="chip"><span class="chip-dot" style="background:#74B3FF"></span>Visa Bulletin</a><a href="immigration.html" class="chip"><span class="chip-dot" style="background:var(--blue)"></span>H1B & OPT</a><a href="cricket.html" class="chip"><span class="chip-dot" style="background:var(--green)"></span>Cricket</a><a href="movies.html" class="chip"><span class="chip-dot" style="background:var(--pink)"></span>Bollywood</a><a href="ai-tools.html" class="chip"><span class="chip-dot" style="background:var(--purple)"></span>AI Tools</a><a href="layoffs.html" class="chip"><span class="chip-dot" style="background:var(--amber)"></span>Layoffs</a></div>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-grid">
+      <div class="hero-main fade-up">
+        <div class="hero-eyebrow"><div class="live-dot"></div><span class="cat">Immigration · Breaking</span></div>
+        <h1 class="hero-title">November 2025 Visa Bulletin:<br><em>EB-2 India Moves Forward</em><br>15 Days — What It Means</h1>
+        <p class="hero-excerpt">The Department of State released the November 2025 Visa Bulletin, showing a 15-day forward movement for EB-2 India's Final Action Date. Here's what this means for your green card timeline.</p>
+        <div style="display:flex;align-items:center;gap:14px;flex-wrap:wrap"><a href="article.html" class="btn-primary">Read Full Analysis →</a><div class="hero-meta"><span>🕐 2 hours ago</span><span>·</span><span>5 min read</span></div></div>
+      </div>
+      <div class="hero-side fade-up">
+        <div class="hero-card"><div class="hc-cat cricket">🏏 Cricket</div><div class="hc-title">India Clinches ODI Series vs Australia — Kohli's 89 Seals the Chase</div><div class="hc-time">4 hours ago · 3 min read</div><div class="hc-arrow">→</div></div>
+        <div class="hero-card"><div class="hc-cat ai">🤖 AI News</div><div class="hc-title">OpenAI's GPT-5 Is Here: Real-Time Web, 10× Faster — Free Tier Included</div><div class="hc-time">6 hours ago · 4 min read</div><div class="hc-arrow">→</div></div>
+        <div class="hero-card"><div class="hc-cat movies">🎬 Movies & OTT</div><div class="hc-title">Stree 3 Official: Shraddha Returns, Pankaj Tripathi Confirmed for 2026</div><div class="hc-time">Yesterday · 2 min read</div><div class="hc-arrow">→</div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- VISA BULLETIN TRACKER -->
+  <section class="vb-section">
+    <div class="section-header"><div class="section-label"><span>🛂</span> Visa Bulletin Tracker — Nov 2025</div><a href="visa-bulletin.html" class="see-all">Full dashboard →</a></div>
+    <div class="vb-grid">
+      <div class="vb-card fade-up"><div class="vb-label">EB-2 India · Final Action</div><div class="vb-date">01 JAN 2013</div><div class="vb-move up">↑ +15 days</div><div class="vb-sub">Previously Dec 17, 2012. Avg. movement: <strong style="color:var(--white)">11 days/month</strong></div></div>
+      <div class="vb-card fade-up"><div class="vb-label">EB-3 India · Final Action</div><div class="vb-date">15 FEB 2013</div><div class="vb-move up">↑ +22 days</div><div class="vb-sub">Faster than EB-2 this month. New FY surge expected Oct–Dec.</div></div>
+      <div class="vb-card fade-up"><div class="vb-label">EB-2 India · Dates for Filing</div><div class="vb-date">01 APR 2022</div><div class="vb-move same">→ No change</div><div class="vb-sub">Unchanged for 2nd consecutive month. USCIS discretion applies.</div></div>
+      <div class="vb-predict fade-up"><div class="vb-predict-label">🔮 AI Prediction Tool</div><div class="vb-predict-title">When will your priority date become current?</div><div class="vb-predict-body">Enter your EB-2 India priority date for an AI-powered estimate.</div><input type="month" id="priorityDate" style="margin-bottom:8px" min="2010-01" max="2023-12"/><button class="predict-btn" onclick="predictDate()">Calculate My Wait Time</button><div id="predict-result"></div></div>
+    </div>
+  </section>
+  <hr class="section-divider"/>
+
+  <!-- LATEST ARTICLES -->
+  <section class="articles-section">
+    <div class="section-header"><div class="section-label"><span>📰</span> Today's Top Stories</div><a href="#" class="see-all">View all →</a></div>
+    <div class="articles-grid">
+      <div class="article-card fade-up"><div class="ac-cat immigration"><div class="cat-dot"></div>Immigration</div><h2 class="ac-title">H1B Cap Reached in Just 5 Days — USCIS Begins Random Lottery Selection</h2><p class="ac-excerpt">The FY2026 H1B cap was hit in a record 5 business days. Here's what every applicant needs to know about next steps, timelines, and what to do if not selected.</p><div class="ac-footer"><span>3 hrs ago · 6 min</span><span class="ac-tag">H1B 2026</span></div></div>
+      <div class="article-card fade-up"><div class="ac-cat ai"><div class="cat-dot"></div>AI & Tech</div><h2 class="ac-title">5 AI Tools Every Indian Tech Professional in the US Should Know in 2025</h2><p class="ac-excerpt">From AI coding assistants to resume builders — a curated roundup of the best AI tools for Indian engineers and product managers in the US.</p><div class="ac-footer"><span>5 hrs ago · 7 min</span><span class="ac-tag">AI Tools</span></div></div>
+      <div class="article-card fade-up"><div class="ac-cat layoffs"><div class="cat-dot"></div>Layoffs</div><h2 class="ac-title">Meta Confirms 3,600 Job Cuts: What H1B Visa Holders Need to Do Right Now</h2><p class="ac-excerpt">For H1B workers, the 60-day grace period clock starts immediately. Here's your step-by-step action guide — what to do, when, and who to call.</p><div class="ac-footer"><span>8 hrs ago · 5 min</span><span class="ac-tag">H1B Grace Period</span></div></div>
+      <div class="article-card fade-up"><div class="ac-cat cricket"><div class="cat-dot"></div>Cricket</div><h2 class="ac-title">Rohit Sharma Announces Retirement from Test Cricket After Series Loss</h2><p class="ac-excerpt">In a surprise announcement, Rohit Sharma confirmed his retirement from Test cricket. He will continue in white-ball formats. Full statement and tributes.</p><div class="ac-footer"><span>10 hrs ago · 4 min</span><span class="ac-tag">Test Cricket</span></div></div>
+      <div class="article-card fade-up"><div class="ac-cat movies"><div class="cat-dot"></div>Movies & OTT</div><h2 class="ac-title">New on Netflix India This Week: 6 Hindi Films and Series Dropping in November</h2><p class="ac-excerpt">Netflix India's November lineup includes a major thriller, two originals, and a highly anticipated documentary. Full schedule and our quick picks.</p><div class="ac-footer"><span>Yesterday · 3 min</span><span class="ac-tag">OTT</span></div></div>
+      <div class="article-card fade-up"><div class="ac-cat tech"><div class="cat-dot"></div>Innovation</div><h2 class="ac-title">Indian-Origin Founders Raise $2.3B in US VC Funding This Quarter</h2><p class="ac-excerpt">A record quarter for Indian-origin founders in Silicon Valley. We profile the top 8 startups from fintech to healthcare AI and climate tech.</p><div class="ac-footer"><span>Yesterday · 8 min</span><span class="ac-tag">Startups</span></div></div>
+    </div>
+  </section>
+
+  <!-- TWO COL -->
+  <div class="two-col">
+    <div><div class="section-header"><div class="section-label" style="font-size:18px"><span>🏏</span> Cricket Corner</div><a href="cricket.html" class="see-all">All cricket →</a></div><div class="col-list"><div class="col-card"><div class="col-num">01</div><div><div class="col-cat">IPL 2026 Auction</div><div class="col-title">RCB Signs Shubman Gill for ₹22.5 Crore in Mega Auction Blockbuster</div><div class="col-time">2 hours ago</div></div></div><div class="col-card"><div class="col-num">02</div><div><div class="col-cat">India vs Australia</div><div class="col-title">Bumrah Takes 5/34 as India Bowls Out Australia for 189 in First Test</div><div class="col-time">5 hours ago</div></div></div><div class="col-card"><div class="col-num">03</div><div><div class="col-cat">T20 World Cup 2026</div><div class="col-title">ICC Announces T20 World Cup 2026 Schedule — India's Group Stage Fixtures</div><div class="col-time">Yesterday</div></div></div><div class="col-card"><div class="col-num">04</div><div><div class="col-cat">WPL 2025</div><div class="col-title">Smriti Mandhana Wins Player of the Tournament After RCB's WPL Title</div><div class="col-time">2 days ago</div></div></div></div></div>
+    <div><div class="section-header"><div class="section-label" style="font-size:18px"><span>📋</span> Immigration Updates</div><a href="immigration.html" class="see-all">All immigration →</a></div><div class="col-list"><div class="col-card"><div class="col-num">01</div><div><div class="col-cat">USCIS Alert</div><div class="col-title">STEM OPT Processing Times Drop to 3 Weeks — Fastest Since 2019</div><div class="col-time">3 hours ago</div></div></div><div class="col-card"><div class="col-num">02</div><div><div class="col-cat">Green Card</div><div class="col-title">EB-1C Priority Workers See Historic 6-Month Surge — What Changed?</div><div class="col-time">7 hours ago</div></div></div><div class="col-card"><div class="col-num">03</div><div><div class="col-cat">F1 Visa</div><div class="col-title">US Consulates in India Reduce F1 Wait Times to Under 30 Days in 4 Cities</div><div class="col-time">Yesterday</div></div></div><div class="col-card"><div class="col-num">04</div><div><div class="col-cat">Policy Update</div><div class="col-title">USCIS Proposes New Premium Processing for Certain Green Card Stages</div><div class="col-time">2 days ago</div></div></div></div></div>
+  </div>
+
+  <!-- AI TOOLS -->
+  <section class="tools-section">
+    <div class="section-header"><div class="section-label"><span>🤖</span> Top AI Tools This Week</div><a href="ai-tools.html" class="see-all">Browse all tools →</a></div>
+    <div class="tools-grid">
+      <div class="tool-card" style="--tc:#4A9EE8"><div class="tool-icon">🧠</div><div class="tool-name">Claude 3.5</div><div class="tool-desc">Best for deep analysis, coding, and long documents. Preferred by engineers for accuracy.</div><div class="tool-footer"><span class="badge badge-green">Free tier</span><a href="ai-tools.html" class="tool-link">Try it →</a></div></div>
+      <div class="tool-card" style="--tc:#A78BFA"><div class="tool-icon">✍️</div><div class="tool-name">Jasper AI</div><div class="tool-desc">AI writing for blogs, LinkedIn posts, and job applications. Loved by marketing teams.</div><div class="tool-footer"><span class="badge badge-blue">From $39/mo</span><a href="ai-tools.html" class="tool-link">Try it →</a></div></div>
+      <div class="tool-card" style="--tc:var(--green)"><div class="tool-icon">🎙️</div><div class="tool-name">Otter.ai</div><div class="tool-desc">Real-time meeting transcription with AI summaries. Perfect for remote teams across time zones.</div><div class="tool-footer"><span class="badge badge-green">Free tier</span><a href="ai-tools.html" class="tool-link">Try it →</a></div></div>
+      <div class="tool-card" style="--tc:var(--saffron)"><div class="tool-icon">💻</div><div class="tool-name">GitHub Copilot</div><div class="tool-desc">AI pair programmer that suggests entire functions in real time. Used by 1M+ developers.</div><div class="tool-footer"><span class="badge badge-blue">$10/mo</span><a href="ai-tools.html" class="tool-link">Try it →</a></div></div>
+    </div>
+  </section>
+
+  <!-- NEWSLETTER -->
+  <section class="newsletter" id="newsletter">
+    <div class="nl-eyebrow">📬 Daily Digest</div>
+    <h2 class="nl-title">Your morning <em>beat</em>,<br>delivered before 7 AM</h2>
+    <p class="nl-sub">Visa Bulletin · AI tools · Cricket scores · OTT releases · Layoff alerts — in 2 minutes.</p>
+    <div class="nl-form"><input class="nl-input" type="email" placeholder="your@email.com" id="emailInput"/><button class="nl-btn" onclick="subscribe()">Subscribe Free</button></div>
+    <p class="nl-note" id="subMsg"><span>✓ 12,400 NRIs</span> reading every morning · No spam, ever</p>
+  </section>
+</main>
+
+<!-- FOOTER -->
+<footer><div class="footer-inner"><div class="footer-top"><div><div class="footer-logo">NRI<span>Beat</span></div><p class="footer-tagline">The daily pulse for Indian Americans — immigration, AI, cricket, and everything in between.</p><div class="social-links"><a href="#" class="social-link">𝕏</a><a href="#" class="social-link">in</a><a href="#" class="social-link">▶</a><a href="#" class="social-link">📸</a></div></div><div><div class="footer-col-title">Immigration</div><ul class="footer-links"><li><a href="visa-bulletin.html">Visa Bulletin Dashboard</a></li><li><a href="immigration.html">H1B Guide 2025</a></li><li><a href="immigration.html">OPT & STEM OPT</a></li><li><a href="visa-bulletin.html">Priority Date Calculator</a></li></ul></div><div><div class="footer-col-title">Categories</div><ul class="footer-links"><li><a href="ai-tools.html">AI & Tech News</a></li><li><a href="cricket.html">Cricket Hub</a></li><li><a href="movies.html">Movies & OTT</a></li><li><a href="layoffs.html">Tech Layoffs</a></li><li><a href="ai-tools.html">AI Tools Finder</a></li></ul></div><div><div class="footer-col-title">Company</div><ul class="footer-links"><li><a href="#">About NRIBeat</a></li><li><a href="#">Advertise With Us</a></li><li><a href="#newsletter">Newsletter</a></li><li><a href="#">Contact</a></li><li><a href="#">Privacy Policy</a></li></ul></div></div><div class="footer-bottom"><span>© 2025 NRIBeat.com · All rights reserved</span><span>Made with ❤️ for the Indian-American community</span></div></div></footer>
+<script>
+function toggleNav(){document.getElementById('mobileNav').classList.toggle('open')}
+function predictDate(){const val=document.getElementById('priorityDate').value,res=document.getElementById('predict-result');if(!val){res.style.display='block';res.style.color='var(--amber)';res.textContent='Please enter your priority date.';return}const[yr,mo]=val.split('-').map(Number);const totalMonths=(2013-yr)*12+(1-mo);if(totalMonths<=0){res.style.display='block';res.style.color='var(--green)';res.innerHTML='✅ Your date is already current or very close!';return}const avg=11,months=Math.ceil((totalMonths*30)/avg),yrs=(months/12).toFixed(1);res.style.display='block';res.style.color='var(--green)';res.innerHTML=`📊 <strong>~${yrs} years</strong> (${months} months) based on avg ${avg} days/month movement.<br><span style="color:var(--white-muted);font-size:11px">Estimate only — subscribe for monthly updates.</span>`}
+function subscribe(){const e=document.getElementById('emailInput').value,m=document.getElementById('subMsg');if(!e||!e.includes('@')){m.innerHTML='<span style="color:var(--amber)">⚠ Please enter a valid email.</span>';return}m.innerHTML='<span style="color:var(--green)">✓ You\'re in! Check your inbox.</span>';document.getElementById('emailInput').value=''}
+document.querySelectorAll('.chip').forEach(c=>c.addEventListener('click',function(){document.querySelectorAll('.chip').forEach(x=>x.classList.remove('active'));this.classList.add('active')}));
+const obs=new IntersectionObserver(e=>e.forEach(x=>{if(x.isIntersecting){x.target.style.opacity='1';x.target.style.transform='translateY(0)'}}),{threshold:.1});
+document.querySelectorAll('.vb-card,.article-card,.tool-card,.col-card').forEach(el=>{el.style.opacity='0';el.style.transform='translateY(16px)';el.style.transition='opacity .4s ease,transform .4s ease';obs.observe(el)});
+</script>
+</body>
+</html>

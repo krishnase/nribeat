@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/>
+<meta name="description" content="NRIBeat AI Tools Finder — Compare the best AI tools for Indian tech professionals in the US. Filter by use case, price, and category."/>
+<title>AI Tools Finder — NRIBeat</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"/><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,300&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="css/style.css"/>
+<style>
+.page-hero{padding:40px 0 32px;border-bottom:1px solid var(--navy-border);margin-bottom:36px}
+.page-eyebrow{font-size:11px;font-weight:600;letter-spacing:1.2px;text-transform:uppercase;color:var(--saffron);margin-bottom:10px}
+.page-title{font-family:'DM Serif Display',serif;font-size:40px;line-height:1.15;color:var(--white);margin-bottom:10px}
+.page-desc{font-size:15px;color:var(--white-dim);max-width:560px;line-height:1.65}
+.filters{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:28px;padding:18px;background:var(--navy-card);border:1px solid var(--navy-border);border-radius:12px;align-items:center}
+.filter-label{font-size:12px;font-weight:600;color:var(--white-muted);letter-spacing:.4px;white-space:nowrap}
+.filter-select{padding:7px 12px;font-size:13px;border-radius:8px;min-width:140px;flex:0 0 auto}
+.filter-btn{padding:7px 16px;background:var(--saffron);color:var(--navy);font-size:13px;font-weight:600;border:none;border-radius:8px;cursor:pointer;font-family:'DM Sans',sans-serif;transition:background .15s}
+.filter-btn:hover{background:var(--saffron-light)}
+.tools-count{font-size:13px;color:var(--white-muted);margin-bottom:16px}
+.tools-count strong{color:var(--white)}
+.tools-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-bottom:48px}
+.tool-card-full{background:var(--navy-card);border:1px solid var(--navy-border);border-radius:14px;padding:24px;transition:all .2s;position:relative;overflow:hidden}
+.tool-card-full:hover{border-color:rgba(232,102,26,.4);transform:translateY(-3px);box-shadow:0 8px 32px rgba(0,0,0,.3)}
+.tool-card-full::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:var(--tc,var(--blue));border-radius:3px 3px 0 0}
+.tool-header{display:flex;align-items:flex-start;gap:14px;margin-bottom:14px}
+.tool-icon-lg{width:52px;height:52px;border-radius:12px;background:rgba(255,255,255,.07);display:flex;align-items:center;justify-content:center;font-size:26px;flex-shrink:0}
+.tool-meta{flex:1}
+.tool-name-lg{font-size:17px;font-weight:600;color:var(--white);margin-bottom:4px}
+.tool-category{font-size:11px;font-weight:600;letter-spacing:.6px;text-transform:uppercase;color:var(--white-muted)}
+.tool-desc-full{font-size:13px;color:var(--white-dim);line-height:1.65;margin-bottom:16px}
+.tool-tags{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:16px}
+.tool-tag{font-size:11px;padding:3px 9px;border-radius:20px;background:rgba(255,255,255,.06);color:var(--white-dim);border:1px solid var(--navy-border)}
+.tool-pros{margin-bottom:14px}
+.pro-item{display:flex;align-items:flex-start;gap:7px;font-size:12px;color:var(--white-dim);margin-bottom:5px}
+.pro-dot{width:4px;height:4px;background:var(--green);border-radius:50%;flex-shrink:0;margin-top:6px}
+.tool-footer-full{display:flex;align-items:center;justify-content:space-between;padding-top:14px;border-top:1px solid var(--navy-border)}
+.tool-pricing{display:flex;flex-direction:column;gap:2px}
+.tool-price-main{font-size:15px;font-weight:600;color:var(--white)}
+.tool-price-sub{font-size:11px;color:var(--white-muted)}
+.tool-cta{padding:8px 18px;background:var(--saffron);color:var(--navy);font-size:12px;font-weight:600;border:none;border-radius:20px;cursor:pointer;text-decoration:none;font-family:'DM Sans',sans-serif;transition:background .15s}
+.tool-cta:hover{background:var(--saffron-light)}
+.compare-section{margin-bottom:48px}
+.compare-table{width:100%;border-collapse:collapse;font-size:13px}
+.compare-table th{text-align:left;font-weight:600;padding:12px 16px;background:var(--navy-mid);border-bottom:1px solid var(--navy-border);font-size:12px;color:var(--white-muted);text-transform:uppercase;letter-spacing:.4px}
+.compare-table td{padding:13px 16px;border-bottom:1px solid rgba(30,48,86,.6);color:var(--white-dim);vertical-align:middle}
+.compare-table tr:hover td{background:var(--navy-card);color:var(--white)}
+.compare-table td:first-child{font-weight:600;color:var(--white)}
+.check{color:var(--green);font-weight:600}
+.cross{color:var(--pink)}
+@media(max-width:900px){.tools-grid{grid-template-columns:1fr 1fr}}
+@media(max-width:600px){.tools-grid{grid-template-columns:1fr}.page-title{font-size:28px}.filters{flex-direction:column;align-items:stretch}}
+</style>
+</head>
+<body>
+<div class="ticker-wrap"><div class="ticker-label">Live</div><div class="ticker-track"><span>GPT-5 launches with real-time web search for all users</span><span>Anthropic releases Claude 3.7 Sonnet — best coding model yet</span><span>Google Gemini Ultra 2.0 now available for Workspace users</span><span>GitHub Copilot adds voice coding for VS Code</span><span>GPT-5 launches with real-time web search for all users</span><span>Anthropic releases Claude 3.7 Sonnet — best coding model yet</span><span>Google Gemini Ultra 2.0 now available for Workspace users</span><span>GitHub Copilot adds voice coding for VS Code</span></div></div>
+<header><div class="header-inner"><a href="index.html" class="logo">NRI<span class="beat">Beat</span><div class="logo-dot"></div></a><nav><a href="index.html">Home</a><a href="immigration.html">Immigration</a><a href="ai-tools.html" class="active">AI & Tech</a><a href="cricket.html">Cricket</a><a href="movies.html">Movies</a><a href="layoffs.html">Layoffs</a><a href="index.html#newsletter" class="nav-cta">Get Daily Digest</a></nav><div class="hamburger" onclick="toggleNav()"><span></span><span></span><span></span></div></div><div class="mobile-nav" id="mobileNav"><a href="index.html">Home</a><a href="immigration.html">Immigration</a><a href="ai-tools.html">AI & Tech</a><a href="cricket.html">Cricket</a><a href="movies.html">Movies</a><a href="layoffs.html">Layoffs</a></div></header>
+
+<main class="page">
+  <div class="page-hero">
+    <div class="page-eyebrow">🤖 AI & Tech · Tools</div>
+    <h1 class="page-title">AI Tools Finder</h1>
+    <p class="page-desc">The best AI tools for Indian tech professionals in the US — curated, compared, and updated weekly. Filter by use case, price, and free tier availability.</p>
+  </div>
+
+  <!-- FILTERS -->
+  <div class="filters">
+    <span class="filter-label">Filter by:</span>
+    <select class="filter-select" id="f-category" onchange="filterTools()"><option value="all">All Categories</option><option value="writing">Writing & Content</option><option value="coding">Coding & Dev</option><option value="productivity">Productivity</option><option value="design">Design & Image</option><option value="voice">Voice & Audio</option></select>
+    <select class="filter-select" id="f-price" onchange="filterTools()"><option value="all">Any Price</option><option value="free">Has Free Tier</option><option value="paid">Paid Only</option></select>
+    <select class="filter-select" id="f-sort" onchange="filterTools()"><option value="popular">Most Popular</option><option value="newest">Newest</option><option value="price-asc">Price: Low to High</option></select>
+    <button class="filter-btn" onclick="resetFilters()">Reset</button>
+    <div class="tools-count" id="tools-count" style="margin-left:auto;margin-bottom:0"><strong>12</strong> tools found</div>
+  </div>
+
+  <!-- TOOLS GRID -->
+  <div class="tools-grid" id="tools-grid">
+    <div class="tool-card-full" style="--tc:#4A9EE8" data-cat="writing" data-free="true"><div class="tool-header"><div class="tool-icon-lg">🧠</div><div class="tool-meta"><div class="tool-name-lg">Claude 3.5 Sonnet</div><div class="tool-category">AI Assistant · Writing</div></div></div><p class="tool-desc-full">Anthropic's most capable AI. Best for long-form analysis, nuanced writing, coding, and following complex instructions. Preferred by engineers for precision.</p><div class="tool-tags"><span class="tool-tag">Coding</span><span class="tool-tag">Analysis</span><span class="tool-tag">Writing</span><span class="tool-tag">Research</span></div><div class="tool-pros"><div class="pro-item"><div class="pro-dot"></div>Best at following complex instructions</div><div class="pro-item"><div class="pro-dot"></div>200K token context window</div><div class="pro-item"><div class="pro-dot"></div>Excellent for immigration document review</div></div><div class="tool-footer-full"><div class="tool-pricing"><div class="tool-price-main">Free · Pro $20/mo</div><div class="tool-price-sub">claude.ai</div></div><a href="#" class="tool-cta">Try Free →</a></div></div>
+    <div class="tool-card-full" style="--tc:#10A37F" data-cat="writing" data-free="true"><div class="tool-header"><div class="tool-icon-lg">💬</div><div class="tool-meta"><div class="tool-name-lg">ChatGPT (GPT-5)</div><div class="tool-category">AI Assistant · Multimodal</div></div></div><p class="tool-desc-full">OpenAI's latest flagship model with real-time web search, image generation, and voice mode. Most widely used AI assistant globally with the largest plugin ecosystem.</p><div class="tool-tags"><span class="tool-tag">Web Search</span><span class="tool-tag">Images</span><span class="tool-tag">Voice</span><span class="tool-tag">Plugins</span></div><div class="tool-pros"><div class="pro-item"><div class="pro-dot"></div>Real-time web search built-in</div><div class="pro-item"><div class="pro-dot"></div>Largest plugin/GPT ecosystem</div><div class="pro-item"><div class="pro-dot"></div>Best for general-purpose use</div></div><div class="tool-footer-full"><div class="tool-pricing"><div class="tool-price-main">Free · Plus $20/mo</div><div class="tool-price-sub">chatgpt.com</div></div><a href="#" class="tool-cta">Try Free →</a></div></div>
+    <div class="tool-card-full" style="--tc:#A78BFA" data-cat="writing" data-free="false"><div class="tool-header"><div class="tool-icon-lg">✍️</div><div class="tool-meta"><div class="tool-name-lg">Jasper AI</div><div class="tool-category">AI Writing · Marketing</div></div></div><p class="tool-desc-full">Purpose-built AI writing platform for marketing teams. Excels at blog posts, LinkedIn content, ad copy, and email sequences. Includes brand voice training.</p><div class="tool-tags"><span class="tool-tag">Blog Posts</span><span class="tool-tag">LinkedIn</span><span class="tool-tag">Ad Copy</span><span class="tool-tag">SEO</span></div><div class="tool-pros"><div class="pro-item"><div class="pro-dot"></div>Brand voice customization</div><div class="pro-item"><div class="pro-dot"></div>50+ content templates</div><div class="pro-item"><div class="pro-dot"></div>Built-in SEO mode with Surfer</div></div><div class="tool-footer-full"><div class="tool-pricing"><div class="tool-price-main">From $39/month</div><div class="tool-price-sub">7-day free trial</div></div><a href="#" class="tool-cta">Try Jasper →</a></div></div>
+    <div class="tool-card-full" style="--tc:var(--saffron)" data-cat="coding" data-free="false"><div class="tool-header"><div class="tool-icon-lg">💻</div><div class="tool-meta"><div class="tool-name-lg">GitHub Copilot</div><div class="tool-category">AI Coding · Dev Tools</div></div></div><p class="tool-desc-full">The industry-standard AI pair programmer. Suggests entire functions, explains code, fixes bugs, and writes tests in real time inside VS Code and JetBrains IDEs.</p><div class="tool-tags"><span class="tool-tag">VS Code</span><span class="tool-tag">JetBrains</span><span class="tool-tag">Code Review</span><span class="tool-tag">Tests</span></div><div class="tool-pros"><div class="pro-item"><div class="pro-dot"></div>Used by 1M+ developers</div><div class="pro-item"><div class="pro-dot"></div>Deeply integrated with GitHub</div><div class="pro-item"><div class="pro-dot"></div>Supports 40+ languages</div></div><div class="tool-footer-full"><div class="tool-pricing"><div class="tool-price-main">$10/month</div><div class="tool-price-sub">Free for students</div></div><a href="#" class="tool-cta">Get Copilot →</a></div></div>
+    <div class="tool-card-full" style="--tc:var(--green)" data-cat="productivity" data-free="true"><div class="tool-header"><div class="tool-icon-lg">🎙️</div><div class="tool-meta"><div class="tool-name-lg">Otter.ai</div><div class="tool-category">AI Transcription · Meetings</div></div></div><p class="tool-desc-full">Real-time meeting transcription with AI-generated summaries, action items, and speaker identification. Works with Zoom, Teams, and Google Meet natively.</p><div class="tool-tags"><span class="tool-tag">Zoom</span><span class="tool-tag">Teams</span><span class="tool-tag">Transcription</span><span class="tool-tag">Summaries</span></div><div class="tool-pros"><div class="pro-item"><div class="pro-dot"></div>Real-time live transcription</div><div class="pro-item"><div class="pro-dot"></div>Auto-joins your calendar meetings</div><div class="pro-item"><div class="pro-dot"></div>Action item extraction</div></div><div class="tool-footer-full"><div class="tool-pricing"><div class="tool-price-main">Free · Pro $16.99/mo</div><div class="tool-price-sub">otter.ai</div></div><a href="#" class="tool-cta">Try Free →</a></div></div>
+    <div class="tool-card-full" style="--tc:var(--pink)" data-cat="design" data-free="true"><div class="tool-header"><div class="tool-icon-lg">🎨</div><div class="tool-meta"><div class="tool-name-lg">Midjourney v7</div><div class="tool-category">AI Image Generation</div></div></div><p class="tool-desc-full">The gold standard for AI-generated artwork and photorealistic images. Version 7 delivers stunning quality with better text rendering and style consistency.</p><div class="tool-tags"><span class="tool-tag">Photorealistic</span><span class="tool-tag">Art</span><span class="tool-tag">Branding</span><span class="tool-tag">Discord</span></div><div class="tool-pros"><div class="pro-item"><div class="pro-dot"></div>Best image quality available</div><div class="pro-item"><div class="pro-dot"></div>Style reference system</div><div class="pro-item"><div class="pro-dot"></div>200 free images/month on basic</div></div><div class="tool-footer-full"><div class="tool-pricing"><div class="tool-price-main">From $10/month</div><div class="tool-price-sub">200 images included</div></div><a href="#" class="tool-cta">Try Midjourney →</a></div></div>
+    <div class="tool-card-full" style="--tc:#6366F1" data-cat="productivity" data-free="true"><div class="tool-header"><div class="tool-icon-lg">📝</div><div class="tool-meta"><div class="tool-name-lg">Notion AI</div><div class="tool-category">AI Workspace · Notes</div></div></div><p class="tool-desc-full">AI supercharged into your notes and wikis. Drafts documents, summarizes pages, answers questions about your content, and auto-fills database properties.</p><div class="tool-tags"><span class="tool-tag">Notes</span><span class="tool-tag">Wiki</span><span class="tool-tag">Databases</span><span class="tool-tag">Team</span></div><div class="tool-pros"><div class="pro-item"><div class="pro-dot"></div>AI built into your existing notes</div><div class="pro-item"><div class="pro-dot"></div>Q&A on your own documents</div><div class="pro-item"><div class="pro-dot"></div>Great for OPT/H1B documentation tracking</div></div><div class="tool-footer-full"><div class="tool-pricing"><div class="tool-price-main">Free · Plus $8/mo</div><div class="tool-price-sub">AI add-on $8/mo extra</div></div><a href="#" class="tool-cta">Try Notion →</a></div></div>
+    <div class="tool-card-full" style="--tc:#F59E0B" data-cat="coding" data-free="true"><div class="tool-header"><div class="tool-icon-lg">⚡</div><div class="tool-meta"><div class="tool-name-lg">Cursor</div><div class="tool-category">AI Code Editor</div></div></div><p class="tool-desc-full">VS Code fork with Claude and GPT-4 built into the editor. Write entire features from natural language, edit code with AI in-context, and chat with your codebase.</p><div class="tool-tags"><span class="tool-tag">VS Code Fork</span><span class="tool-tag">Codebase Chat</span><span class="tool-tag">Multi-file</span></div><div class="tool-pros"><div class="pro-item"><div class="pro-dot"></div>Chat with your entire codebase</div><div class="pro-item"><div class="pro-dot"></div>Multi-file AI edits</div><div class="pro-item"><div class="pro-dot"></div>Works with all VS Code extensions</div></div><div class="tool-footer-full"><div class="tool-pricing"><div class="tool-price-main">Free · Pro $20/mo</div><div class="tool-price-sub">cursor.sh</div></div><a href="#" class="tool-cta">Download Free →</a></div></div>
+    <div class="tool-card-full" style="--tc:#EC4899" data-cat="voice" data-free="false"><div class="tool-header"><div class="tool-icon-lg">🔊</div><div class="tool-meta"><div class="tool-name-lg">ElevenLabs</div><div class="tool-category">AI Voice · Text-to-Speech</div></div></div><p class="tool-desc-full">Most realistic AI voice generation available. Clone any voice, create narrations, build voice assistants. Used for YouTube channels, podcasts, and accessibility tools.</p><div class="tool-tags"><span class="tool-tag">Voice Clone</span><span class="tool-tag">Narration</span><span class="tool-tag">Podcast</span><span class="tool-tag">API</span></div><div class="tool-pros"><div class="pro-item"><div class="pro-dot"></div>Most natural-sounding AI voices</div><div class="pro-item"><div class="pro-dot"></div>Hindi and regional Indian accent support</div><div class="pro-item"><div class="pro-dot"></div>Voice cloning from 30-second sample</div></div><div class="tool-footer-full"><div class="tool-pricing"><div class="tool-price-main">Free · Starter $5/mo</div><div class="tool-price-sub">10K chars free/month</div></div><a href="#" class="tool-cta">Try Free →</a></div></div>
+  </div>
+
+  <!-- COMPARISON TABLE -->
+  <section class="compare-section">
+    <div class="section-header"><div class="section-label" style="font-size:18px">⚖️ AI Assistants — Head-to-Head Comparison</div></div>
+    <div style="background:var(--navy-card);border:1px solid var(--navy-border);border-radius:12px;overflow:auto">
+      <table class="compare-table">
+        <tr><th>Feature</th><th>Claude 3.5</th><th>ChatGPT (GPT-5)</th><th>Gemini Ultra</th></tr>
+        <tr><td>Free tier available</td><td class="check">✓ Yes</td><td class="check">✓ Yes</td><td class="check">✓ Yes</td></tr>
+        <tr><td>Real-time web search</td><td class="cross">✗ Pro only</td><td class="check">✓ All plans</td><td class="check">✓ All plans</td></tr>
+        <tr><td>Context window</td><td>200K tokens</td><td>128K tokens</td><td>1M tokens</td></tr>
+        <tr><td>Image generation</td><td class="cross">✗ No</td><td class="check">✓ DALL-E 3</td><td class="check">✓ Imagen 3</td></tr>
+        <tr><td>Code quality (dev rating)</td><td><strong style="color:var(--green)">★★★★★</strong></td><td><strong style="color:var(--green)">★★★★☆</strong></td><td>★★★★☆</td></tr>
+        <tr><td>Following instructions</td><td><strong style="color:var(--green)">Best in class</strong></td><td>Excellent</td><td>Good</td></tr>
+        <tr><td>API availability</td><td class="check">✓ Yes</td><td class="check">✓ Yes</td><td class="check">✓ Yes</td></tr>
+        <tr><td>Best for</td><td>Coding, analysis, long docs</td><td>General use, web tasks</td><td>Google Workspace integration</td></tr>
+        <tr><td>Monthly cost (Pro)</td><td>$20/month</td><td>$20/month</td><td>$20/month</td></tr>
+      </table>
+    </div>
+  </section>
+
+  <!-- NEWSLETTER -->
+  <section class="newsletter" id="newsletter">
+    <div class="nl-eyebrow">🤖 Weekly AI Digest</div>
+    <h2 class="nl-title">New AI tools,<br>every <em>Thursday</em></h2>
+    <p class="nl-sub">Get our weekly roundup of the best new AI tools for tech professionals — with honest reviews, pricing, and affiliate deals.</p>
+    <div class="nl-form"><input class="nl-input" type="email" placeholder="your@email.com" id="emailInput"/><button class="nl-btn" onclick="subscribe()">Subscribe Free</button></div>
+    <p class="nl-note" id="subMsg"><span>✓ 12,400 NRIs</span> reading every morning · No spam, ever</p>
+  </section>
+</main>
+
+<footer><div class="footer-inner"><div class="footer-top"><div><div class="footer-logo">NRI<span>Beat</span></div><p class="footer-tagline">The daily pulse for Indian Americans — immigration, AI, cricket, and everything in between.</p><div class="social-links"><a href="#" class="social-link">𝕏</a><a href="#" class="social-link">in</a><a href="#" class="social-link">▶</a><a href="#" class="social-link">📸</a></div></div><div><div class="footer-col-title">Immigration</div><ul class="footer-links"><li><a href="visa-bulletin.html">Visa Bulletin Dashboard</a></li><li><a href="immigration.html">H1B Guide 2025</a></li><li><a href="immigration.html">OPT & STEM OPT</a></li></ul></div><div><div class="footer-col-title">Categories</div><ul class="footer-links"><li><a href="ai-tools.html">AI & Tech News</a></li><li><a href="cricket.html">Cricket Hub</a></li><li><a href="movies.html">Movies & OTT</a></li><li><a href="layoffs.html">Tech Layoffs</a></li></ul></div><div><div class="footer-col-title">Company</div><ul class="footer-links"><li><a href="#">About NRIBeat</a></li><li><a href="#">Advertise</a></li><li><a href="#">Contact</a></li><li><a href="#">Privacy Policy</a></li></ul></div></div><div class="footer-bottom"><span>© 2025 NRIBeat.com · All rights reserved</span><span>Made with ❤️ for the Indian-American community</span></div></div></footer>
+<script>
+function toggleNav(){document.getElementById('mobileNav').classList.toggle('open')}
+function filterTools(){const cat=document.getElementById('f-category').value,price=document.getElementById('f-price').value;let count=0;document.querySelectorAll('.tool-card-full').forEach(c=>{const mc=cat==='all'||c.dataset.cat===cat;const mp=price==='all'||(price==='free'&&c.dataset.free==='true')||(price==='paid'&&c.dataset.free==='false');c.style.display=(mc&&mp)?'block':'none';if(mc&&mp)count++});document.getElementById('tools-count').innerHTML=`<strong>${count}</strong> tools found`}
+function resetFilters(){document.getElementById('f-category').value='all';document.getElementById('f-price').value='all';document.getElementById('f-sort').value='popular';document.querySelectorAll('.tool-card-full').forEach(c=>c.style.display='block');document.getElementById('tools-count').innerHTML='<strong>9</strong> tools found'}
+function subscribe(){const e=document.getElementById('emailInput').value,m=document.getElementById('subMsg');if(!e||!e.includes('@')){m.innerHTML='<span style="color:var(--amber)">⚠ Please enter a valid email.</span>';return}m.innerHTML='<span style="color:var(--green)">✓ You\'re in! Check your inbox.</span>';document.getElementById('emailInput').value=''}
+</script>
+</body>
+</html>

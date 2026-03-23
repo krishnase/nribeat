@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>Bollywood, OTT & Indian Cinema | NRIBeat</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"/><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,300&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="css/style.css"/>
+<style>
+.page-hero{padding:40px 0 32px;border-bottom:1px solid var(--navy-border);margin-bottom:36px}
+.page-eyebrow{font-size:11px;font-weight:600;letter-spacing:1.2px;text-transform:uppercase;color:var(--pink);margin-bottom:10px}
+.page-title{font-family:'DM Serif Display',serif;font-size:40px;line-height:1.15;color:var(--white);margin-bottom:10px}
+.page-desc{font-size:15px;color:var(--white-dim);max-width:600px;line-height:1.65}
+.ott-calendar{background:var(--navy-card);border:1px solid var(--navy-border);border-radius:16px;padding:24px;margin-bottom:36px}
+.ott-cal-title{font-size:15px;font-weight:600;color:var(--white);margin-bottom:16px}
+.ott-rows{display:flex;flex-direction:column;gap:0}
+.ott-row{display:flex;align-items:center;gap:16px;padding:12px 0;border-bottom:1px solid rgba(30,48,86,.5)}
+.ott-row:last-child{border-bottom:none}
+.ott-date{font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--white-muted);width:60px;flex-shrink:0}
+.ott-platform{font-size:11px;font-weight:600;padding:2px 8px;border-radius:20px;flex-shrink:0}
+.ott-platform.netflix{background:rgba(229,9,20,.15);color:#E50914}
+.ott-platform.prime{background:rgba(0,168,225,.12);color:#00A8E1}
+.ott-platform.hotstar{background:rgba(17,67,166,.15);color:#1143A6}
+.ott-title-text{font-size:14px;color:var(--white);font-weight:500}
+.ott-genre{font-size:11px;color:var(--white-muted)}
+.news-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:2px;border-radius:16px;overflow:hidden;background:var(--navy-border);margin-bottom:40px}
+@media(max-width:900px){.news-grid{grid-template-columns:1fr 1fr}}
+@media(max-width:600px){.news-grid{grid-template-columns:1fr}.page-title{font-size:28px}.ott-row{flex-wrap:wrap}}
+</style>
+</head>
+<body>
+<div class="ticker-wrap"><div class="ticker-label">Live</div><div class="ticker-track"><span>Stree 3 officially confirmed for Diwali 2026</span><span>Pushpa 3 box office: ₹280 crore in 4 days worldwide</span><span>Netflix India adds 50 new Hindi titles this month</span><span>Deepika Padukone to headline new OTT thriller for Prime Video</span><span>Stree 3 officially confirmed for Diwali 2026</span><span>Pushpa 3 box office: ₹280 crore in 4 days worldwide</span><span>Netflix India adds 50 new Hindi titles this month</span><span>Deepika Padukone to headline new OTT thriller for Prime Video</span></div></div>
+<header><div class="header-inner"><a href="index.html" class="logo">NRI<span class="beat">Beat</span><div class="logo-dot"></div></a><nav><a href="index.html">Home</a><a href="immigration.html">Immigration</a><a href="ai-tools.html">AI & Tech</a><a href="cricket.html">Cricket</a><a href="movies.html" class="active">Movies</a><a href="layoffs.html">Layoffs</a><a href="index.html#newsletter" class="nav-cta">Get Daily Digest</a></nav><div class="hamburger" onclick="toggleNav()"><span></span><span></span><span></span></div></div><div class="mobile-nav" id="mobileNav"><a href="index.html">Home</a><a href="immigration.html">Immigration</a><a href="ai-tools.html">AI & Tech</a><a href="cricket.html">Cricket</a><a href="movies.html">Movies</a><a href="layoffs.html">Layoffs</a></div></header>
+<main class="page">
+  <div class="page-hero"><div class="page-eyebrow">🎬 Movies & OTT</div><h1 class="page-title">Bollywood, OTT & Indian Cinema</h1><p class="page-desc">New Bollywood releases, Netflix/Prime/Hotstar India OTT schedule, film reviews, and streaming picks for the Indian diaspora in the US.</p></div>
+  <div class="ott-calendar">
+    <div class="ott-cal-title">📅 New OTT Releases This Week — November 11–17, 2025</div>
+    <div class="ott-rows">
+      <div class="ott-row"><div class="ott-date">Nov 11</div><div class="ott-platform netflix">Netflix</div><div><div class="ott-title-text">Singham Returns 2</div><div class="ott-genre">Hindi · Action · 2h 22m</div></div></div>
+      <div class="ott-row"><div class="ott-date">Nov 12</div><div class="ott-platform prime">Prime</div><div><div class="ott-title-text">Paatal Lok Season 3</div><div class="ott-genre">Hindi · Thriller Series · 8 episodes</div></div></div>
+      <div class="ott-row"><div class="ott-date">Nov 13</div><div class="ott-platform hotstar">Hotstar</div><div><div class="ott-title-text">MS Dhoni: The Comeback</div><div class="ott-genre">Hindi · Documentary · 1h 45m</div></div></div>
+      <div class="ott-row"><div class="ott-date">Nov 14</div><div class="ott-platform netflix">Netflix</div><div><div class="ott-title-text">Heeramandi Season 2</div><div class="ott-genre">Hindi · Drama Series · 6 episodes</div></div></div>
+      <div class="ott-row"><div class="ott-date">Nov 15</div><div class="ott-platform prime">Prime</div><div><div class="ott-title-text">Pushpa 3 (Telugu + Hindi)</div><div class="ott-genre">Telugu · Action · 3h 10m</div></div></div>
+      <div class="ott-row"><div class="ott-date">Nov 17</div><div class="ott-platform netflix">Netflix</div><div><div class="ott-title-text">The Diploma (Original)</div><div class="ott-genre">Hindi · Comedy Drama · 8 episodes</div></div></div>
+    </div>
+  </div>
+  <div class="section-header"><div class="section-label" style="font-size:18px">📰 Latest Film & OTT News</div></div>
+  <div class="news-grid">
+    <div class="article-card"><div class="ac-cat movies"><div class="cat-dot"></div>Bollywood</div><h2 class="ac-title">Stree 3 Officially Confirmed: Shraddha Returns, Tamannaah Joins the Cast</h2><p class="ac-excerpt">Dinesh Vijan confirmed Stree 3 is in development. Shraddha Kapoor reprises her role and Tamannaah Bhatia joins as a new lead. Targeting Diwali 2026 release.</p><div class="ac-footer"><span>2 hrs ago · 3 min</span><span class="ac-tag">Horror Comedy</span></div></div>
+    <div class="article-card"><div class="ac-cat movies"><div class="cat-dot"></div>OTT</div><h2 class="ac-title">New on Netflix India November 2025: 6 Hindi Shows and Films — Full List</h2><p class="ac-excerpt">Full calendar of new Netflix India releases this month including a major thriller, two originals, and an acclaimed documentary. Our watch recommendations inside.</p><div class="ac-footer"><span>3 hrs ago · 4 min</span><span class="ac-tag">Netflix India</span></div></div>
+    <div class="article-card"><div class="ac-cat movies"><div class="cat-dot"></div>Review</div><h2 class="ac-title">Pushpa 3 Review: Allu Arjun Delivers the Franchise Best — ★★★★</h2><p class="ac-excerpt">The third Pushpa film hits harder than its predecessors with better storytelling and career-best work from Allu Arjun. Our full spoiler-free review.</p><div class="ac-footer"><span>Yesterday · 5 min</span><span class="ac-tag">Review</span></div></div>
+    <div class="article-card"><div class="ac-cat movies"><div class="cat-dot"></div>Box Office</div><h2 class="ac-title">Singham Again Crosses ₹400 Crore Worldwide — Eyes All-Time Record</h2><p class="ac-excerpt">Rohit Shetty confirms Singham Again is tracking toward ₹500 crore, becoming the highest-grossing cop universe film in Bollywood history.</p><div class="ac-footer"><span>2 days ago · 3 min</span><span class="ac-tag">Box Office</span></div></div>
+    <div class="article-card"><div class="ac-cat movies"><div class="cat-dot"></div>Amazon Prime</div><h2 class="ac-title">Prime Video India November 2025: Complete New Releases Calendar</h2><p class="ac-excerpt">Amazon Prime Video India's full November lineup — movies, series, originals, and international content. Week-by-week breakdown with ratings.</p><div class="ac-footer"><span>3 days ago · 3 min</span><span class="ac-tag">Prime Video</span></div></div>
+    <div class="article-card"><div class="ac-cat movies"><div class="cat-dot"></div>Disney+ Hotstar</div><h2 class="ac-title">Hotstar India Adds 400+ New Titles After Disney+ Rebrand</h2><p class="ac-excerpt">Following the global Disney+ rebrand, Hotstar India has added hundreds of new international titles to its catalogue. Complete list of additions.</p><div class="ac-footer"><span>4 days ago · 3 min</span><span class="ac-tag">Hotstar</span></div></div>
+  </div>
+  <section class="newsletter" id="newsletter"><div class="nl-eyebrow">🎬 OTT Weekly Digest</div><h2 class="nl-title">New releases, every <em>Friday</em></h2><p class="nl-sub">Weekly OTT release roundup, Bollywood box office, and streaming picks for the Indian diaspora — every Friday morning.</p><div class="nl-form"><input class="nl-input" type="email" placeholder="your@email.com" id="emailInput"/><button class="nl-btn" onclick="subscribe()">Subscribe Free</button></div><p class="nl-note" id="subMsg"><span>✓ 12,400 NRIs</span> reading every morning · No spam</p></section>
+</main>
+<footer><div class="footer-inner"><div class="footer-top"><div><div class="footer-logo">NRI<span>Beat</span></div><p class="footer-tagline">The daily pulse for Indian Americans.</p><div class="social-links"><a href="#" class="social-link">𝕏</a><a href="#" class="social-link">in</a><a href="#" class="social-link">▶</a><a href="#" class="social-link">📸</a></div></div><div><div class="footer-col-title">Immigration</div><ul class="footer-links"><li><a href="visa-bulletin.html">Visa Bulletin</a></li><li><a href="immigration.html">H1B Guide</a></li></ul></div><div><div class="footer-col-title">More</div><ul class="footer-links"><li><a href="ai-tools.html">AI Tools</a></li><li><a href="cricket.html">Cricket</a></li><li><a href="layoffs.html">Layoffs</a></li></ul></div><div><div class="footer-col-title">Company</div><ul class="footer-links"><li><a href="#">About</a></li><li><a href="#">Advertise</a></li><li><a href="#">Contact</a></li></ul></div></div><div class="footer-bottom"><span>© 2025 NRIBeat.com</span><span>Made with ❤️ for the Indian-American community</span></div></div></footer>
+<script>function toggleNav(){document.getElementById('mobileNav').classList.toggle('open')}function subscribe(){const e=document.getElementById('emailInput').value,m=document.getElementById('subMsg');if(!e||!e.includes('@')){m.innerHTML='<span style="color:var(--amber)">⚠ Valid email required.</span>';return}m.innerHTML='<span style="color:var(--green)">✓ You\'re in!</span>';document.getElementById('emailInput').value=''}</script>
+</body>
+</html>

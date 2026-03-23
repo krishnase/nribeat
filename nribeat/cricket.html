@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>Cricket Hub — IPL, India Scores & Series | NRIBeat</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"/><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,300&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="css/style.css"/>
+<style>
+.page-hero{padding:40px 0 32px;border-bottom:1px solid var(--navy-border);margin-bottom:36px}
+.page-eyebrow{font-size:11px;font-weight:600;letter-spacing:1.2px;text-transform:uppercase;color:var(--green);margin-bottom:10px}
+.page-title{font-family:'DM Serif Display',serif;font-size:40px;line-height:1.15;color:var(--white);margin-bottom:10px}
+.page-desc{font-size:15px;color:var(--white-dim);max-width:600px;line-height:1.65}
+.live-match{background:linear-gradient(135deg,rgba(45,184,122,.1),rgba(74,158,232,.06));border:1px solid rgba(45,184,122,.3);border-radius:16px;padding:28px;margin-bottom:36px}
+.match-label{font-size:11px;font-weight:600;letter-spacing:1.2px;text-transform:uppercase;color:var(--green);margin-bottom:14px;display:flex;align-items:center;gap:6px}
+.live-indicator{width:7px;height:7px;background:var(--green);border-radius:50%;animation:pulse-dot 1.2s infinite}
+.match-teams{display:flex;align-items:center;gap:24px;margin-bottom:12px;flex-wrap:wrap}
+.team-score{font-family:'DM Serif Display',serif;font-size:30px;color:var(--white)}
+.team-name{font-size:14px;color:var(--white-muted);margin-top:2px}
+.vs-divider{font-size:14px;color:var(--white-muted);font-weight:500}
+.match-status{font-size:14px;color:var(--white-dim);line-height:1.5}
+.news-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:2px;border-radius:16px;overflow:hidden;background:var(--navy-border);margin-bottom:40px}
+@media(max-width:900px){.news-grid{grid-template-columns:1fr 1fr}.match-teams{gap:16px}}
+@media(max-width:600px){.news-grid{grid-template-columns:1fr}.page-title{font-size:28px}.team-score{font-size:22px}}
+</style>
+</head>
+<body>
+<div class="ticker-wrap"><div class="ticker-label">Live</div><div class="ticker-track"><span>India vs Australia 2nd Test — Day 3 Live: India 312/5</span><span>IPL 2026 Mega Auction starts December 14 in Jeddah</span><span>Bumrah named ICC Test Cricketer of the Year 2025</span><span>RCB signs Shubman Gill for ₹22.5 crore</span><span>India vs Australia 2nd Test — Day 3 Live: India 312/5</span><span>IPL 2026 Mega Auction starts December 14 in Jeddah</span><span>Bumrah named ICC Test Cricketer of the Year 2025</span><span>RCB signs Shubman Gill for ₹22.5 crore</span></div></div>
+<header><div class="header-inner"><a href="index.html" class="logo">NRI<span class="beat">Beat</span><div class="logo-dot"></div></a><nav><a href="index.html">Home</a><a href="immigration.html">Immigration</a><a href="ai-tools.html">AI & Tech</a><a href="cricket.html" class="active">Cricket</a><a href="movies.html">Movies</a><a href="layoffs.html">Layoffs</a><a href="index.html#newsletter" class="nav-cta">Get Daily Digest</a></nav><div class="hamburger" onclick="toggleNav()"><span></span><span></span><span></span></div></div><div class="mobile-nav" id="mobileNav"><a href="index.html">Home</a><a href="immigration.html">Immigration</a><a href="ai-tools.html">AI & Tech</a><a href="cricket.html">Cricket</a><a href="movies.html">Movies</a><a href="layoffs.html">Layoffs</a></div></header>
+<main class="page">
+  <div class="page-hero"><div class="page-eyebrow">🏏 Cricket Hub</div><h1 class="page-title">Cricket — Live Scores, IPL & India</h1><p class="page-desc">IPL auction updates, India match previews, series results, and ICC tournaments — the cricket home for the Indian diaspora in the US.</p></div>
+  <div class="live-match">
+    <div class="match-label"><div class="live-indicator"></div>Live Match — 2nd Test, Day 3</div>
+    <div class="match-teams">
+      <div><div class="team-score">🇮🇳 IND 312/5</div><div class="team-name">India · 89.3 overs</div></div>
+      <div class="vs-divider">vs</div>
+      <div><div class="team-score">🇦🇺 AUS 189</div><div class="team-name">Australia · All out</div></div>
+    </div>
+    <div class="match-status">India trail by <strong style="color:var(--white)">not out</strong> — currently leading by 123 runs. Kohli 67*, Jadeja 34*. India in commanding position heading into Day 4. <strong style="color:var(--green)">India likely to enforce follow-on.</strong></div>
+  </div>
+  <div class="section-header"><div class="section-label" style="font-size:18px">📰 Latest Cricket News</div></div>
+  <div class="news-grid">
+    <div class="article-card"><div class="ac-cat cricket"><div class="cat-dot"></div>IPL Auction</div><h2 class="ac-title">IPL 2026 Mega Auction: Every Big Buy, Every Surprise Release — Full Recap</h2><p class="ac-excerpt">The IPL 2026 mega auction saw record bids, shock releases, and franchise rebuilds. Full list of all purchases and what each team looks like heading into next season.</p><div class="ac-footer"><span>2 hrs ago · 8 min</span><span class="ac-tag">IPL 2026</span></div></div>
+    <div class="article-card"><div class="ac-cat cricket"><div class="cat-dot"></div>India vs Australia</div><h2 class="ac-title">Bumrah Takes 5/34 as India Bowls Out Australia for 189 in First Test</h2><p class="ac-excerpt">Jasprit Bumrah delivered a masterclass in swing bowling as India dismantled Australia's top order. Yashasvi Jaiswal hit 67 in India's reply.</p><div class="ac-footer"><span>5 hrs ago · 4 min</span><span class="ac-tag">Test Series</span></div></div>
+    <div class="article-card"><div class="ac-cat cricket"><div class="cat-dot"></div>ICC</div><h2 class="ac-title">ICC T20 World Cup 2026 Groups Announced — India in Group A with Pakistan</h2><p class="ac-excerpt">The ICC confirmed the group stage draw for T20 World Cup 2026 in Sri Lanka and India. The India-Pakistan clash is confirmed for March 15, 2026.</p><div class="ac-footer"><span>Yesterday · 3 min</span><span class="ac-tag">T20 WC 2026</span></div></div>
+    <div class="article-card"><div class="ac-cat cricket"><div class="cat-dot"></div>WPL</div><h2 class="ac-title">WPL 2026 Schedule Released — 22 Matches Over 3 Weeks in March</h2><p class="ac-excerpt">The Women Premier League 2026 schedule is out with matches in Mumbai and Delhi. RCB are defending champions after their historic run in 2025.</p><div class="ac-footer"><span>2 days ago · 3 min</span><span class="ac-tag">WPL</span></div></div>
+    <div class="article-card"><div class="ac-cat cricket"><div class="cat-dot"></div>Records</div><h2 class="ac-title">Virat Kohli: 80 International Centuries — The Numbers Behind the Legend</h2><p class="ac-excerpt">Kohli reached his 80th international century against Australia in Canberra. A data-driven look at his career milestones and records still ahead of him.</p><div class="ac-footer"><span>3 days ago · 6 min</span><span class="ac-tag">Stats</span></div></div>
+    <div class="article-card"><div class="ac-cat cricket"><div class="cat-dot"></div>Series Preview</div><h2 class="ac-title">India vs Australia ODI Series Preview: Form, Pitch Report, Predicted XI</h2><p class="ac-excerpt">India head into the 3-match ODI series with a settled squad. Full series preview with pitch conditions, weather, and both team predicted lineups.</p><div class="ac-footer"><span>4 days ago · 5 min</span><span class="ac-tag">ODI Series</span></div></div>
+  </div>
+  <section class="newsletter" id="newsletter"><div class="nl-eyebrow">🏏 Cricket Digest</div><h2 class="nl-title">Cricket scores, every <em>morning</em></h2><p class="nl-sub">Match results, IPL updates, and series previews — delivered to Indian cricket fans in the US every morning at 7 AM.</p><div class="nl-form"><input class="nl-input" type="email" placeholder="your@email.com" id="emailInput"/><button class="nl-btn" onclick="subscribe()">Subscribe Free</button></div><p class="nl-note" id="subMsg"><span>✓ 12,400 NRIs</span> reading every morning · No spam</p></section>
+</main>
+<footer><div class="footer-inner"><div class="footer-top"><div><div class="footer-logo">NRI<span>Beat</span></div><p class="footer-tagline">The daily pulse for Indian Americans.</p><div class="social-links"><a href="#" class="social-link">𝕏</a><a href="#" class="social-link">in</a><a href="#" class="social-link">▶</a><a href="#" class="social-link">📸</a></div></div><div><div class="footer-col-title">Immigration</div><ul class="footer-links"><li><a href="visa-bulletin.html">Visa Bulletin</a></li><li><a href="immigration.html">H1B Guide</a></li></ul></div><div><div class="footer-col-title">More</div><ul class="footer-links"><li><a href="ai-tools.html">AI Tools</a></li><li><a href="movies.html">Movies</a></li><li><a href="layoffs.html">Layoffs</a></li></ul></div><div><div class="footer-col-title">Company</div><ul class="footer-links"><li><a href="#">About</a></li><li><a href="#">Advertise</a></li><li><a href="#">Contact</a></li></ul></div></div><div class="footer-bottom"><span>© 2025 NRIBeat.com</span><span>Made with ❤️ for the Indian-American community</span></div></div></footer>
+<script>function toggleNav(){document.getElementById('mobileNav').classList.toggle('open')}function subscribe(){const e=document.getElementById('emailInput').value,m=document.getElementById('subMsg');if(!e||!e.includes('@')){m.innerHTML='<span style="color:var(--amber)">⚠ Valid email required.</span>';return}m.innerHTML='<span style="color:var(--green)">✓ You\'re in!</span>';document.getElementById('emailInput').value=''}</script>
+</body>
+</html>
