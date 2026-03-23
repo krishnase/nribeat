@@ -25,7 +25,7 @@
 </style>
 </head>
 <body>
-<div class="ticker-wrap"><div class="ticker-label">Live</div><div class="ticker-track"><span>India vs Australia 2nd Test — Day 3 Live: India 312/5</span><span>IPL 2026 Mega Auction starts December 14 in Jeddah</span><span>Bumrah named ICC Test Cricketer of the Year 2025</span><span>RCB signs Shubman Gill for ₹22.5 crore</span><span>India vs Australia 2nd Test — Day 3 Live: India 312/5</span><span>IPL 2026 Mega Auction starts December 14 in Jeddah</span><span>Bumrah named ICC Test Cricketer of the Year 2025</span><span>RCB signs Shubman Gill for ₹22.5 crore</span></div></div>
+<div class="ticker-wrap"><div class="ticker-label">Live</div><div class="ticker-track" id="tickerTrack"><span>Loading latest headlines...</span></div></div>
 <header><div class="header-inner"><a href="index.html" class="logo">NRI<span class="beat">Beat</span><div class="logo-dot"></div></a><nav><a href="index.html">Home</a><a href="immigration.html">Immigration</a><a href="ai-tools.html">AI & Tech</a><a href="cricket.html" class="active">Cricket</a><a href="movies.html">Movies</a><a href="layoffs.html">Layoffs</a><a href="index.html#newsletter" class="nav-cta">Get Daily Digest</a></nav><div class="hamburger" onclick="toggleNav()"><span></span><span></span><span></span></div></div><div class="mobile-nav" id="mobileNav"><a href="index.html">Home</a><a href="immigration.html">Immigration</a><a href="ai-tools.html">AI & Tech</a><a href="cricket.html">Cricket</a><a href="movies.html">Movies</a><a href="layoffs.html">Layoffs</a></div></header>
 <main class="page">
   <div class="page-hero"><div class="page-eyebrow">🏏 Cricket Hub</div><h1 class="page-title">Cricket — Live Scores, IPL & India</h1><p class="page-desc">IPL auction updates, India match previews, series results, and ICC tournaments — the cricket home for the Indian diaspora in the US.</p></div>
@@ -51,6 +51,14 @@ fetch('data/article-index.json').then(r=>r.json()).then(data=>{
   const grid=document.getElementById('newsGrid');
   if(!articles.length){grid.innerHTML='<div class="article-card" style="grid-column:1/-1;text-align:center;color:var(--white-muted);padding:40px">No cricket articles yet.</div>';return;}
   grid.innerHTML=articles.map(a=>`<div class="article-card" onclick="location.href='${a.url}'"><div class="ac-cat cricket"><div class="cat-dot"></div>Cricket</div><h2 class="ac-title">${a.title}</h2><p class="ac-excerpt">${a.excerpt||''}</p><div class="ac-footer"><span>${a.date||''} · ${a.reading_time||'5 min'}</span>${(a.tags||[]).slice(0,1).map(t=>`<span class="ac-tag">${t}</span>`).join('')}</div></div>`).join('');
+}).catch(()=>{});
+</script>
+<script id="tickerScript">
+fetch('data/latest-articles.json').then(r=>r.json()).then(data=>{
+  const items=(data.articles||[]).slice(0,8).map(a=>a.title);
+  if(!items.length) return;
+  const doubled=[...items,...items];
+  document.getElementById('tickerTrack').innerHTML=doubled.map(t=>`<span>${t}</span>`).join('');
 }).catch(()=>{});
 </script>
 </body>

@@ -28,7 +28,7 @@
 </style>
 </head>
 <body>
-<div class="ticker-wrap"><div class="ticker-label">Live</div><div class="ticker-track"><span>EB-2 India moves forward 15 days — Jan 01, 2013</span><span>H1B cap reached in 5 days — lottery begins</span><span>STEM OPT processing: 3 weeks average</span><span>F1 visa wait times under 30 days in 4 Indian cities</span><span>EB-2 India moves forward 15 days — Jan 01, 2013</span><span>H1B cap reached in 5 days — lottery begins</span><span>STEM OPT processing: 3 weeks average</span><span>F1 visa wait times under 30 days in 4 Indian cities</span></div></div>
+<div class="ticker-wrap"><div class="ticker-label">Live</div><div class="ticker-track" id="tickerTrack"><span>Loading latest headlines...</span></div></div>
 <header><div class="header-inner"><a href="index.html" class="logo">NRI<span class="beat">Beat</span><div class="logo-dot"></div></a><nav><a href="index.html">Home</a><a href="immigration.html" class="active">Immigration</a><a href="ai-tools.html">AI & Tech</a><a href="cricket.html">Cricket</a><a href="movies.html">Movies</a><a href="layoffs.html">Layoffs</a><a href="index.html#newsletter" class="nav-cta">Get Daily Digest</a></nav><div class="hamburger" onclick="toggleNav()"><span></span><span></span><span></span></div></div><div class="mobile-nav" id="mobileNav"><a href="index.html">Home</a><a href="immigration.html">Immigration</a><a href="ai-tools.html">AI & Tech</a><a href="cricket.html">Cricket</a><a href="movies.html">Movies</a><a href="layoffs.html">Layoffs</a></div></header>
 <main class="page">
   <div class="page-hero"><div class="page-eyebrow">🛂 Immigration Hub</div><h1 class="page-title">Immigration News & Guides</h1><p class="page-desc">Everything Indian professionals in the US need to know about H1B, OPT, green cards, and the Visa Bulletin — simplified and updated daily.</p></div>
@@ -60,6 +60,14 @@ fetch('data/article-index.json').then(r=>r.json()).then(data=>{
   const grid=document.getElementById('newsGrid');
   if(!articles.length){grid.innerHTML='<div class="article-card" style="grid-column:1/-1;text-align:center;color:var(--white-muted);padding:40px">No immigration articles yet.</div>';return;}
   grid.innerHTML=articles.map(a=>`<div class="article-card" onclick="location.href='${a.url}'"><div class="ac-cat immigration"><div class="cat-dot"></div>Immigration</div><h2 class="ac-title">${a.title}</h2><p class="ac-excerpt">${a.excerpt||''}</p><div class="ac-footer"><span>${a.date||''} · ${a.reading_time||'5 min'}</span>${(a.tags||[]).slice(0,1).map(t=>`<span class="ac-tag">${t}</span>`).join('')}</div></div>`).join('');
+}).catch(()=>{});
+</script>
+<script id="tickerScript">
+fetch('data/latest-articles.json').then(r=>r.json()).then(data=>{
+  const items=(data.articles||[]).slice(0,8).map(a=>a.title);
+  if(!items.length) return;
+  const doubled=[...items,...items];
+  document.getElementById('tickerTrack').innerHTML=doubled.map(t=>`<span>${t}</span>`).join('');
 }).catch(()=>{});
 </script>
 </body>

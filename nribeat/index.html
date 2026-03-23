@@ -74,7 +74,7 @@
 </head>
 <body>
 <!-- TICKER -->
-<div class="ticker-wrap"><div class="ticker-label">Live</div><div class="ticker-track"><span>EB-2 India moves forward 15 days in November 2025 Visa Bulletin</span><span>India beats Australia by 6 wickets — Kohli scores 89</span><span>OpenAI launches GPT-5 with real-time web access for all users</span><span>H1B cap reached in record 5 days — USCIS begins lottery selection</span><span>Stree 3 officially confirmed — Shraddha Kapoor returning</span><span>Meta announces 3,600 layoffs — H1B workers advised to check status</span><span>STEM OPT processing times drop to 3 weeks: USCIS update</span><span>IPL 2026 mega auction: RCB buys Shubman Gill for ₹22.5 crore</span><span>EB-2 India moves forward 15 days in November 2025 Visa Bulletin</span><span>India beats Australia by 6 wickets — Kohli scores 89</span><span>OpenAI launches GPT-5 with real-time web access for all users</span><span>H1B cap reached in record 5 days — USCIS begins lottery selection</span><span>Stree 3 officially confirmed — Shraddha Kapoor returning</span><span>Meta announces 3,600 layoffs — H1B workers advised to check status</span><span>STEM OPT processing times drop to 3 weeks: USCIS update</span><span>IPL 2026 mega auction: RCB buys Shubman Gill for ₹22.5 crore</span></div></div>
+<div class="ticker-wrap"><div class="ticker-label">Live</div><div class="ticker-track" id="tickerTrack"><span>Loading latest headlines...</span></div></div>
 <!-- HEADER -->
 <header><div class="header-inner"><a href="index.html" class="logo">NRI<span class="beat">Beat</span><div class="logo-dot"></div></a><nav><a href="index.html" class="active">Home</a><a href="immigration.html">Immigration</a><a href="ai-tools.html">AI & Tech</a><a href="cricket.html">Cricket</a><a href="movies.html">Movies</a><a href="layoffs.html">Layoffs</a><a href="#newsletter" class="nav-cta">Get Daily Digest</a></nav><div class="hamburger" onclick="toggleNav()"><span></span><span></span><span></span></div></div><div class="mobile-nav" id="mobileNav"><a href="index.html">Home</a><a href="immigration.html">Immigration</a><a href="ai-tools.html">AI & Tech</a><a href="cricket.html">Cricket</a><a href="movies.html">Movies</a><a href="layoffs.html">Layoffs</a><a href="#newsletter" style="color:var(--saffron);font-weight:600">Get Daily Digest →</a></div></header>
 
@@ -179,6 +179,14 @@ function subscribe(){const e=document.getElementById('emailInput').value,m=docum
 document.querySelectorAll('.chip').forEach(c=>c.addEventListener('click',function(){document.querySelectorAll('.chip').forEach(x=>x.classList.remove('active'));this.classList.add('active')}));
 const obs=new IntersectionObserver(e=>e.forEach(x=>{if(x.isIntersecting){x.target.style.opacity='1';x.target.style.transform='translateY(0)'}}),{threshold:.1});
 document.querySelectorAll('.vb-card,.article-card,.tool-card,.col-card').forEach(el=>{el.style.opacity='0';el.style.transform='translateY(16px)';el.style.transition='opacity .4s ease,transform .4s ease';obs.observe(el)});
+</script>
+<script id="tickerScript">
+fetch('data/latest-articles.json').then(r=>r.json()).then(data=>{
+  const items=(data.articles||[]).slice(0,8).map(a=>a.title);
+  if(!items.length) return;
+  const doubled=[...items,...items];
+  document.getElementById('tickerTrack').innerHTML=doubled.map(t=>`<span>${t}</span>`).join('');
+}).catch(()=>{});
 </script>
 </body>
 </html>

@@ -29,7 +29,7 @@
 </style>
 </head>
 <body>
-<div class="ticker-wrap"><div class="ticker-label">Live</div><div class="ticker-track"><span>Stree 3 officially confirmed for Diwali 2026</span><span>Pushpa 3 box office: ₹280 crore in 4 days worldwide</span><span>Netflix India adds 50 new Hindi titles this month</span><span>Deepika Padukone to headline new OTT thriller for Prime Video</span><span>Stree 3 officially confirmed for Diwali 2026</span><span>Pushpa 3 box office: ₹280 crore in 4 days worldwide</span><span>Netflix India adds 50 new Hindi titles this month</span><span>Deepika Padukone to headline new OTT thriller for Prime Video</span></div></div>
+<div class="ticker-wrap"><div class="ticker-label">Live</div><div class="ticker-track" id="tickerTrack"><span>Loading latest headlines...</span></div></div>
 <header><div class="header-inner"><a href="index.html" class="logo">NRI<span class="beat">Beat</span><div class="logo-dot"></div></a><nav><a href="index.html">Home</a><a href="immigration.html">Immigration</a><a href="ai-tools.html">AI & Tech</a><a href="cricket.html">Cricket</a><a href="movies.html" class="active">Movies</a><a href="layoffs.html">Layoffs</a><a href="index.html#newsletter" class="nav-cta">Get Daily Digest</a></nav><div class="hamburger" onclick="toggleNav()"><span></span><span></span><span></span></div></div><div class="mobile-nav" id="mobileNav"><a href="index.html">Home</a><a href="immigration.html">Immigration</a><a href="ai-tools.html">AI & Tech</a><a href="cricket.html">Cricket</a><a href="movies.html">Movies</a><a href="layoffs.html">Layoffs</a></div></header>
 <main class="page">
   <div class="page-hero"><div class="page-eyebrow">🎬 Movies & OTT</div><h1 class="page-title">Bollywood, OTT & Indian Cinema</h1><p class="page-desc">New Bollywood releases, Netflix/Prime/Hotstar India OTT schedule, film reviews, and streaming picks for the Indian diaspora in the US.</p></div>
@@ -57,6 +57,14 @@ fetch('data/article-index.json').then(r=>r.json()).then(data=>{
   const grid=document.getElementById('newsGrid');
   if(!articles.length){grid.innerHTML='<div class="article-card" style="grid-column:1/-1;text-align:center;color:var(--white-muted);padding:40px">No movies articles yet.</div>';return;}
   grid.innerHTML=articles.map(a=>`<div class="article-card" onclick="location.href='${a.url}'"><div class="ac-cat movies"><div class="cat-dot"></div>Movies & OTT</div><h2 class="ac-title">${a.title}</h2><p class="ac-excerpt">${a.excerpt||''}</p><div class="ac-footer"><span>${a.date||''} · ${a.reading_time||'5 min'}</span>${(a.tags||[]).slice(0,1).map(t=>`<span class="ac-tag">${t}</span>`).join('')}</div></div>`).join('');
+}).catch(()=>{});
+</script>
+<script id="tickerScript">
+fetch('data/latest-articles.json').then(r=>r.json()).then(data=>{
+  const items=(data.articles||[]).slice(0,8).map(a=>a.title);
+  if(!items.length) return;
+  const doubled=[...items,...items];
+  document.getElementById('tickerTrack').innerHTML=doubled.map(t=>`<span>${t}</span>`).join('');
 }).catch(()=>{});
 </script>
 </body>

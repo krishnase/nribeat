@@ -58,7 +58,7 @@
 </style>
 </head>
 <body>
-<div class="ticker-wrap"><div class="ticker-label">Live</div><div class="ticker-track"><span>EB-2 India Final Action: Jan 01, 2013 — moved +15 days</span><span>EB-3 India Final Action: Feb 15, 2013 — moved +22 days</span><span>Next bulletin expected: October 8, 2025</span><span>USCIS processing H1B transfers in 2–3 weeks average</span><span>EB-2 India Final Action: Jan 01, 2013 — moved +15 days</span><span>EB-3 India Final Action: Feb 15, 2013 — moved +22 days</span><span>Next bulletin expected: October 8, 2025</span><span>USCIS processing H1B transfers in 2–3 weeks average</span></div></div>
+<div class="ticker-wrap"><div class="ticker-label">Live</div><div class="ticker-track" id="tickerTrack"><span>Loading latest headlines...</span></div></div>
 <header><div class="header-inner"><a href="index.html" class="logo">NRI<span class="beat">Beat</span><div class="logo-dot"></div></a><nav><a href="index.html">Home</a><a href="immigration.html" class="active">Immigration</a><a href="ai-tools.html">AI & Tech</a><a href="cricket.html">Cricket</a><a href="movies.html">Movies</a><a href="layoffs.html">Layoffs</a><a href="index.html#newsletter" class="nav-cta">Get Daily Digest</a></nav><div class="hamburger" onclick="toggleNav()"><span></span><span></span><span></span></div></div><div class="mobile-nav" id="mobileNav"><a href="index.html">Home</a><a href="immigration.html">Immigration</a><a href="ai-tools.html">AI & Tech</a><a href="cricket.html">Cricket</a><a href="movies.html">Movies</a><a href="layoffs.html">Layoffs</a></div></header>
 
 <main class="page">
@@ -179,6 +179,14 @@ function toggleNav(){document.getElementById('mobileNav').classList.toggle('open
 function runPredictor(){const cat=document.getElementById('pred-cat').value,date=document.getElementById('pred-date').value,out=document.getElementById('pred-output'),ph=document.getElementById('pred-placeholder');if(!date){return}const[yr,mo]=date.split('-').map(Number);const curYr=2013,curMo=1;const totalDays=(curYr-yr)*365+((curMo-mo)*30);if(totalDays<=0){out.innerHTML='✅ Your priority date is already current! Contact your employer to begin filing immediately.';out.style.display='block';ph.style.display='none';return}const avgMov=cat==='eb3'?14:11;const monthsNeeded=Math.ceil(totalDays/avgMov);const yrs=(monthsNeeded/12).toFixed(1);const targetDate=new Date(2025,10+monthsNeeded,1);const opts={year:'numeric',month:'long'};out.innerHTML=`📊 <strong>Estimated wait: ~${yrs} years</strong> (${monthsNeeded} months)<br>Approximate current date: ~${targetDate.toLocaleDateString('en-US',opts)}<br>Based on avg movement of ${avgMov} days/month for ${document.getElementById('pred-cat').options[document.getElementById('pred-cat').selectedIndex].text}.<br><span style="font-size:11px;color:var(--white-muted)">Estimate only. Retrogression, policy changes, and demand shifts can significantly alter timelines.</span>`;out.style.display='block';ph.style.display='none'}
 function toggleFaq(el){el.closest('.faq-item').classList.toggle('open')}
 function subscribe(){const e=document.getElementById('emailInput').value,m=document.getElementById('subMsg');if(!e||!e.includes('@')){m.innerHTML='<span style="color:var(--amber)">⚠ Please enter a valid email.</span>';return}m.innerHTML='<span style="color:var(--green)">✓ You\'re subscribed! Check your inbox for confirmation.</span>';document.getElementById('emailInput').value=''}
+</script>
+<script id="tickerScript">
+fetch('data/latest-articles.json').then(r=>r.json()).then(data=>{
+  const items=(data.articles||[]).slice(0,8).map(a=>a.title);
+  if(!items.length) return;
+  const doubled=[...items,...items];
+  document.getElementById('tickerTrack').innerHTML=doubled.map(t=>`<span>${t}</span>`).join('');
+}).catch(()=>{});
 </script>
 </body>
 </html>

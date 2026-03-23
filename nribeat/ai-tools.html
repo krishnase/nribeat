@@ -53,7 +53,7 @@
 </style>
 </head>
 <body>
-<div class="ticker-wrap"><div class="ticker-label">Live</div><div class="ticker-track"><span>GPT-5 launches with real-time web search for all users</span><span>Anthropic releases Claude 3.7 Sonnet — best coding model yet</span><span>Google Gemini Ultra 2.0 now available for Workspace users</span><span>GitHub Copilot adds voice coding for VS Code</span><span>GPT-5 launches with real-time web search for all users</span><span>Anthropic releases Claude 3.7 Sonnet — best coding model yet</span><span>Google Gemini Ultra 2.0 now available for Workspace users</span><span>GitHub Copilot adds voice coding for VS Code</span></div></div>
+<div class="ticker-wrap"><div class="ticker-label">Live</div><div class="ticker-track" id="tickerTrack"><span>Loading latest headlines...</span></div></div>
 <header><div class="header-inner"><a href="index.html" class="logo">NRI<span class="beat">Beat</span><div class="logo-dot"></div></a><nav><a href="index.html">Home</a><a href="immigration.html">Immigration</a><a href="ai-tools.html" class="active">AI & Tech</a><a href="cricket.html">Cricket</a><a href="movies.html">Movies</a><a href="layoffs.html">Layoffs</a><a href="index.html#newsletter" class="nav-cta">Get Daily Digest</a></nav><div class="hamburger" onclick="toggleNav()"><span></span><span></span><span></span></div></div><div class="mobile-nav" id="mobileNav"><a href="index.html">Home</a><a href="immigration.html">Immigration</a><a href="ai-tools.html">AI & Tech</a><a href="cricket.html">Cricket</a><a href="movies.html">Movies</a><a href="layoffs.html">Layoffs</a></div></header>
 
 <main class="page">
@@ -121,6 +121,14 @@ function toggleNav(){document.getElementById('mobileNav').classList.toggle('open
 function filterTools(){const cat=document.getElementById('f-category').value,price=document.getElementById('f-price').value;let count=0;document.querySelectorAll('.tool-card-full').forEach(c=>{const mc=cat==='all'||c.dataset.cat===cat;const mp=price==='all'||(price==='free'&&c.dataset.free==='true')||(price==='paid'&&c.dataset.free==='false');c.style.display=(mc&&mp)?'block':'none';if(mc&&mp)count++});document.getElementById('tools-count').innerHTML=`<strong>${count}</strong> tools found`}
 function resetFilters(){document.getElementById('f-category').value='all';document.getElementById('f-price').value='all';document.getElementById('f-sort').value='popular';document.querySelectorAll('.tool-card-full').forEach(c=>c.style.display='block');document.getElementById('tools-count').innerHTML='<strong>9</strong> tools found'}
 function subscribe(){const e=document.getElementById('emailInput').value,m=document.getElementById('subMsg');if(!e||!e.includes('@')){m.innerHTML='<span style="color:var(--amber)">⚠ Please enter a valid email.</span>';return}m.innerHTML='<span style="color:var(--green)">✓ You\'re in! Check your inbox.</span>';document.getElementById('emailInput').value=''}
+</script>
+<script id="tickerScript">
+fetch('data/latest-articles.json').then(r=>r.json()).then(data=>{
+  const items=(data.articles||[]).slice(0,8).map(a=>a.title);
+  if(!items.length) return;
+  const doubled=[...items,...items];
+  document.getElementById('tickerTrack').innerHTML=doubled.map(t=>`<span>${t}</span>`).join('');
+}).catch(()=>{});
 </script>
 </body>
 </html>
