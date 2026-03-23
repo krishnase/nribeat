@@ -1,6 +1,34 @@
 {
   "articles": [
     {
+      "title": "What Bernie Sanders' AI Video Reveals About Chatbot Limitations",
+      "slug": "bernie-sanders-ai-video-chatbot-safety",
+      "category": "ai_tech",
+      "date": "March 23, 2026",
+      "reading_time": "6 min read",
+      "excerpt": "A recent viral video attempting to expose AI system behavior actually revealed how chatbots are designed to be agreeable\u2014a critical insight for tech professionals. For Indian engineers working on AI products, understanding prompt engineering, AI safety testing, and behavioral design is now essential career knowledge that employers actively hire for.",
+      "tags": [
+        "artificial-intelligence",
+        "ai-safety",
+        "chatbot-behavior"
+      ],
+      "url": "/articles/ai-tech/bernie-sanders-ai-video-chatbot-safety.html"
+    },
+    {
+      "title": "Zipline's $200M Funding: What Drone Delivery Means for Your Tech Career",
+      "slug": "zipline-200m-funding-drone-delivery-tech-careers",
+      "category": "ai_tech",
+      "date": "March 23, 2026",
+      "reading_time": "6 min read",
+      "excerpt": "Zipline's $200M funding validates drone delivery as a major growth sector, creating significant hiring opportunities for Indian tech professionals in AI, cloud infrastructure, and robotics. This is a genuine career opportunity with competitive US-level salaries, especially for engineers with skills in machine learning, DevOps, and autonomous systems.",
+      "tags": [
+        "drone-technology",
+        "funding-news",
+        "ai-robotics"
+      ],
+      "url": "/articles/ai-tech/zipline-200m-funding-drone-delivery-tech-careers.html"
+    },
+    {
       "title": "Banijay Asia Brings Dutch Reality Hit 'The Alliance' to Prime Video India",
       "slug": "banijay-asia-alliance-prime-video-india-hindi",
       "category": "movies",
