@@ -58,7 +58,7 @@ def publish_to_github(articles: list[dict]) -> dict:
             slug = article.get("slug", "article")
             category = article.get("category", "general")
             subdir = CATEGORY_DIRS.get(category, "general")
-            file_path = f"articles/{subdir}/{slug}.html"
+            file_path = f"nribeat/articles/{subdir}/{slug}.html"
 
             result = _commit_file(
                 path=file_path,
@@ -243,7 +243,7 @@ def _update_homepage(articles: list[dict]):
 
     content = json.dumps({"date": datetime.now().isoformat(), "articles": cards}, indent=2)
     _commit_file(
-        path="data/latest-articles.json",
+        path="nribeat/data/latest-articles.json",
         content=content,
         message=f"📰 Daily article update — {datetime.now().strftime('%B %d, %Y')}"
     )
@@ -253,7 +253,7 @@ def _update_article_index(articles: list[dict]):
     """Maintain a rolling index of all published articles."""
     # Try to get existing index
     index = []
-    url = f"{GITHUB_API}/repos/{GITHUB_REPO}/contents/data/article-index.json"
+    url = f"{GITHUB_API}/repos/{GITHUB_REPO}/contents/nribeat/data/article-index.json"
     resp = requests.get(url, headers=HEADERS)
     if resp.status_code == 200:
         try:
@@ -278,7 +278,7 @@ def _update_article_index(articles: list[dict]):
 
     content = json.dumps({"articles": index}, indent=2)
     _commit_file(
-        path="data/article-index.json",
+        path="nribeat/data/article-index.json",
         content=content,
         message="📚 Update article index"
     )
