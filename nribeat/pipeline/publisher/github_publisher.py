@@ -269,7 +269,10 @@ def _update_article_index(articles: list[dict]):
             "title": a.get("title", ""),
             "slug": a.get("slug", ""),
             "category": a.get("category", ""),
-            "date": a.get("published_date", ""),
+            "date": a.get("published_date_display", a.get("published_date", "")),
+            "reading_time": a.get("reading_time", "5 min read"),
+            "excerpt": a.get("what_this_means", ""),
+            "tags": a.get("tags", [])[:3],
             "url": f"/articles/{CATEGORY_DIRS.get(a.get('category','general'), 'general')}/{a.get('slug','')}.html"
         })
 
