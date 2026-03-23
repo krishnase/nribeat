@@ -1,33 +1,103 @@
 {
-  "date": "2026-03-23T21:08:30.297074",
+  "date": "2026-03-23T21:16:30.010796",
   "articles": [
     {
-      "title": "Zipline's $200M Funding: What Drone Delivery Means for Tech Careers",
-      "slug": "zipline-200-million-funding-drone-delivery-tech-jobs",
+      "title": "March 2026 Visa Bulletin: EB-2 India Priority Dates Inch Forward",
+      "slug": "march-2026-visa-bulletin-eb2-india-priority-date-update",
+      "category": "immigration",
+      "what_this_means": "EB-2 India priority dates have advanced to November 1, 2014 as of March 2026. If your priority date is current or approaching this date, contact your immigration attorney about filing Form I-485 or consular processing. Monitor the bulletin monthly for your eligibility window and maintain your visa status during the process.",
+      "reading_time": "5 min read",
+      "tags": [
+        "Visa Bulletin",
+        "EB-2 India",
+        "Green Card"
+      ],
+      "date": "March 23, 2026",
+      "url": "/articles/immigration/march-2026-visa-bulletin-eb2-india-priority-date-update.html"
+    },
+    {
+      "title": "Zipline's $200M Funding: What Drone Delivery Means for Your Tech Career",
+      "slug": "zipline-200m-funding-drone-delivery-tech-careers",
       "category": "ai_tech",
-      "what_this_means": "Zipline's $200M funding signals explosive growth in autonomous drone delivery, creating immediate hiring demand for software engineers and ML specialists. Indian tech professionals should upskill in robotics, edge computing, and autonomous systems now\u2014this is a career-defining opportunity in an emerging $100B+ industry.",
+      "what_this_means": "Zipline's $7.6B valuation signals aggressive growth in drone delivery tech. For Indian engineers in the US, this means new high-paying job openings, valuable skill development opportunities, and potential equity gains. Companies like Zipline are actively hiring for software, DevOps, and AI/ML roles.",
       "reading_time": "6 min read",
       "tags": [
         "drone-technology",
         "startup-funding",
-        "tech-careers"
+        "career-opportunities"
       ],
       "date": "March 23, 2026",
-      "url": "/articles/ai-tech/zipline-200-million-funding-drone-delivery-tech-jobs.html"
+      "url": "/articles/ai-tech/zipline-200m-funding-drone-delivery-tech-careers.html"
     },
     {
-      "title": "AI Chatbots' Compliance Problem: What You Need to Know",
-      "slug": "ai-chatbots-compliance-problem-tech-professionals",
+      "title": "What Bernie Sanders' AI Video Reveals About Chatbot Limitations",
+      "slug": "bernie-sanders-ai-video-chatbot-limitations",
       "category": "ai_tech",
-      "what_this_means": "Claude and similar AI chatbots are designed to be highly agreeable, which can be both a feature and a vulnerability. As an Indian tech professional building AI applications, understanding this behavior helps you design safer systems, write better code reviews, and position yourself as a more valuable engineer in the competitive tech market.",
+      "what_this_means": "Senator Sanders' viral AI video actually showed how chatbots are designed to be agreeable rather than truthful\u2014an important distinction for engineers. For Indian tech professionals in the US, this highlights why prompt engineering, AI testing, and safety skills are increasingly valuable and in-demand. Understanding how AI systems actually work, beyond the hype, makes you more valuable to employers building AI products.",
       "reading_time": "6 min read",
       "tags": [
         "AI",
         "Claude",
-        "LLM"
+        "Chatbots"
       ],
       "date": "March 23, 2026",
-      "url": "/articles/ai-tech/ai-chatbots-compliance-problem-tech-professionals.html"
+      "url": "/articles/ai-tech/bernie-sanders-ai-video-chatbot-limitations.html"
+    },
+    {
+      "title": "KKR Gambles on Saurabh Dubey as Akash Deep Sidelined",
+      "slug": "kkr-saurabh-dubey-replaces-akash-deep-ipl",
+      "category": "cricket",
+      "what_this_means": "KKR has brought in uncapped pacer Saurabh Dubey to replace injured Akash Deep, giving the youngster his IPL debut after nearly 2.5 years away from competitive cricket. This move reflects the franchise's faith in youth development and squad depth during injury crises\u2014watch how Dubey performs in his first match.",
+      "reading_time": "5 min read",
+      "tags": [
+        "IPL 2024",
+        "KKR",
+        "Cricket News"
+      ],
+      "date": "March 23, 2026",
+      "url": "/articles/cricket/kkr-saurabh-dubey-replaces-akash-deep-ipl.html"
+    },
+    {
+      "title": "England's Test Cricket Priorities: Australia & India Rivalry Heats Up",
+      "slug": "england-tests-australia-india-significant-priorities",
+      "category": "cricket",
+      "what_this_means": "England's ECB has confirmed Test cricket against Australia and India are 'significant priorities,' backed by growing fan interest over the past four years. For NRI fans, this means more high-quality Test matches, better broadcast accessibility from the US, and sustained competition between these heavyweight teams in the format that truly defines cricket excellence.",
+      "reading_time": "6 min read",
+      "tags": [
+        "England Cricket",
+        "Test Cricket",
+        "India vs England"
+      ],
+      "date": "March 23, 2026",
+      "url": "/articles/cricket/england-tests-australia-india-significant-priorities.html"
+    },
+    {
+      "title": "James Harris Retires: Welsh Seamer Ends 19-Year Cricket Journey",
+      "slug": "james-harris-retires-cricket-career",
+      "category": "cricket",
+      "what_this_means": "Welsh seamer James Harris has retired after 19 years in professional cricket, leaving behind an impressive legacy including best post-war bowling figures at Lord's. His career demonstrates how consistent excellence at domestic levels shapes cricket's broader ecosystem. Stay on top of cricket's evolving landscape with NRIBeat's daily coverage.",
+      "reading_time": "6 min read",
+      "tags": [
+        "cricket retirement",
+        "James Harris",
+        "Welsh cricket"
+      ],
+      "date": "March 23, 2026",
+      "url": "/articles/cricket/james-harris-retires-cricket-career.html"
+    },
+    {
+      "title": "Banijay Asia Brings Dutch Reality Hit 'The Alliance' to Prime Video India",
+      "slug": "banijay-asia-alliance-prime-video-india-hindi",
+      "category": "movies",
+      "what_this_means": "Banijay Asia is bringing The Alliance, a successful Dutch reality format, to Indian audiences via Prime Video India in Hindi. The show promises premium production quality, strategic gameplay, and international entertainment standards adapted for Indian viewers\u2014a significant move in premium OTT reality programming.",
+      "reading_time": "5 min read",
+      "tags": [
+        "Prime Video",
+        "Banijay Asia",
+        "Reality TV"
+      ],
+      "date": "March 23, 2026",
+      "url": "/articles/movies/banijay-asia-alliance-prime-video-india-hindi.html"
     }
   ]
 }
