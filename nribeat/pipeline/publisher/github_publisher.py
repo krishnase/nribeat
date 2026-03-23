@@ -287,6 +287,31 @@ def _update_article_index(articles: list[dict]):
     )
 
 
+def publish_visa_bulletin_data(vb: dict):
+    """Publish visa bulletin priority dates as JSON for the dashboard page."""
+    if not GITHUB_TOKEN or not vb:
+        return
+    dates = vb.get("priority_dates", {})
+    content = json.dumps({
+        "month_year": vb.get("month_year", ""),
+        "updated": datetime.now().isoformat(),
+        "eb2_india_final": dates.get("eb2_india_final", ""),
+        "eb3_india_final": dates.get("eb3_india_final", ""),
+        "eb1_india_final": dates.get("eb1_india_final", "Current"),
+        "eb3_india_filing": dates.get("eb3_india_filing", ""),
+        "eb2_india_filing": dates.get("eb2_india_filing", ""),
+    }, indent=2)
+    try:
+        _commit_file(
+            path="nribeat/data/visa-bulletin.json",
+            content=content,
+            message=f"🛂 Visa Bulletin data update — {vb.get('month_year', '')}"
+        )
+        log.info("    ✓ Visa bulletin data published")
+    except Exception as e:
+        log.error(f"    ✗ Visa bulletin data publish failed: {e}")
+
+
 def _save_locally(articles: list[dict]) -> dict:
     """Save articles locally when GitHub token is not set (for testing)."""
     output_dir = Path("output/articles")

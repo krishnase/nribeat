@@ -66,49 +66,12 @@
     <div class="page-eyebrow">🛂 Immigration · Visa Bulletin</div>
     <h1 class="page-title">Visa Bulletin Dashboard</h1>
     <p class="page-desc">Live priority dates, historical movement data, and AI-powered predictions for EB-2 and EB-3 India categories. Updated the moment the bulletin drops each month.</p>
-    <div class="updated"><div class="updated-dot"></div>Last updated: November 12, 2025 · Next bulletin: ~December 10, 2025</div>
+    <div class="updated" id="bulletinUpdated"><div class="updated-dot"></div>Loading...</div>
   </div>
 
   <!-- CURRENT DATES -->
-  <div class="section-header"><div class="section-label">📅 November 2025 — Current Dates</div></div>
-  <div class="dates-grid">
-    <div class="date-card featured" style="--dc:var(--saffron)">
-      <div class="dc-category">EB-2 India · Final Action Date</div>
-      <div class="dc-date">Jan 01, 2013</div>
-      <div class="dc-movement"><span class="dc-badge move-up">↑ +15 days</span><span class="dc-prev">Was: Dec 17, 2012</span></div>
-      <div class="dc-note">If your priority date is before Jan 1, 2013, your case is current and you can proceed to the final step. Average movement last 6 months: <strong style="color:var(--white)">11 days/month.</strong></div>
-    </div>
-    <div class="date-card" style="--dc:var(--green)">
-      <div class="dc-category">EB-3 India · Final Action Date</div>
-      <div class="dc-date">Feb 15, 2013</div>
-      <div class="dc-movement"><span class="dc-badge move-up">↑ +22 days</span><span class="dc-prev">Was: Jan 24, 2013</span></div>
-      <div class="dc-note">EB-3 is moving faster than EB-2 this month — an unusual pattern. New fiscal year often causes surges in Oct–Dec. Worth monitoring if you have both options.</div>
-    </div>
-    <div class="date-card" style="--dc:var(--blue)">
-      <div class="dc-category">EB-2 India · Dates for Filing</div>
-      <div class="dc-date">Apr 01, 2022</div>
-      <div class="dc-movement"><span class="dc-badge move-same">→ No change</span><span class="dc-prev">Same as Oct 2025</span></div>
-      <div class="dc-note">USCIS must announce if Dates for Filing can be used each month. No announcement yet for November. Check USCIS.gov Visa Bulletin Processing Dates page.</div>
-    </div>
-    <div class="date-card" style="--dc:var(--amber)">
-      <div class="dc-category">EB-3 India · Dates for Filing</div>
-      <div class="dc-date">Jun 01, 2022</div>
-      <div class="dc-movement"><span class="dc-badge move-up">↑ +30 days</span><span class="dc-prev">Was: May 01, 2022</span></div>
-      <div class="dc-note">Significant jump of 30 days. If you're in EB-3 and your attorney can file an I-485, this may be your opportunity before potential retrogression.</div>
-    </div>
-    <div class="date-card" style="--dc:var(--purple)">
-      <div class="dc-category">F2A (Spouse of LPR) · Final Action</div>
-      <div class="dc-date">Current</div>
-      <div class="dc-movement"><span class="dc-badge move-up">✓ Current</span></div>
-      <div class="dc-note">F2A has been current for several months — spouses and children of LPRs can file immediately without waiting for a priority date.</div>
-    </div>
-    <div class="date-card" style="--dc:var(--pink)">
-      <div class="dc-category">EB-1 India · Final Action</div>
-      <div class="dc-date">Current</div>
-      <div class="dc-movement"><span class="dc-badge move-up">✓ Current</span></div>
-      <div class="dc-note">EB-1A (Extraordinary Ability) and EB-1B (Outstanding Researcher) for India remain current. Priority processing available with premium service.</div>
-    </div>
-  </div>
+  <div class="section-header"><div class="section-label" id="bulletinHeader">📅 Loading current dates...</div></div>
+  <div class="dates-grid" id="datesGrid"><div class="date-card" style="grid-column:1/-1;text-align:center;color:var(--white-muted);padding:40px">Loading visa bulletin data...</div></div>
 
   <!-- AI PREDICTOR -->
   <div class="predictor-card">
@@ -178,6 +141,19 @@
 function toggleNav(){document.getElementById('mobileNav').classList.toggle('open')}
 function runPredictor(){const cat=document.getElementById('pred-cat').value,date=document.getElementById('pred-date').value,out=document.getElementById('pred-output'),ph=document.getElementById('pred-placeholder');if(!date){return}const[yr,mo]=date.split('-').map(Number);const curYr=2013,curMo=1;const totalDays=(curYr-yr)*365+((curMo-mo)*30);if(totalDays<=0){out.innerHTML='✅ Your priority date is already current! Contact your employer to begin filing immediately.';out.style.display='block';ph.style.display='none';return}const avgMov=cat==='eb3'?14:11;const monthsNeeded=Math.ceil(totalDays/avgMov);const yrs=(monthsNeeded/12).toFixed(1);const targetDate=new Date(2025,10+monthsNeeded,1);const opts={year:'numeric',month:'long'};out.innerHTML=`📊 <strong>Estimated wait: ~${yrs} years</strong> (${monthsNeeded} months)<br>Approximate current date: ~${targetDate.toLocaleDateString('en-US',opts)}<br>Based on avg movement of ${avgMov} days/month for ${document.getElementById('pred-cat').options[document.getElementById('pred-cat').selectedIndex].text}.<br><span style="font-size:11px;color:var(--white-muted)">Estimate only. Retrogression, policy changes, and demand shifts can significantly alter timelines.</span>`;out.style.display='block';ph.style.display='none'}
 function toggleFaq(el){el.closest('.faq-item').classList.toggle('open')}
+fetch('data/visa-bulletin.json').then(r=>r.json()).then(d=>{
+  document.getElementById('bulletinHeader').textContent='📅 '+d.month_year+' — Current Dates';
+  document.getElementById('bulletinUpdated').innerHTML='<div class="updated-dot"></div>Last updated: '+new Date(d.updated).toLocaleDateString('en-US',{month:'long',day:'numeric',year:'numeric'});
+  const eb2=d.eb2_india_final||'—', eb3=d.eb3_india_final||'—', eb1=d.eb1_india_final||'Current';
+  document.getElementById('datesGrid').innerHTML=`
+    <div class="date-card featured" style="--dc:var(--saffron)"><div class="dc-category">EB-2 India · Final Action Date</div><div class="dc-date">${eb2}</div><div class="dc-movement"><span class="dc-badge move-up">Latest</span></div><div class="dc-note">If your priority date is before this date, your case is current. Check USCIS.gov for filing instructions.</div></div>
+    <div class="date-card" style="--dc:var(--green)"><div class="dc-category">EB-3 India · Final Action Date</div><div class="dc-date">${eb3}</div><div class="dc-movement"><span class="dc-badge move-up">Latest</span></div><div class="dc-note">EB-3 movement varies month to month. Compare with EB-2 if you have both options available.</div></div>
+    <div class="date-card" style="--dc:var(--pink)"><div class="dc-category">EB-1 India · Final Action</div><div class="dc-date">${eb1}</div><div class="dc-movement"><span class="dc-badge move-up">✓ ${eb1==='Current'?'Current':'Latest'}</span></div><div class="dc-note">EB-1A (Extraordinary Ability) and EB-1B (Outstanding Researcher). Premium processing available.</div></div>`;
+}).catch(()=>{
+  document.getElementById('bulletinHeader').textContent='📅 Visa Bulletin — Current Dates';
+  document.getElementById('bulletinUpdated').innerHTML='<div class="updated-dot"></div>Run the daily pipeline to fetch latest data';
+  document.getElementById('datesGrid').innerHTML='<div class="date-card" style="grid-column:1/-1;text-align:center;color:var(--white-muted);padding:40px">Pipeline has not run yet — trigger the daily pipeline to fetch live data.</div>';
+});
 function subscribe(){const e=document.getElementById('emailInput').value,m=document.getElementById('subMsg');if(!e||!e.includes('@')){m.innerHTML='<span style="color:var(--amber)">⚠ Please enter a valid email.</span>';return}m.innerHTML='<span style="color:var(--green)">✓ You\'re subscribed! Check your inbox for confirmation.</span>';document.getElementById('emailInput').value=''}
 </script>
 <script id="tickerScript">

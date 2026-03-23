@@ -19,7 +19,7 @@ from fetchers.movies import fetch_ott_news
 from filters.content_filter import filter_stories
 from generator.article_gen import generate_articles
 from generator.visa_predict import generate_visa_prediction
-from publisher.github_publisher import publish_to_github
+from publisher.github_publisher import publish_to_github, publish_visa_bulletin_data
 from publisher.email_digest import send_daily_digest
 
 logging.basicConfig(
@@ -104,6 +104,8 @@ def run_pipeline():
 
     # ── 4. PUBLISH ────────────────────────────────────────────
     log.info("Step 4: Publishing to GitHub...")
+    if vb:
+        publish_visa_bulletin_data(vb)
     try:
         result = publish_to_github(articles)
         log.info(f"  ✓ Published: {result['files_updated']} files updated")
