@@ -33,7 +33,7 @@ jobs:
 
       - name: Install dependencies
         run: |
-          cd pipeline
+          cd nribeat/pipeline
           pip install -r requirements.txt
 
       - name: Run NRIBeat pipeline
@@ -45,7 +45,7 @@ jobs:
           CONVERTKIT_API_KEY: ${{ secrets.CONVERTKIT_API_KEY }}
           DRY_RUN: ${{ github.event.inputs.dry_run || 'false' }}
         run: |
-          cd pipeline
+          cd nribeat/pipeline
           python pipeline.py
 
       - name: Upload pipeline logs
@@ -53,5 +53,5 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: pipeline-logs-${{ github.run_number }}
-          path: pipeline/pipeline.log
+          path: nribeat/pipeline/pipeline.log
           retention-days: 7
