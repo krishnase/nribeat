@@ -83,21 +83,7 @@
   <div class="cat-chips"><div class="chip active"><span class="chip-dot"></span>All</div><a href="visa-bulletin.html" class="chip"><span class="chip-dot" style="background:#74B3FF"></span>Visa Bulletin</a><a href="immigration.html" class="chip"><span class="chip-dot" style="background:var(--blue)"></span>H1B & OPT</a><a href="cricket.html" class="chip"><span class="chip-dot" style="background:var(--green)"></span>Cricket</a><a href="movies.html" class="chip"><span class="chip-dot" style="background:var(--pink)"></span>Bollywood</a><a href="ai-tools.html" class="chip"><span class="chip-dot" style="background:var(--purple)"></span>AI Tools</a><a href="layoffs.html" class="chip"><span class="chip-dot" style="background:var(--amber)"></span>Layoffs</a></div>
 
   <!-- HERO -->
-  <section class="hero">
-    <div class="hero-grid">
-      <div class="hero-main fade-up">
-        <div class="hero-eyebrow"><div class="live-dot"></div><span class="cat">Immigration · Breaking</span></div>
-        <h1 class="hero-title">November 2025 Visa Bulletin:<br><em>EB-2 India Moves Forward</em><br>15 Days — What It Means</h1>
-        <p class="hero-excerpt">The Department of State released the November 2025 Visa Bulletin, showing a 15-day forward movement for EB-2 India's Final Action Date. Here's what this means for your green card timeline.</p>
-        <div style="display:flex;align-items:center;gap:14px;flex-wrap:wrap"><a href="article.html" class="btn-primary">Read Full Analysis →</a><div class="hero-meta"><span>🕐 2 hours ago</span><span>·</span><span>5 min read</span></div></div>
-      </div>
-      <div class="hero-side fade-up">
-        <div class="hero-card"><div class="hc-cat cricket">🏏 Cricket</div><div class="hc-title">India Clinches ODI Series vs Australia — Kohli's 89 Seals the Chase</div><div class="hc-time">4 hours ago · 3 min read</div><div class="hc-arrow">→</div></div>
-        <div class="hero-card"><div class="hc-cat ai">🤖 AI News</div><div class="hc-title">OpenAI's GPT-5 Is Here: Real-Time Web, 10× Faster — Free Tier Included</div><div class="hc-time">6 hours ago · 4 min read</div><div class="hc-arrow">→</div></div>
-        <div class="hero-card"><div class="hc-cat movies">🎬 Movies & OTT</div><div class="hc-title">Stree 3 Official: Shraddha Returns, Pankaj Tripathi Confirmed for 2026</div><div class="hc-time">Yesterday · 2 min read</div><div class="hc-arrow">→</div></div>
-      </div>
-    </div>
-  </section>
+  <section class="hero" id="heroSection"></section>
 
   <!-- VISA BULLETIN TRACKER -->
   <section class="vb-section">
@@ -154,9 +140,27 @@ function toggleNav(){document.getElementById('mobileNav').classList.toggle('open
 const CAT_LABELS={'immigration':'Immigration','visa_bulletin':'Immigration','ai_tech':'AI & Tech','cricket':'Cricket','movies':'Movies & OTT','layoffs':'Layoffs'};
 const CAT_CLASSES={'immigration':'immigration','visa_bulletin':'immigration','ai_tech':'ai','cricket':'cricket','movies':'movies','layoffs':'layoffs'};
 fetch('data/latest-articles.json').then(r=>r.json()).then(data=>{
-  const grid=document.getElementById('articlesGrid');
   const articles=data.articles||[];
-  if(!articles.length){grid.innerHTML='<div class="article-card" style="grid-column:1/-1;text-align:center;color:var(--white-muted);padding:40px">No articles yet — check back tomorrow.</div>';return;}
+  if(!articles.length) return;
+
+  // Render hero
+  const CAT_ICONS={'immigration':'🛂','visa_bulletin':'🛂','ai_tech':'🤖','cricket':'🏏','movies':'🎬','layoffs':'⚠️'};
+  const hero=document.getElementById('heroSection');
+  const main=articles[0], side=articles.slice(1,4);
+  const mainCat=main.category||'';
+  hero.innerHTML=`<div class="hero-grid">
+    <div class="hero-main fade-up" onclick="location.href='${main.url}'" style="cursor:pointer">
+      <div class="hero-eyebrow"><div class="live-dot"></div><span class="cat">${CAT_LABELS[mainCat]||mainCat} · Latest</span></div>
+      <h1 class="hero-title">${main.title}</h1>
+      <p class="hero-excerpt">${main.what_this_means||''}</p>
+      <div style="display:flex;align-items:center;gap:14px;flex-wrap:wrap"><a href="${main.url}" class="btn-primary">Read Full Analysis →</a><div class="hero-meta"><span>📅 ${main.date||''}</span><span>·</span><span>${main.reading_time||'5 min read'}</span></div></div>
+    </div>
+    <div class="hero-side fade-up">${side.map(a=>{const c=a.category||'';const cls=CAT_CLASSES[c]||'ai';return`<div class="hero-card" onclick="location.href='${a.url}'"><div class="hc-cat ${cls}">${CAT_ICONS[c]||'📰'} ${CAT_LABELS[c]||c}</div><div class="hc-title">${a.title}</div><div class="hc-time">${a.date||''} · ${a.reading_time||'5 min read'}</div><div class="hc-arrow">→</div></div>`;}).join('')}
+    </div>
+  </div>`;
+
+  // Render articles grid
+  const grid=document.getElementById('articlesGrid');
   grid.innerHTML=articles.slice(0,6).map(a=>{
     const cat=a.category||'';
     const cls=CAT_CLASSES[cat]||'ai';
