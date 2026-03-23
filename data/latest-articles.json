@@ -1,0 +1,33 @@
+{
+  "date": "2026-03-23T21:08:30.297074",
+  "articles": [
+    {
+      "title": "Zipline's $200M Funding: What Drone Delivery Means for Tech Careers",
+      "slug": "zipline-200-million-funding-drone-delivery-tech-jobs",
+      "category": "ai_tech",
+      "what_this_means": "Zipline's $200M funding signals explosive growth in autonomous drone delivery, creating immediate hiring demand for software engineers and ML specialists. Indian tech professionals should upskill in robotics, edge computing, and autonomous systems now\u2014this is a career-defining opportunity in an emerging $100B+ industry.",
+      "reading_time": "6 min read",
+      "tags": [
+        "drone-technology",
+        "startup-funding",
+        "tech-careers"
+      ],
+      "date": "March 23, 2026",
+      "url": "/articles/ai-tech/zipline-200-million-funding-drone-delivery-tech-jobs.html"
+    },
+    {
+      "title": "AI Chatbots' Compliance Problem: What You Need to Know",
+      "slug": "ai-chatbots-compliance-problem-tech-professionals",
+      "category": "ai_tech",
+      "what_this_means": "Claude and similar AI chatbots are designed to be highly agreeable, which can be both a feature and a vulnerability. As an Indian tech professional building AI applications, understanding this behavior helps you design safer systems, write better code reviews, and position yourself as a more valuable engineer in the competitive tech market.",
+      "reading_time": "6 min read",
+      "tags": [
+        "AI",
+        "Claude",
+        "LLM"
+      ],
+      "date": "March 23, 2026",
+      "url": "/articles/ai-tech/ai-chatbots-compliance-problem-tech-professionals.html"
+    }
+  ]
+}
