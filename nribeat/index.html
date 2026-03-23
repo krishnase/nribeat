@@ -114,13 +114,8 @@
   <!-- LATEST ARTICLES -->
   <section class="articles-section">
     <div class="section-header"><div class="section-label"><span>📰</span> Today's Top Stories</div><a href="#" class="see-all">View all →</a></div>
-    <div class="articles-grid">
-      <div class="article-card fade-up"><div class="ac-cat immigration"><div class="cat-dot"></div>Immigration</div><h2 class="ac-title">H1B Cap Reached in Just 5 Days — USCIS Begins Random Lottery Selection</h2><p class="ac-excerpt">The FY2026 H1B cap was hit in a record 5 business days. Here's what every applicant needs to know about next steps, timelines, and what to do if not selected.</p><div class="ac-footer"><span>3 hrs ago · 6 min</span><span class="ac-tag">H1B 2026</span></div></div>
-      <div class="article-card fade-up"><div class="ac-cat ai"><div class="cat-dot"></div>AI & Tech</div><h2 class="ac-title">5 AI Tools Every Indian Tech Professional in the US Should Know in 2025</h2><p class="ac-excerpt">From AI coding assistants to resume builders — a curated roundup of the best AI tools for Indian engineers and product managers in the US.</p><div class="ac-footer"><span>5 hrs ago · 7 min</span><span class="ac-tag">AI Tools</span></div></div>
-      <div class="article-card fade-up"><div class="ac-cat layoffs"><div class="cat-dot"></div>Layoffs</div><h2 class="ac-title">Meta Confirms 3,600 Job Cuts: What H1B Visa Holders Need to Do Right Now</h2><p class="ac-excerpt">For H1B workers, the 60-day grace period clock starts immediately. Here's your step-by-step action guide — what to do, when, and who to call.</p><div class="ac-footer"><span>8 hrs ago · 5 min</span><span class="ac-tag">H1B Grace Period</span></div></div>
-      <div class="article-card fade-up"><div class="ac-cat cricket"><div class="cat-dot"></div>Cricket</div><h2 class="ac-title">Rohit Sharma Announces Retirement from Test Cricket After Series Loss</h2><p class="ac-excerpt">In a surprise announcement, Rohit Sharma confirmed his retirement from Test cricket. He will continue in white-ball formats. Full statement and tributes.</p><div class="ac-footer"><span>10 hrs ago · 4 min</span><span class="ac-tag">Test Cricket</span></div></div>
-      <div class="article-card fade-up"><div class="ac-cat movies"><div class="cat-dot"></div>Movies & OTT</div><h2 class="ac-title">New on Netflix India This Week: 6 Hindi Films and Series Dropping in November</h2><p class="ac-excerpt">Netflix India's November lineup includes a major thriller, two originals, and a highly anticipated documentary. Full schedule and our quick picks.</p><div class="ac-footer"><span>Yesterday · 3 min</span><span class="ac-tag">OTT</span></div></div>
-      <div class="article-card fade-up"><div class="ac-cat tech"><div class="cat-dot"></div>Innovation</div><h2 class="ac-title">Indian-Origin Founders Raise $2.3B in US VC Funding This Quarter</h2><p class="ac-excerpt">A record quarter for Indian-origin founders in Silicon Valley. We profile the top 8 startups from fintech to healthcare AI and climate tech.</p><div class="ac-footer"><span>Yesterday · 8 min</span><span class="ac-tag">Startups</span></div></div>
+    <div class="articles-grid" id="articlesGrid">
+      <div class="article-card fade-up" style="grid-column:1/-1;text-align:center;color:var(--white-muted);padding:40px">Loading latest stories...</div>
     </div>
   </section>
 
@@ -155,6 +150,26 @@
 <footer><div class="footer-inner"><div class="footer-top"><div><div class="footer-logo">NRI<span>Beat</span></div><p class="footer-tagline">The daily pulse for Indian Americans — immigration, AI, cricket, and everything in between.</p><div class="social-links"><a href="#" class="social-link">𝕏</a><a href="#" class="social-link">in</a><a href="#" class="social-link">▶</a><a href="#" class="social-link">📸</a></div></div><div><div class="footer-col-title">Immigration</div><ul class="footer-links"><li><a href="visa-bulletin.html">Visa Bulletin Dashboard</a></li><li><a href="immigration.html">H1B Guide 2025</a></li><li><a href="immigration.html">OPT & STEM OPT</a></li><li><a href="visa-bulletin.html">Priority Date Calculator</a></li></ul></div><div><div class="footer-col-title">Categories</div><ul class="footer-links"><li><a href="ai-tools.html">AI & Tech News</a></li><li><a href="cricket.html">Cricket Hub</a></li><li><a href="movies.html">Movies & OTT</a></li><li><a href="layoffs.html">Tech Layoffs</a></li><li><a href="ai-tools.html">AI Tools Finder</a></li></ul></div><div><div class="footer-col-title">Company</div><ul class="footer-links"><li><a href="#">About NRIBeat</a></li><li><a href="#">Advertise With Us</a></li><li><a href="#newsletter">Newsletter</a></li><li><a href="#">Contact</a></li><li><a href="#">Privacy Policy</a></li></ul></div></div><div class="footer-bottom"><span>© 2025 NRIBeat.com · All rights reserved</span><span>Made with ❤️ for the Indian-American community</span></div></div></footer>
 <script>
 function toggleNav(){document.getElementById('mobileNav').classList.toggle('open')}
+
+const CAT_LABELS={'immigration':'Immigration','visa_bulletin':'Immigration','ai_tech':'AI & Tech','cricket':'Cricket','movies':'Movies & OTT','layoffs':'Layoffs'};
+const CAT_CLASSES={'immigration':'immigration','visa_bulletin':'immigration','ai_tech':'ai','cricket':'cricket','movies':'movies','layoffs':'layoffs'};
+fetch('data/latest-articles.json').then(r=>r.json()).then(data=>{
+  const grid=document.getElementById('articlesGrid');
+  const articles=data.articles||[];
+  if(!articles.length){grid.innerHTML='<div class="article-card" style="grid-column:1/-1;text-align:center;color:var(--white-muted);padding:40px">No articles yet — check back tomorrow.</div>';return;}
+  grid.innerHTML=articles.slice(0,6).map(a=>{
+    const cat=a.category||'';
+    const cls=CAT_CLASSES[cat]||'ai';
+    const label=CAT_LABELS[cat]||cat;
+    const tags=(a.tags||[]).slice(0,1).map(t=>`<span class="ac-tag">${t}</span>`).join('');
+    return`<div class="article-card fade-up" onclick="location.href='${a.url}'">
+      <div class="ac-cat ${cls}"><div class="cat-dot"></div>${label}</div>
+      <h2 class="ac-title">${a.title}</h2>
+      <p class="ac-excerpt">${a.what_this_means||''}</p>
+      <div class="ac-footer"><span>${a.date||''} · ${a.reading_time||'5 min'}</span>${tags}</div>
+    </div>`;
+  }).join('');
+}).catch(()=>{document.getElementById('articlesGrid').innerHTML='<div class="article-card" style="grid-column:1/-1;text-align:center;color:var(--white-muted);padding:40px">Unable to load articles.</div>';});
 function predictDate(){const val=document.getElementById('priorityDate').value,res=document.getElementById('predict-result');if(!val){res.style.display='block';res.style.color='var(--amber)';res.textContent='Please enter your priority date.';return}const[yr,mo]=val.split('-').map(Number);const totalMonths=(2013-yr)*12+(1-mo);if(totalMonths<=0){res.style.display='block';res.style.color='var(--green)';res.innerHTML='✅ Your date is already current or very close!';return}const avg=11,months=Math.ceil((totalMonths*30)/avg),yrs=(months/12).toFixed(1);res.style.display='block';res.style.color='var(--green)';res.innerHTML=`📊 <strong>~${yrs} years</strong> (${months} months) based on avg ${avg} days/month movement.<br><span style="color:var(--white-muted);font-size:11px">Estimate only — subscribe for monthly updates.</span>`}
 function subscribe(){const e=document.getElementById('emailInput').value,m=document.getElementById('subMsg');if(!e||!e.includes('@')){m.innerHTML='<span style="color:var(--amber)">⚠ Please enter a valid email.</span>';return}m.innerHTML='<span style="color:var(--green)">✓ You\'re in! Check your inbox.</span>';document.getElementById('emailInput').value=''}
 document.querySelectorAll('.chip').forEach(c=>c.addEventListener('click',function(){document.querySelectorAll('.chip').forEach(x=>x.classList.remove('active'));this.classList.add('active')}));
