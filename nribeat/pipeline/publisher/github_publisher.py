@@ -595,6 +595,33 @@ def publish_movies_data():
             log.error(f"  {local_path.name} update failed: {e}")
 
 
+def publish_movies_releases(data: dict):
+    """
+    Commit auto-fetched theatrical releases data to data/movies-releases.json.
+    Called every pipeline run with the result of fetch_theatrical_releases().
+    """
+    if not data or (not data.get("now_playing") and not data.get("coming_soon")):
+        log.info("  Movies releases: no data to publish")
+        return
+
+    content = json.dumps(data, indent=2, default=str)
+    path = "nribeat/data/movies-releases.json"
+    try:
+        if GITHUB_TOKEN:
+            _commit_file_with_retry(path, content, "data: update movies-releases.json")
+            log.info(f"  Updated: movies-releases.json "
+                     f"({len(data.get('now_playing', []))} now playing, "
+                     f"{len(data.get('coming_soon', []))} coming soon)")
+        else:
+            from pathlib import Path
+            out = Path("output/data/movies-releases.json")
+            out.parent.mkdir(parents=True, exist_ok=True)
+            out.write_text(content)
+            log.info("  Saved locally: output/data/movies-releases.json")
+    except Exception as e:
+        log.error(f"  movies-releases.json publish failed: {e}")
+
+
 def _save_locally(articles: list[dict]) -> dict:
     """Save articles locally when GitHub token is not set (dev/testing)."""
     output_dir = Path("output/articles")

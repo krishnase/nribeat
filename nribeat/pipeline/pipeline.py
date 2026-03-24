@@ -42,7 +42,7 @@ from fetchers.visa_bulletin import fetch_visa_bulletin
 from fetchers.news import fetch_tech_ai_news
 from fetchers.cricket import fetch_cricket_news
 from fetchers.reddit import fetch_reddit_trending
-from fetchers.movies import fetch_ott_news
+from fetchers.movies import fetch_ott_news, fetch_theatrical_releases
 from fetchers.trends import fetch_trending_topics, get_rising_topics
 
 from filters.content_filter import filter_stories
@@ -52,7 +52,7 @@ from generator.visa_predict import generate_visa_prediction
 from seo.keyword_scorer import score_article_seo, enrich_with_seo_keywords, rank_articles_by_seo
 from monetization.affiliate_injector import inject_monetization, get_email_affiliate_block
 
-from publisher.github_publisher import publish_to_github, publish_visa_bulletin_data, publish_movies_data
+from publisher.github_publisher import publish_to_github, publish_visa_bulletin_data, publish_movies_data, publish_movies_releases
 from publisher.email_digest import send_daily_digest
 
 DRY_RUN = os.environ.get("DRY_RUN", "false").lower() == "true"
@@ -122,6 +122,18 @@ def run_pipeline() -> dict:
         except Exception as e:
             log.error(f"  {name} fetch failed: {e}")
             fetch_results[key] = 0
+
+    # Theatrical releases (structured data for movies-releases.json, not article stories)
+    releases_data = {}
+    try:
+        releases_data = fetch_theatrical_releases()
+        np = len(releases_data.get("now_playing", []))
+        cs = len(releases_data.get("coming_soon", []))
+        log.info(f"  Theatrical releases: {np} now playing, {cs} coming soon")
+        fetch_results["theatrical"] = np + cs
+    except Exception as e:
+        log.error(f"  Theatrical releases fetch failed: {e}")
+        fetch_results["theatrical"] = 0
 
     log.info(f"  Total raw stories: {len(stories)}")
     results["steps"]["fetch"] = {"status": "ok", "raw_count": len(stories), "by_source": fetch_results}
@@ -205,6 +217,7 @@ def run_pipeline() -> dict:
             publish_visa_bulletin_data(vb)
 
         publish_movies_data()
+        publish_movies_releases(releases_data)
 
         try:
             pub_result = publish_to_github(monetized_articles)
