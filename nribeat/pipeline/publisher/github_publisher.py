@@ -23,6 +23,7 @@ from pathlib import Path
 
 from seo.keyword_scorer import generate_schema_markup
 from publisher.sitemap_builder import build_sitemap, build_rss_feed
+from generator.visa_bulletin_article import generate_visa_bulletin_article
 
 log = logging.getLogger(__name__)
 
@@ -397,28 +398,161 @@ def _rebuild_sitemap_and_rss(articles: list[dict]):
 
 
 def publish_visa_bulletin_data(vb: dict):
-    """Publish visa bulletin priority dates as JSON for the dashboard."""
-    if not GITHUB_TOKEN or not vb:
+    """
+    Publish visa bulletin data JSON + auto-generate and publish the monthly article.
+    1. Read existing visa-bulletin.json (for movement calculation)
+    2. Write updated visa-bulletin.json
+    3. Generate the month's article HTML from the new data
+    4. Commit article HTML
+    5. Prepend article to article-index.json and latest-articles.json
+    """
+    if not vb:
         return
+
     dates = vb.get("priority_dates", {})
-    content = json.dumps({
-        "month_year":        vb.get("month_year", ""),
+    month_year = vb.get("month_year", "")
+
+    # Step 1: Read previous bulletin data for movement calculation
+    prev_data = None
+    if GITHUB_TOKEN:
+        try:
+            url = f"{GITHUB_API}/repos/{GITHUB_REPO}/contents/nribeat/data/visa-bulletin.json"
+            resp = requests.get(url, headers=HEADERS, timeout=15)
+            if resp.status_code == 200:
+                raw = base64.b64decode(resp.json().get("content", "")).decode("utf-8")
+                prev_data = json.loads(raw)
+        except Exception as e:
+            log.warning(f"  Could not read previous visa-bulletin.json: {e}")
+
+    # Step 2: Write updated visa-bulletin.json
+    bulletin_json = json.dumps({
+        "month_year":        month_year,
         "updated":           datetime.now().isoformat(),
         "eb2_india_final":   dates.get("eb2_india_final", ""),
         "eb3_india_final":   dates.get("eb3_india_final", ""),
         "eb1_india_final":   dates.get("eb1_india_final", "Current"),
-        "eb3_india_filing":  dates.get("eb3_india_filing", ""),
         "eb2_india_filing":  dates.get("eb2_india_filing", ""),
+        "eb3_india_filing":  dates.get("eb3_india_filing", ""),
+        "eb1_india_filing":  dates.get("eb1_india_filing", "Current"),
+        "dff_authorized":    bool(dates.get("eb2_india_filing") or dates.get("eb3_india_filing")),
     }, indent=2)
+
+    if GITHUB_TOKEN:
+        try:
+            _commit_file(
+                path="nribeat/data/visa-bulletin.json",
+                content=bulletin_json,
+                message=f"data: visa bulletin {month_year}",
+            )
+            log.info("  Updated: visa-bulletin.json")
+        except Exception as e:
+            log.error(f"  visa-bulletin.json update failed: {e}")
+    else:
+        # Local dev: write to disk
+        from pathlib import Path
+        Path("output").mkdir(exist_ok=True)
+        (Path("output") / "visa-bulletin.json").write_text(bulletin_json)
+
+    # Step 3: Generate the monthly article
     try:
-        _commit_file(
-            path="nribeat/data/visa-bulletin.json",
-            content=content,
-            message=f"data: visa bulletin {vb.get('month_year', '')}",
-        )
-        log.info("  Updated: visa-bulletin.json")
+        article = generate_visa_bulletin_article(vb, prev_data=prev_data)
+        log.info(f"  Generated bulletin article: {article['slug']}")
     except Exception as e:
-        log.error(f"  visa-bulletin.json update failed: {e}")
+        log.error(f"  Visa bulletin article generation failed: {e}")
+        return
+
+    # Step 4: Render and commit article HTML
+    try:
+        html = _render_article_html(article)
+        slug = article["slug"]
+        article_path = f"nribeat/articles/immigration/{slug}.html"
+        if GITHUB_TOKEN:
+            _commit_file_with_retry(
+                path=article_path,
+                content=html,
+                message=f"article: {article['title'][:60]}",
+            )
+            log.info(f"  Published bulletin article: {article_path}")
+        else:
+            from pathlib import Path
+            out = Path("output/articles/immigration")
+            out.mkdir(parents=True, exist_ok=True)
+            (out / f"{slug}.html").write_text(html)
+            log.info(f"  Saved bulletin article locally: output/articles/immigration/{slug}.html")
+    except Exception as e:
+        log.error(f"  Bulletin article publish failed: {e}")
+        return
+
+    # Step 5: Prepend to article-index.json and latest-articles.json
+    _prepend_bulletin_to_indices(article)
+
+
+def _prepend_bulletin_to_indices(article: dict):
+    """
+    Prepend the auto-generated bulletin article to both article-index.json
+    and latest-articles.json, replacing any existing entry with the same slug.
+    """
+    slug = article.get("slug", "")
+    category = article.get("category", "immigration")
+    subdir = CATEGORY_DIRS.get(category, "immigration")
+    url = f"/articles/{subdir}/{slug}.html"
+
+    index_entry = {
+        "title":        article.get("title", ""),
+        "slug":         slug,
+        "category":     category,
+        "date":         article.get("published_date_display", ""),
+        "reading_time": article.get("reading_time", "5 min read"),
+        "excerpt":      article.get("what_this_means", ""),
+        "tags":         article.get("tags", [])[:5],
+        "seo_score":    article.get("seo_score", 85),
+        "url":          url,
+    }
+    latest_entry = {**index_entry, "what_this_means": article.get("what_this_means", "")}
+
+    if not GITHUB_TOKEN:
+        return
+
+    # ── article-index.json ──────────────────────────────────────────────
+    try:
+        url_api = f"{GITHUB_API}/repos/{GITHUB_REPO}/contents/nribeat/data/article-index.json"
+        resp = requests.get(url_api, headers=HEADERS, timeout=15)
+        existing = []
+        if resp.status_code == 200:
+            raw = base64.b64decode(resp.json().get("content", "")).decode("utf-8")
+            existing = json.loads(raw).get("articles", [])
+        # Remove duplicate slug entry if it exists, then prepend
+        existing = [a for a in existing if a.get("slug") != slug]
+        existing.insert(0, index_entry)
+        existing = existing[:500]
+        _commit_file(
+            path="nribeat/data/article-index.json",
+            content=json.dumps({"articles": existing}, indent=2),
+            message=f"data: add bulletin article {slug}",
+        )
+        log.info("  Updated: article-index.json (bulletin)")
+    except Exception as e:
+        log.error(f"  article-index.json bulletin update failed: {e}")
+
+    # ── latest-articles.json ─────────────────────────────────────────────
+    try:
+        url_api = f"{GITHUB_API}/repos/{GITHUB_REPO}/contents/nribeat/data/latest-articles.json"
+        resp = requests.get(url_api, headers=HEADERS, timeout=15)
+        existing = []
+        if resp.status_code == 200:
+            raw = base64.b64decode(resp.json().get("content", "")).decode("utf-8")
+            existing = json.loads(raw).get("articles", [])
+        existing = [a for a in existing if a.get("slug") != slug]
+        existing.insert(0, latest_entry)
+        existing = existing[:20]
+        _commit_file(
+            path="nribeat/data/latest-articles.json",
+            content=json.dumps({"date": datetime.now().isoformat(), "articles": existing}, indent=2),
+            message=f"data: add bulletin article {slug}",
+        )
+        log.info("  Updated: latest-articles.json (bulletin)")
+    except Exception as e:
+        log.error(f"  latest-articles.json bulletin update failed: {e}")
 
 
 def _save_locally(articles: list[dict]) -> dict:

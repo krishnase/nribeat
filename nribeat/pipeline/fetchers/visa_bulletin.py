@@ -82,37 +82,76 @@ def fetch_visa_bulletin() -> dict | None:
 
 def _parse_bulletin_page(html: str) -> dict:
     """
-    Parse priority dates from the bulletin HTML page.
-    The bulletin has tables with rows for each preference category.
+    Parse both Final Action Dates AND Dates for Filing from the bulletin HTML.
+
+    The bulletin page contains two distinct employment-based tables:
+      Table A — "Final Action Dates for Employment-Based Preference Cases"
+      Table B — "Dates for Filing Employment-Based Visa Applications"
+
+    We identify them by scanning for these heading strings in the text
+    immediately preceding each <table> tag.
     """
     soup = BeautifulSoup(html, "html.parser")
     dates = {}
 
-    tables = soup.find_all("table")
-    for table in tables:
+    # Build a mapping: table element → table type ("final" | "filing" | None)
+    def _table_type(table) -> str | None:
+        # Look at text in the 200 chars before this table in the page
+        prev = table.find_previous(string=True)
+        context = ""
+        node = table.previous_sibling
+        for _ in range(20):
+            if node is None:
+                break
+            if hasattr(node, "get_text"):
+                context = node.get_text(" ", strip=True).upper() + " " + context
+            elif isinstance(node, str):
+                context = node.upper() + " " + context
+            node = getattr(node, "previous_sibling", None)
+            if len(context) > 400:
+                break
+        if "FINAL ACTION" in context:
+            return "final"
+        if "DATES FOR FILING" in context or "DATE FOR FILING" in context:
+            return "filing"
+        return None
+
+    # Fallback: if heading detection fails, treat first EB table as final,
+    # second as filing — which matches how every bulletin is structured.
+    eb_tables = []
+    for table in soup.find_all("table"):
         rows = table.find_all("tr")
-        for row in rows:
+        row_texts = " ".join(r.get_text(" ", strip=True).upper() for r in rows[:4])
+        if any(k in row_texts for k in ("2ND", "SECOND", "3RD", "THIRD", "1ST", "FIRST")):
+            eb_tables.append(table)
+
+    for idx, table in enumerate(eb_tables):
+        ttype = _table_type(table)
+        if ttype is None:
+            ttype = "final" if idx == 0 else "filing"
+
+        suffix = "final" if ttype == "final" else "filing"
+
+        for row in table.find_all("tr"):
             cells = row.find_all(["td", "th"])
             if len(cells) < 3:
                 continue
-
             row_text = cells[0].get_text(strip=True).upper()
 
-            # Look for employment-based rows
             if "2ND" in row_text or "SECOND" in row_text:
-                india_date = _extract_india_date(cells)
-                if india_date:
-                    dates["eb2_india_final"] = india_date
+                d = _extract_india_date(cells)
+                if d:
+                    dates[f"eb2_india_{suffix}"] = d
 
             elif "3RD" in row_text or "THIRD" in row_text:
-                india_date = _extract_india_date(cells)
-                if india_date:
-                    dates["eb3_india_final"] = india_date
+                d = _extract_india_date(cells)
+                if d:
+                    dates[f"eb3_india_{suffix}"] = d
 
             elif "1ST" in row_text or "FIRST" in row_text:
-                india_date = _extract_india_date(cells)
-                if india_date:
-                    dates["eb1_india_final"] = india_date
+                d = _extract_india_date(cells)
+                if d:
+                    dates[f"eb1_india_{suffix}"] = d
 
     return dates if dates else _get_fallback_dates()
 
@@ -166,11 +205,14 @@ def _extract_month_year(url: str) -> str:
 
 
 def _get_fallback_dates() -> dict:
-    """Return the last known dates if scraping fails."""
+    """Return last known real dates (April 2026) if scraping fails."""
     return {
-        "eb2_india_final": "January 01, 2013",
-        "eb3_india_final": "February 15, 2013",
-        "eb1_india_final": "Current",
+        "eb2_india_final":  "July 15, 2014",
+        "eb3_india_final":  "November 15, 2013",
+        "eb1_india_final":  "April 01, 2023",
+        "eb2_india_filing": "January 15, 2015",
+        "eb3_india_filing": "January 15, 2015",
+        "eb1_india_filing": "December 01, 2023",
     }
 
 

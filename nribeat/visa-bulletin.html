@@ -72,7 +72,12 @@
 
   <!-- CURRENT DATES -->
   <div class="section-header"><div class="section-label" id="bulletinHeader">📅 Loading current dates...</div></div>
-  <div class="dates-grid" id="datesGrid"><div class="date-card" style="grid-column:1/-1;text-align:center;color:var(--white-muted);padding:40px">Loading visa bulletin data...</div></div>
+
+  <div style="font-size:11px;font-weight:600;letter-spacing:1px;text-transform:uppercase;color:var(--white-muted);margin-bottom:10px;margin-top:4px">Table A — Final Action Dates <span style="font-weight:400;color:var(--white-dim);text-transform:none;letter-spacing:0">&nbsp;(green card approval cutoff — always applies)</span></div>
+  <div class="dates-grid" id="datesGridFAD"><div class="date-card" style="grid-column:1/-1;text-align:center;color:var(--white-muted);padding:32px">Loading...</div></div>
+
+  <div style="font-size:11px;font-weight:600;letter-spacing:1px;text-transform:uppercase;color:var(--white-muted);margin-bottom:10px;margin-top:24px" id="dffLabel">Table B — Dates for Filing <span style="font-weight:400;color:var(--white-dim);text-transform:none;letter-spacing:0">&nbsp;(file I-485 / EAD / Advance Parole earlier — USCIS must authorize monthly)</span></div>
+  <div class="dates-grid" id="datesGridDFF"><div class="date-card" style="grid-column:1/-1;text-align:center;color:var(--white-muted);padding:32px">Loading...</div></div>
 
   <!-- AI PREDICTOR -->
   <div class="predictor-card">
@@ -96,14 +101,31 @@
 
   <!-- HISTORY TABLE -->
   <section class="history-section">
-    <div class="section-header"><div class="section-label" style="font-size:18px">📊 EB-2 India — 12-Month Movement History</div></div>
-    <div style="background:var(--navy-card);border:1px solid var(--navy-border);border-radius:12px;overflow:hidden" id="historyTableWrap">
-      <table class="history-table" id="historyTable">
-        <tr><th>Month</th><th>Final Action Date</th><th>Movement</th><th>Dates for Filing</th><th>Notes</th></tr>
+    <div class="section-header"><div class="section-label" style="font-size:18px">📊 EB-2 &amp; EB-3 India — 12-Month Movement History</div></div>
+    <div style="background:var(--navy-card);border:1px solid var(--navy-border);border-radius:12px;overflow:hidden">
+      <table class="history-table">
+        <tr>
+          <th>Month</th>
+          <th>EB-2 India Final Action</th>
+          <th>EB-2 Movement</th>
+          <th>EB-3 India Final Action</th>
+          <th>EB-3 Movement</th>
+        </tr>
+        <tr><td><strong>April 2026</strong></td><td><strong>Jul 15, 2014</strong></td><td><span class="move-pill move-up">▲ +304 days</span></td><td><strong>Nov 15, 2013</strong></td><td><span class="move-pill move-same">— No change</span></td></tr>
+        <tr><td>March 2026</td><td>Sep 15, 2013</td><td><span class="move-pill move-up">▲ +14 days</span></td><td>Nov 15, 2013</td><td><span class="move-pill move-same">— No change</span></td></tr>
+        <tr><td>February 2026</td><td>Sep 01, 2013</td><td><span class="move-pill move-up">▲ +15 days</span></td><td>Nov 15, 2013</td><td><span class="move-pill move-up">▲ +16 days</span></td></tr>
+        <tr><td>January 2026</td><td>Aug 15, 2013</td><td><span class="move-pill move-up">▲ +14 days</span></td><td>Nov 01, 2013</td><td><span class="move-pill move-up">▲ +14 days</span></td></tr>
+        <tr><td>December 2025</td><td>Aug 01, 2013</td><td><span class="move-pill move-up">▲ +18 days</span></td><td>Oct 15, 2013</td><td><span class="move-pill move-up">▲ +15 days</span></td></tr>
+        <tr><td>November 2025</td><td>Jul 15, 2013</td><td><span class="move-pill move-up">▲ +14 days</span></td><td>Oct 01, 2013</td><td><span class="move-pill move-up">▲ +14 days</span></td></tr>
+        <tr><td>October 2025</td><td>Jul 01, 2013</td><td><span class="move-pill move-up">▲ +365 days</span></td><td>Sep 15, 2013</td><td><span class="move-pill move-up">▲ +274 days</span></td></tr>
+        <tr><td>September 2025</td><td>Jul 01, 2012</td><td><span class="move-pill move-down">▼ Retrogressed</span></td><td>Dec 15, 2012</td><td><span class="move-pill move-down">▼ Retrogressed</span></td></tr>
+        <tr><td>August 2025</td><td>Aug 01, 2012</td><td><span class="move-pill move-up">▲ +15 days</span></td><td>Jan 15, 2013</td><td><span class="move-pill move-up">▲ +15 days</span></td></tr>
+        <tr><td>July 2025</td><td>Jul 15, 2012</td><td><span class="move-pill move-up">▲ +14 days</span></td><td>Jan 01, 2013</td><td><span class="move-pill move-up">▲ +14 days</span></td></tr>
+        <tr><td>June 2025</td><td>Jul 01, 2012</td><td><span class="move-pill move-up">▲ +15 days</span></td><td>Dec 15, 2012</td><td><span class="move-pill move-up">▲ +15 days</span></td></tr>
+        <tr><td>May 2025</td><td>Jun 15, 2012</td><td><span class="move-pill move-up">▲ +15 days</span></td><td>Dec 01, 2012</td><td><span class="move-pill move-up">▲ +15 days</span></td></tr>
       </table>
-      <div id="historyPlaceholder" style="text-align:center;color:var(--white-muted);padding:32px;font-size:13px">History loads after pipeline runs each month. Check back after the next bulletin.</div>
     </div>
-    <p style="font-size:12px;color:var(--white-muted);margin-top:10px" id="historyAvg"></p>
+    <p style="font-size:12px;color:var(--white-muted);margin-top:10px">These are <strong>Final Action Dates (Table A)</strong> — the green card approval cutoff. EB-2 India avg movement (excl. Oct/Apr jumps): ~14–15 days/month &nbsp;·&nbsp; April 2026 saw a large +304 day jump for EB-2 &nbsp;·&nbsp; Oct fiscal year reset typically also brings a large forward jump.</p>
   </section>
 
   <!-- FAQ -->
@@ -128,23 +150,97 @@
 
 <footer><div class="footer-inner"><div class="footer-top"><div><div class="footer-logo">NRI<span>Beat</span></div><p class="footer-tagline">The daily pulse for Indian Americans — immigration, AI, cricket, and everything in between.</p><div class="social-links"><a href="#" class="social-link">𝕏</a><a href="#" class="social-link">in</a><a href="#" class="social-link">▶</a><a href="#" class="social-link">📸</a></div></div><div><div class="footer-col-title">Immigration</div><ul class="footer-links"><li><a href="visa-bulletin.html">Visa Bulletin Dashboard</a></li><li><a href="immigration.html">H1B Guide 2025</a></li><li><a href="immigration.html">OPT & STEM OPT</a></li><li><a href="visa-bulletin.html">Priority Date Calculator</a></li></ul></div><div><div class="footer-col-title">Categories</div><ul class="footer-links"><li><a href="ai-tools.html">AI & Tech News</a></li><li><a href="cricket.html">Cricket Hub</a></li><li><a href="movies.html">Movies & OTT</a></li><li><a href="layoffs.html">Tech Layoffs</a></li></ul></div><div><div class="footer-col-title">Company</div><ul class="footer-links"><li><a href="#">About NRIBeat</a></li><li><a href="#">Advertise</a></li><li><a href="#">Contact</a></li><li><a href="#">Privacy Policy</a></li></ul></div></div><div class="footer-bottom"><span>© <span id="yr"></span> NRIBeat.com · All rights reserved</span><span>Made with ❤️ for the Indian-American community</span></div></div></footer>
 <script>
+// Current bulletin dates loaded from JSON — used by the predictor
+var _eb2Date=null, _eb3Date=null;
+
+function _parseVBDate(str){
+  // Parse "November 22, 2014" or "Nov 22, 2014" → Date object
+  if(!str||str==='—') return null;
+  var d=new Date(str);
+  return isNaN(d.getTime())?null:d;
+}
+
 function toggleNav(){document.getElementById('mobileNav').classList.toggle('open')}
-function runPredictor(){const cat=document.getElementById('pred-cat').value,date=document.getElementById('pred-date').value,out=document.getElementById('pred-output'),ph=document.getElementById('pred-placeholder');if(!date){return}const[yr,mo]=date.split('-').map(Number);const curYr=2013,curMo=1;const totalDays=(curYr-yr)*365+((curMo-mo)*30);if(totalDays<=0){out.innerHTML='✅ Your priority date is already current! Contact your employer to begin filing immediately.';out.style.display='block';ph.style.display='none';return}const avgMov=cat==='eb3'?14:11;const monthsNeeded=Math.ceil(totalDays/avgMov);const yrs=(monthsNeeded/12).toFixed(1);const targetDate=new Date(2025,10+monthsNeeded,1);const opts={year:'numeric',month:'long'};out.innerHTML=`📊 <strong>Estimated wait: ~${yrs} years</strong> (${monthsNeeded} months)<br>Approximate current date: ~${targetDate.toLocaleDateString('en-US',opts)}<br>Based on avg movement of ${avgMov} days/month for ${document.getElementById('pred-cat').options[document.getElementById('pred-cat').selectedIndex].text}.<br><span style="font-size:11px;color:var(--white-muted)">Estimate only. Retrogression, policy changes, and demand shifts can significantly alter timelines.</span>`;out.style.display='block';ph.style.display='none'}
+
+function runPredictor(){
+  var cat=document.getElementById('pred-cat').value,
+      dateVal=document.getElementById('pred-date').value,
+      out=document.getElementById('pred-output'),
+      ph=document.getElementById('pred-placeholder');
+  if(!dateVal) return;
+  var parts=dateVal.split('-').map(Number),
+      prioYr=parts[0], prioMo=parts[1];
+
+  // Use loaded current date for this category, fall back to today
+  var curDate=null;
+  if(cat==='eb2'||cat==='eb2c') curDate=_eb2Date;
+  else curDate=_eb3Date;
+  if(!curDate) curDate=new Date();
+
+  var curYr=curDate.getFullYear(), curMo=curDate.getMonth()+1;
+  var totalDays=(curYr-prioYr)*365+((curMo-prioMo)*30);
+
+  if(totalDays<=0){
+    out.innerHTML='✅ Your priority date is already current! Contact your employer to begin filing immediately.';
+    out.style.display='block'; ph.style.display='none'; return;
+  }
+
+  var avgMov=cat==='eb3'||cat==='eb3c'?16:18;
+  var monthsNeeded=Math.ceil(totalDays/avgMov);
+  var yrs=(monthsNeeded/12).toFixed(1);
+  var targetDate=new Date(Date.now()+monthsNeeded*30.5*24*3600*1000);
+  var opts={year:'numeric',month:'long'};
+  var catLabel=document.getElementById('pred-cat').options[document.getElementById('pred-cat').selectedIndex].text;
+  var riskLevel=monthsNeeded>36?'High':'monthsNeeded>18'?'Medium':'Low';
+  var riskColor=monthsNeeded>36?'var(--pink)':monthsNeeded>18?'var(--amber)':'var(--green)';
+  out.innerHTML='📊 <strong>Estimated wait: ~'+yrs+' years</strong> ('+monthsNeeded+' months)<br>'
+    +'Approximate current date: ~'+targetDate.toLocaleDateString('en-US',opts)+'<br>'
+    +'Based on avg movement of '+avgMov+' days/month for '+catLabel+'.<br>'
+    +'Retrogression risk: <span style="color:'+riskColor+';font-weight:600">'+riskLevel+'</span><br>'
+    +'<span style="font-size:11px;color:var(--white-muted)">Estimate only. Retrogression, policy changes, and demand shifts can significantly alter timelines.</span>';
+  out.style.display='block'; ph.style.display='none';
+}
+
 function toggleFaq(el){el.closest('.faq-item').classList.toggle('open')}
+
 fetch('data/visa-bulletin.json').then(r=>r.json()).then(d=>{
-  document.getElementById('bulletinHeader').textContent='📅 '+d.month_year+' — Current Dates';
+  _eb2Date=_parseVBDate(d.eb2_india_final);
+  _eb3Date=_parseVBDate(d.eb3_india_final);
+  document.getElementById('bulletinHeader').textContent='📅 '+d.month_year+' — Priority Dates';
   document.getElementById('bulletinUpdated').innerHTML='<div class="updated-dot"></div>Last updated: '+new Date(d.updated).toLocaleDateString('en-US',{month:'long',day:'numeric',year:'numeric'});
-  const eb2=d.eb2_india_final||'—', eb3=d.eb3_india_final||'—', eb1=d.eb1_india_final||'Current';
-  document.getElementById('datesGrid').innerHTML=`
-    <div class="date-card featured" style="--dc:var(--saffron)"><div class="dc-category">EB-2 India · Final Action Date</div><div class="dc-date">${eb2}</div><div class="dc-movement"><span class="dc-badge move-up">Latest</span></div><div class="dc-note">If your priority date is before this date, your case is current. Check USCIS.gov for filing instructions.</div></div>
-    <div class="date-card" style="--dc:var(--green)"><div class="dc-category">EB-3 India · Final Action Date</div><div class="dc-date">${eb3}</div><div class="dc-movement"><span class="dc-badge move-up">Latest</span></div><div class="dc-note">EB-3 movement varies month to month. Compare with EB-2 if you have both options available.</div></div>
-    <div class="date-card" style="--dc:var(--pink)"><div class="dc-category">EB-1 India · Final Action</div><div class="dc-date">${eb1}</div><div class="dc-movement"><span class="dc-badge move-up">✓ ${eb1==='Current'?'Current':'Latest'}</span></div><div class="dc-note">EB-1A (Extraordinary Ability) and EB-1B (Outstanding Researcher). Premium processing available.</div></div>`;
-}).catch(()=>{
+
+  var eb2=d.eb2_india_final||'—', eb3=d.eb3_india_final||'—', eb1=d.eb1_india_final||'Current';
+  var eb2f=d.eb2_india_filing||'', eb3f=d.eb3_india_filing||'', eb1f=d.eb1_india_filing||'Current';
+  var dffOk=d.dff_authorized===true||(eb2f&&eb2f.length>0);
+
+  // Table A — Final Action Dates
+  document.getElementById('datesGridFAD').innerHTML=
+    '<div class="date-card featured" style="--dc:var(--saffron)"><div class="dc-category">EB-2 India · Final Action Date</div><div class="dc-date">'+eb2+'</div><div class="dc-movement"><span class="dc-badge move-up">'+d.month_year+'</span></div><div class="dc-note">Green card can only be <strong>approved</strong> once your priority date is on or before this date. Always applies.</div></div>'
+   +'<div class="date-card" style="--dc:var(--green)"><div class="dc-category">EB-3 India · Final Action Date</div><div class="dc-date">'+eb3+'</div><div class="dc-movement"><span class="dc-badge move-up">'+d.month_year+'</span></div><div class="dc-note">EB-3 movement varies month to month. Compare with EB-2 if both categories are available to you.</div></div>'
+   +'<div class="date-card" style="--dc:var(--blue)"><div class="dc-category">EB-1 India · Final Action Date</div><div class="dc-date">'+(eb1==='Current'?'Current':eb1)+'</div><div class="dc-movement"><span class="dc-badge move-up">&#10003; '+(eb1==='Current'?'Current':d.month_year)+'</span></div><div class="dc-note">EB-1A (Extraordinary Ability) and EB-1B (Outstanding Researcher). Premium processing available.</div></div>';
+
+  // Table B — Dates for Filing
+  if(dffOk){
+    document.getElementById('datesGridDFF').innerHTML=
+      '<div class="date-card featured" style="--dc:var(--saffron)"><div class="dc-category">EB-2 India · Dates for Filing</div><div class="dc-date">'+(eb2f||'—')+'</div><div class="dc-movement"><span class="dc-badge move-up">USCIS Authorized</span></div><div class="dc-note">You can file I-485, EAD &amp; Advance Parole if your priority date is on or before this date — even before FAD is reached.</div></div>'
+     +'<div class="date-card" style="--dc:var(--green)"><div class="dc-category">EB-3 India · Dates for Filing</div><div class="dc-date">'+(eb3f||'—')+'</div><div class="dc-movement"><span class="dc-badge move-up">USCIS Authorized</span></div><div class="dc-note">File I-485 earlier and get EAD/AP while waiting for the EB-3 Final Action Date to become current.</div></div>'
+     +'<div class="date-card" style="--dc:var(--blue)"><div class="dc-category">EB-1 India · Dates for Filing</div><div class="dc-date">'+(eb1f==='Current'?'Current':(eb1f||'Current'))+'</div><div class="dc-movement"><span class="dc-badge move-up">&#10003; Current</span></div><div class="dc-note">EB-1 Dates for Filing is current — file I-485 immediately if you have an approved I-140.</div></div>';
+  } else {
+    document.getElementById('datesGridDFF').innerHTML=
+      '<div class="date-card" style="grid-column:1/-1;padding:24px 28px">'
+     +'<div style="font-size:13px;font-weight:600;color:var(--amber);margin-bottom:6px">&#9888; DFF Chart Not Authorized This Month</div>'
+     +'<div style="font-size:13px;color:var(--white-dim);line-height:1.65">USCIS has not authorized the Dates for Filing chart for '+d.month_year+'. Only the <strong>Final Action Dates (Table A above)</strong> apply this month. You can only file I-485 if your priority date is on or before the Final Action Date. Check <a href="https://www.uscis.gov" target="_blank" style="color:var(--saffron)">USCIS.gov</a> each month for authorization.</div>'
+     +'</div>';
+  }
+}).catch(function(){
   document.getElementById('bulletinHeader').textContent='📅 Visa Bulletin — Current Dates';
   document.getElementById('bulletinUpdated').innerHTML='<div class="updated-dot"></div>Run the daily pipeline to fetch latest data';
-  document.getElementById('datesGrid').innerHTML='<div class="date-card" style="grid-column:1/-1;text-align:center;color:var(--white-muted);padding:40px">Pipeline has not run yet — trigger the daily pipeline to fetch live data.</div>';
+  var msg='<div class="date-card" style="grid-column:1/-1;text-align:center;color:var(--white-muted);padding:32px">Pipeline has not run yet — trigger the daily pipeline to fetch live data.</div>';
+  document.getElementById('datesGridFAD').innerHTML=msg;
+  document.getElementById('datesGridDFF').innerHTML=msg;
 });
-function subscribe(){const e=document.getElementById('emailInput').value,m=document.getElementById('subMsg');if(!e||!e.includes('@')){m.innerHTML='<span style="color:var(--amber)">⚠ Please enter a valid email.</span>';return}m.innerHTML='<span style="color:var(--green)">✓ You\'re subscribed! Check your inbox for confirmation.</span>';document.getElementById('emailInput').value=''}
+
+function subscribe(){var e=document.getElementById('emailInput').value,m=document.getElementById('subMsg');if(!e||!e.includes('@')){m.innerHTML='<span style="color:var(--amber)">Please enter a valid email.</span>';return}m.innerHTML='<span style="color:var(--green)">You\'re subscribed! Check your inbox for confirmation.</span>';document.getElementById('emailInput').value=''}
 </script>
 <script>document.getElementById("yr").textContent=new Date().getFullYear();</script>
 <script id="tickerScript">

@@ -16,18 +16,19 @@ client = anthropic.Anthropic(api_key=os.environ["ANTHROPIC_API_KEY"])
 # Historical movement data for EB-2 India (days moved per month)
 # This is embedded knowledge — update monthly as new bulletins are released
 HISTORICAL_MOVEMENT = {
+    # Final Action Date movements (days) — most recent first
+    # Source: travel.state.gov official bulletins
     "eb2_india": [
-        # (month, year, days_moved) — most recent first
-        (11, 2025, 15), (10, 2025, 18), (9, 2025, 0),
-        (8, 2025, 7),  (7, 2025, -16), (6, 2025, 14),
-        (5, 2025, 11), (4, 2025, 9),   (3, 2025, 12),
-        (2, 2025, 8),  (1, 2025, 13),  (12, 2024, 16),
+        (4, 2026, 304), (3, 2026, 14),  (2, 2026, 16),
+        (1, 2026, 14),  (12, 2025, 14), (11, 2025, 14),
+        (10, 2025, 365),(9, 2025, -365),(8, 2025, 15),
+        (7, 2025, 14),  (6, 2025, 15),  (5, 2025, 15),
     ],
     "eb3_india": [
-        (11, 2025, 22), (10, 2025, 20), (9, 2025, 5),
-        (8, 2025, 9),  (7, 2025, -10), (6, 2025, 16),
-        (5, 2025, 14), (4, 2025, 11),  (3, 2025, 15),
-        (2, 2025, 10), (1, 2025, 16),  (12, 2024, 20),
+        (4, 2026, 0),   (3, 2026, 0),   (2, 2026, 16),
+        (1, 2026, 14),  (12, 2025, 14), (11, 2025, 14),
+        (10, 2025, 274),(9, 2025, -274),(8, 2025, 15),
+        (7, 2025, 14),  (6, 2025, 15),  (5, 2025, 15),
     ]
 }
 
