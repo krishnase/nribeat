@@ -32,11 +32,11 @@
 <header><div class="header-inner"><a href="index.html" class="logo">NRI<span class="beat">Beat</span><div class="logo-dot"></div></a><nav><a href="index.html">Home</a><a href="immigration.html" class="active">Immigration</a><a href="ai-tools.html">AI & Tech</a><a href="cricket.html">Cricket</a><a href="movies.html">Movies</a><a href="layoffs.html">Layoffs</a><a href="index.html#newsletter" class="nav-cta">Get Daily Digest</a></nav><div class="hamburger" onclick="toggleNav()"><span></span><span></span><span></span></div></div><div class="mobile-nav" id="mobileNav"><a href="index.html">Home</a><a href="immigration.html">Immigration</a><a href="ai-tools.html">AI & Tech</a><a href="cricket.html">Cricket</a><a href="movies.html">Movies</a><a href="layoffs.html">Layoffs</a></div></header>
 <main class="page">
   <div class="page-hero"><div class="page-eyebrow">🛂 Immigration Hub</div><h1 class="page-title">Immigration News & Guides</h1><p class="page-desc">Everything Indian professionals in the US need to know about H1B, OPT, green cards, and the Visa Bulletin — simplified and updated daily.</p></div>
-  <div class="quick-stats">
-    <div class="stat-card"><div class="stat-num">Jan 2013</div><div class="stat-label">EB-2 India<br>Final Action Date</div></div>
-    <div class="stat-card"><div class="stat-num">+15 days</div><div class="stat-label">Nov 2025<br>Movement</div></div>
+  <div class="quick-stats" id="quickStats">
+    <div class="stat-card"><div class="stat-num" id="statEB2">—</div><div class="stat-label">EB-2 India<br>Final Action Date</div></div>
+    <div class="stat-card"><div class="stat-num" id="statEB3">—</div><div class="stat-label">EB-3 India<br>Final Action Date</div></div>
     <div class="stat-card"><div class="stat-num">3 wks</div><div class="stat-label">STEM OPT<br>Processing Time</div></div>
-    <div class="stat-card"><div class="stat-num">5 days</div><div class="stat-label">H1B FY2026<br>Cap Hit In</div></div>
+    <div class="stat-card"><div class="stat-num" id="statBulletin">—</div><div class="stat-label">Visa Bulletin<br>Last Updated</div></div>
   </div>
   <div class="section-header"><div class="section-label" style="font-size:18px">📚 Essential Guides</div></div>
   <div class="guides-grid">
@@ -55,6 +55,11 @@
 <script>
 function toggleNav(){document.getElementById('mobileNav').classList.toggle('open')}
 function subscribe(){const e=document.getElementById('emailInput').value,m=document.getElementById('subMsg');if(!e||!e.includes('@')){m.innerHTML='<span style="color:var(--amber)">⚠ Valid email required.</span>';return}m.innerHTML='<span style="color:var(--green)">✓ You\'re in!</span>';document.getElementById('emailInput').value=''}
+fetch('data/visa-bulletin.json').then(r=>r.json()).then(d=>{
+  if(d.eb2_india_final) document.getElementById('statEB2').textContent=d.eb2_india_final;
+  if(d.eb3_india_final) document.getElementById('statEB3').textContent=d.eb3_india_final;
+  if(d.month_year) document.getElementById('statBulletin').textContent=d.month_year;
+}).catch(()=>{});
 fetch('data/article-index.json').then(r=>r.json()).then(data=>{
   const articles=(data.articles||[]).filter(a=>a.category==='immigration'||a.category==='visa_bulletin').slice(0,6);
   const grid=document.getElementById('newsGrid');

@@ -29,18 +29,14 @@
 <header><div class="header-inner"><a href="index.html" class="logo">NRI<span class="beat">Beat</span><div class="logo-dot"></div></a><nav><a href="index.html">Home</a><a href="immigration.html">Immigration</a><a href="ai-tools.html">AI & Tech</a><a href="cricket.html" class="active">Cricket</a><a href="movies.html">Movies</a><a href="layoffs.html">Layoffs</a><a href="index.html#newsletter" class="nav-cta">Get Daily Digest</a></nav><div class="hamburger" onclick="toggleNav()"><span></span><span></span><span></span></div></div><div class="mobile-nav" id="mobileNav"><a href="index.html">Home</a><a href="immigration.html">Immigration</a><a href="ai-tools.html">AI & Tech</a><a href="cricket.html">Cricket</a><a href="movies.html">Movies</a><a href="layoffs.html">Layoffs</a></div></header>
 <main class="page">
   <div class="page-hero"><div class="page-eyebrow">🏏 Cricket Hub</div><h1 class="page-title">Cricket — Live Scores, IPL & India</h1><p class="page-desc">IPL auction updates, India match previews, series results, and ICC tournaments — the cricket home for the Indian diaspora in the US.</p></div>
-  <div class="live-match">
-    <div class="match-label"><div class="live-indicator"></div>Live Match — 2nd Test, Day 3</div>
-    <div class="match-teams">
-      <div><div class="team-score">🇮🇳 IND 312/5</div><div class="team-name">India · 89.3 overs</div></div>
-      <div class="vs-divider">vs</div>
-      <div><div class="team-score">🇦🇺 AUS 189</div><div class="team-name">Australia · All out</div></div>
-    </div>
-    <div class="match-status">India trail by <strong style="color:var(--white)">not out</strong> — currently leading by 123 runs. Kohli 67*, Jadeja 34*. India in commanding position heading into Day 4. <strong style="color:var(--green)">India likely to enforce follow-on.</strong></div>
+  <div class="live-match" id="liveMatchWrap" style="display:none">
+    <div class="match-label"><div class="live-indicator"></div><span id="matchLabel">Live Match</span></div>
+    <div class="match-teams" id="matchTeams"></div>
+    <div class="match-status" id="matchStatus"></div>
   </div>
   <div class="section-header"><div class="section-label" style="font-size:18px">📰 Latest Cricket News</div></div>
   <div class="news-grid" id="newsGrid"><div class="article-card" style="grid-column:1/-1;text-align:center;color:var(--white-muted);padding:40px">Loading...</div></div>
-  <section class="newsletter" id="newsletter"><div class="nl-eyebrow">🏏 Cricket Digest</div><h2 class="nl-title">Cricket scores, every <em>morning</em></h2><p class="nl-sub">Match results, IPL updates, and series previews — delivered to Indian cricket fans in the US every morning at 7 AM.</p><div class="nl-form"><input class="nl-input" type="email" placeholder="your@email.com" id="emailInput"/><button class="nl-btn" onclick="subscribe()">Subscribe Free</button></div><p class="nl-note" id="subMsg"><span>✓ 12,400 NRIs</span> reading every morning · No spam</p></section>
+  <section class="newsletter" id="newsletter"><div class="nl-eyebrow">🏏 Cricket Digest</div><h2 class="nl-title">Cricket scores, every <em>morning</em></h2><p class="nl-sub">Match results, IPL updates, and series previews — delivered to Indian cricket fans in the US every morning at 7 AM.</p><div class="nl-form"><input class="nl-input" type="email" placeholder="your@email.com" id="emailInput"/><button class="nl-btn" onclick="subscribe()">Subscribe Free</button></div><p class="nl-note" id="subMsg"><span>Free forever</span> · No spam, ever</p></section>
 </main>
 <footer><div class="footer-inner"><div class="footer-top"><div><div class="footer-logo">NRI<span>Beat</span></div><p class="footer-tagline">The daily pulse for Indian Americans.</p><div class="social-links"><a href="#" class="social-link">𝕏</a><a href="#" class="social-link">in</a><a href="#" class="social-link">▶</a><a href="#" class="social-link">📸</a></div></div><div><div class="footer-col-title">Immigration</div><ul class="footer-links"><li><a href="visa-bulletin.html">Visa Bulletin</a></li><li><a href="immigration.html">H1B Guide</a></li></ul></div><div><div class="footer-col-title">More</div><ul class="footer-links"><li><a href="ai-tools.html">AI Tools</a></li><li><a href="movies.html">Movies</a></li><li><a href="layoffs.html">Layoffs</a></li></ul></div><div><div class="footer-col-title">Company</div><ul class="footer-links"><li><a href="#">About</a></li><li><a href="#">Advertise</a></li><li><a href="#">Contact</a></li></ul></div></div><div class="footer-bottom"><span>© <span id="yr"></span> NRIBeat.com</span><span>Made with ❤️ for the Indian-American community</span></div></div></footer>
 <script>

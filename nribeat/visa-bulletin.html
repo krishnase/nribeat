@@ -96,24 +96,13 @@
   <!-- HISTORY TABLE -->
   <section class="history-section">
     <div class="section-header"><div class="section-label" style="font-size:18px">📊 EB-2 India — 12-Month Movement History</div></div>
-    <div style="background:var(--navy-card);border:1px solid var(--navy-border);border-radius:12px;overflow:hidden">
-      <table class="history-table">
+    <div style="background:var(--navy-card);border:1px solid var(--navy-border);border-radius:12px;overflow:hidden" id="historyTableWrap">
+      <table class="history-table" id="historyTable">
         <tr><th>Month</th><th>Final Action Date</th><th>Movement</th><th>Dates for Filing</th><th>Notes</th></tr>
-        <tr><td><strong style="color:var(--white)">Nov 2025</strong></td><td>Jan 01, 2013</td><td><span class="move-pill move-up">↑ +15 days</span></td><td>Apr 01, 2022</td><td>New FY momentum</td></tr>
-        <tr><td>Oct 2025</td><td>Dec 17, 2012</td><td><span class="move-pill move-up">↑ +18 days</span></td><td>Apr 01, 2022</td><td>FY start surge</td></tr>
-        <tr><td>Sep 2025</td><td>Nov 29, 2012</td><td><span class="move-pill move-same">→ 0 days</span></td><td>Mar 01, 2022</td><td>Year-end slowdown</td></tr>
-        <tr><td>Aug 2025</td><td>Nov 29, 2012</td><td><span class="move-pill move-up">↑ +7 days</span></td><td>Mar 01, 2022</td><td>Slow summer</td></tr>
-        <tr><td>Jul 2025</td><td>Nov 22, 2012</td><td><span class="move-pill move-down">↓ Retrogressions</span></td><td>Feb 01, 2022</td><td>Quota pressure</td></tr>
-        <tr><td>Jun 2025</td><td>Dec 08, 2012</td><td><span class="move-pill move-up">↑ +14 days</span></td><td>Mar 15, 2022</td><td>Normal movement</td></tr>
-        <tr><td>May 2025</td><td>Nov 24, 2012</td><td><span class="move-pill move-up">↑ +11 days</span></td><td>Mar 01, 2022</td><td>Steady progress</td></tr>
-        <tr><td>Apr 2025</td><td>Nov 13, 2012</td><td><span class="move-pill move-up">↑ +9 days</span></td><td>Feb 15, 2022</td><td>Consistent pace</td></tr>
-        <tr><td>Mar 2025</td><td>Nov 04, 2012</td><td><span class="move-pill move-up">↑ +12 days</span></td><td>Feb 01, 2022</td><td>Normal movement</td></tr>
-        <tr><td>Feb 2025</td><td>Oct 23, 2012</td><td><span class="move-pill move-up">↑ +8 days</span></td><td>Jan 15, 2022</td><td>Slow February</td></tr>
-        <tr><td>Jan 2025</td><td>Oct 15, 2012</td><td><span class="move-pill move-up">↑ +13 days</span></td><td>Jan 01, 2022</td><td>Year-start pickup</td></tr>
-        <tr><td>Dec 2024</td><td>Oct 02, 2012</td><td><span class="move-pill move-up">↑ +16 days</span></td><td>Dec 01, 2021</td><td>Holiday surge</td></tr>
       </table>
+      <div id="historyPlaceholder" style="text-align:center;color:var(--white-muted);padding:32px;font-size:13px">History loads after pipeline runs each month. Check back after the next bulletin.</div>
     </div>
-    <p style="font-size:12px;color:var(--white-muted);margin-top:10px">Average movement (last 12 months): <strong style="color:var(--white)">~11.1 days/month</strong> for EB-2 India Final Action Date.</p>
+    <p style="font-size:12px;color:var(--white-muted);margin-top:10px" id="historyAvg"></p>
   </section>
 
   <!-- FAQ -->
@@ -132,7 +121,7 @@
     <h2 class="nl-title">Never miss a <em>bulletin</em> again</h2>
     <p class="nl-sub">Get an instant email the moment the new Visa Bulletin drops each month — with plain-English analysis and what it means for your case.</p>
     <div class="nl-form"><input class="nl-input" type="email" placeholder="your@email.com" id="emailInput"/><button class="nl-btn" onclick="subscribe()">Get Bulletin Alerts</button></div>
-    <p class="nl-note" id="subMsg"><span>✓ 8,200 green card applicants</span> already subscribed · Free forever</p>
+    <p class="nl-note" id="subMsg"><span>Free forever</span> · No spam, ever</p>
   </section>
 </main>
 
