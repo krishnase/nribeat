@@ -555,6 +555,45 @@ def _prepend_bulletin_to_indices(article: dict):
         log.error(f"  latest-articles.json bulletin update failed: {e}")
 
 
+def publish_movies_data():
+    """
+    Commit the three movies data JSON files to GitHub Pages on every pipeline run.
+    Files are read from the local repo and pushed via GitHub Contents API.
+    Box office data is curated monthly; OTT picks and celebrity news can be
+    updated via the movies fetcher as live RSS data becomes available.
+    """
+    movies_files = [
+        ("data/movies-boxoffice.json",  "nribeat/data/movies-boxoffice.json"),
+        ("data/movies-ott.json",        "nribeat/data/movies-ott.json"),
+        ("data/movies-celebrity.json",  "nribeat/data/movies-celebrity.json"),
+    ]
+
+    # Resolve path relative to the repo root (one level up from pipeline/)
+    repo_root = Path(__file__).parent.parent.parent
+
+    for local_rel, github_path in movies_files:
+        local_path = repo_root / local_rel
+        if not local_path.exists():
+            log.warning(f"  Movies data file not found locally: {local_path}")
+            continue
+        content = local_path.read_text(encoding="utf-8")
+        try:
+            if GITHUB_TOKEN:
+                _commit_file_with_retry(
+                    path=github_path,
+                    content=content,
+                    message=f"data: update {local_path.name}",
+                )
+                log.info(f"  Updated: {local_path.name}")
+            else:
+                out = Path("output") / local_rel
+                out.parent.mkdir(parents=True, exist_ok=True)
+                out.write_text(content)
+                log.info(f"  Saved locally: output/{local_rel}")
+        except Exception as e:
+            log.error(f"  {local_path.name} update failed: {e}")
+
+
 def _save_locally(articles: list[dict]) -> dict:
     """Save articles locally when GitHub token is not set (dev/testing)."""
     output_dir = Path("output/articles")

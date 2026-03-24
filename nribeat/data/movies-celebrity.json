@@ -1,0 +1,85 @@
+{
+  "updated": "2026-03-24",
+  "stories": [
+    {
+      "id": 1,
+      "type": "announcement",
+      "star": "Ranveer Singh & Deepika Padukone",
+      "headline": "Ranveer & Deepika Welcome Baby Girl — Dua Padukone Singh",
+      "summary": "Bollywood's power couple Ranveer Singh and Deepika Padukone welcomed their first child, daughter Dua Padukone Singh, in September 2024. The family has been keeping a low profile, with both stars selectively taking projects post-parenthood.",
+      "image_emoji": "👶",
+      "category": "Family",
+      "positive": true
+    },
+    {
+      "id": 2,
+      "type": "project",
+      "star": "Hrithik Roshan",
+      "headline": "Hrithik Roshan Signs Quirky Comedy 'Mess' with Prime Video",
+      "summary": "Hrithik Roshan is set to star in 'Mess,' a quirky comedy film for Prime Video, marking a fun departure from his action-hero image. Filming begins mid-2026.",
+      "image_emoji": "🎬",
+      "category": "New Project",
+      "positive": true
+    },
+    {
+      "id": 3,
+      "type": "boxoffice",
+      "star": "Vicky Kaushal",
+      "headline": "Vicky Kaushal's Chhaava Crosses ₹850 Cr — His Biggest Hit Ever",
+      "summary": "Vicky Kaushal's Chhaava became one of the biggest Bollywood hits of 2025, crossing ₹850 crore worldwide. The actor, who married Katrina Kaif in 2021, is now firmly among Bollywood's A-listers.",
+      "image_emoji": "🏆",
+      "category": "Box Office",
+      "positive": true
+    },
+    {
+      "id": 4,
+      "type": "wedding",
+      "star": "Sonakshi Sinha & Zaheer Iqbal",
+      "headline": "Sonakshi Sinha & Zaheer Iqbal Celebrate 1-Year Anniversary",
+      "summary": "Bollywood couple Sonakshi Sinha and Zaheer Iqbal, who had a dreamy civil ceremony in June 2024, recently celebrated their first anniversary. The couple has been vocal about their love story on social media.",
+      "image_emoji": "💍",
+      "category": "Celebration",
+      "positive": true
+    },
+    {
+      "id": 5,
+      "type": "project",
+      "star": "Salman Khan",
+      "headline": "Salman Khan's 'Maatrubhumi' — War Epic on Galwan Valley Hero",
+      "summary": "Salman Khan stars in the ambitious war drama 'Maatrubhumi – May War Rest in Peace,' a tribute to the soldiers of the Galwan Valley standoff. Co-starring Chitrangada Singh, it's one of the most anticipated releases of 2026.",
+      "image_emoji": "🇮🇳",
+      "category": "Upcoming Film",
+      "positive": true
+    },
+    {
+      "id": 6,
+      "type": "ott",
+      "star": "Arjun Rampal",
+      "headline": "Arjun Rampal & Hansal Mehta Team Up for Web Series 'Billionaire'",
+      "summary": "Arjun Rampal is set to star in 'Billionaire,' a new web series directed by Hansal Mehta for Amazon MX Player. The series explores the rise of India's business elite against a backdrop of corporate intrigue.",
+      "image_emoji": "📺",
+      "category": "OTT Series",
+      "positive": true
+    },
+    {
+      "id": 7,
+      "type": "award",
+      "star": "Allu Arjun",
+      "headline": "Allu Arjun Makes History — First Telugu Actor to Win National Film Award for Hindi Film",
+      "summary": "Allu Arjun's iconic Pushpa 2 performance continues to earn global recognition. The film's success has cemented Allu Arjun as a pan-India superstar loved equally by Telugu and Hindi audiences.",
+      "image_emoji": "🎭",
+      "category": "Achievement",
+      "positive": true
+    },
+    {
+      "id": 8,
+      "type": "upcoming",
+      "star": "Shah Rukh Khan",
+      "headline": "Shah Rukh Khan's Next — 'King' with Son Aryan Khan Directing",
+      "summary": "SRK's upcoming action film 'King' features his real-life daughter Suhana Khan and is produced under Red Chillies Entertainment. The film is one of the most-anticipated Bollywood releases of 2026.",
+      "image_emoji": "👑",
+      "category": "Upcoming Film",
+      "positive": true
+    }
+  ]
+}

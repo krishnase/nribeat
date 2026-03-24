@@ -52,7 +52,7 @@ from generator.visa_predict import generate_visa_prediction
 from seo.keyword_scorer import score_article_seo, enrich_with_seo_keywords, rank_articles_by_seo
 from monetization.affiliate_injector import inject_monetization, get_email_affiliate_block
 
-from publisher.github_publisher import publish_to_github, publish_visa_bulletin_data
+from publisher.github_publisher import publish_to_github, publish_visa_bulletin_data, publish_movies_data
 from publisher.email_digest import send_daily_digest
 
 DRY_RUN = os.environ.get("DRY_RUN", "false").lower() == "true"
@@ -203,6 +203,8 @@ def run_pipeline() -> dict:
     else:
         if vb:
             publish_visa_bulletin_data(vb)
+
+        publish_movies_data()
 
         try:
             pub_result = publish_to_github(monetized_articles)

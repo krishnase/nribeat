@@ -1,0 +1,161 @@
+{
+  "updated": "2026-03-24",
+  "picks": [
+    {
+      "title": "Heeramandi: The Diamond Bazaar",
+      "platform": "netflix",
+      "platform_label": "Netflix",
+      "language": "Hindi",
+      "genre": "Period Drama",
+      "stars": "Manisha Koirala, Sonakshi Sinha, Aditi Rao Hydari",
+      "director": "Sanjay Leela Bhansali",
+      "year": 2024,
+      "rating": "9.1",
+      "nri_pick": true,
+      "desc": "Sanjay Leela Bhansali's magnum opus — a lavish saga of courtesans in pre-independence Lahore. Visually stunning and emotionally gripping. Perfect weekend binge."
+    },
+    {
+      "title": "IC 814: The Kandahar Hijack",
+      "platform": "netflix",
+      "platform_label": "Netflix",
+      "language": "Hindi",
+      "genre": "Thriller / True Crime",
+      "stars": "Vijay Varma, Naseeruddin Shah, Pankaj Kapur",
+      "director": "Anubhav Sinha",
+      "year": 2024,
+      "rating": "8.6",
+      "nri_pick": true,
+      "desc": "Gripping retelling of the 1999 Indian Airlines hijacking. One of the best Indian web series in years — tense, authentic, and brilliantly acted."
+    },
+    {
+      "title": "Mirzapur Season 3",
+      "platform": "prime",
+      "platform_label": "Prime Video",
+      "language": "Hindi",
+      "genre": "Crime Thriller",
+      "stars": "Pankaj Tripathi, Ali Fazal, Shweta Tripathi",
+      "director": "Gurmmeet Singh",
+      "year": 2024,
+      "rating": "8.4",
+      "nri_pick": true,
+      "desc": "The Mirzapur saga continues. Bigger, bloodier, and more politically charged than ever. A must-watch if you've followed the series."
+    },
+    {
+      "title": "Panchayat Season 3",
+      "platform": "prime",
+      "platform_label": "Prime Video",
+      "language": "Hindi",
+      "genre": "Comedy Drama",
+      "stars": "Jitendra Kumar, Raghubir Yadav, Neena Gupta",
+      "director": "Deepak Kumar Mishra",
+      "year": 2024,
+      "rating": "9.4",
+      "nri_pick": true,
+      "desc": "The most heartwarming Indian series on streaming. An NRI nostalgia trip — rural India, bureaucratic chaos, and characters you fall in love with."
+    },
+    {
+      "title": "Citadel: Honey Bunny",
+      "platform": "prime",
+      "platform_label": "Prime Video",
+      "language": "Hindi",
+      "genre": "Action Thriller",
+      "stars": "Varun Dhawan, Samantha Ruth Prabhu",
+      "director": "Raj & DK",
+      "year": 2024,
+      "rating": "8.1",
+      "nri_pick": false,
+      "desc": "India's entry into the Citadel universe — slick production, fun chemistry, and non-stop action set across 90s Mumbai and Delhi."
+    },
+    {
+      "title": "Maharaj",
+      "platform": "netflix",
+      "platform_label": "Netflix",
+      "language": "Hindi",
+      "genre": "Historical Drama",
+      "stars": "Junaid Khan, Jaideep Ahlawat",
+      "director": "Siddharth P Malhotra",
+      "year": 2024,
+      "rating": "8.2",
+      "nri_pick": false,
+      "desc": "Junaid Khan's debut — a powerful historical drama about a defamation trial in 1862 Bombay. Jaideep Ahlawat is exceptional."
+    },
+    {
+      "title": "Farzi",
+      "platform": "prime",
+      "platform_label": "Prime Video",
+      "language": "Hindi",
+      "genre": "Thriller",
+      "stars": "Shahid Kapoor, Vijay Sethupathi, Kay Kay Menon",
+      "director": "Raj & DK",
+      "year": 2023,
+      "rating": "8.5",
+      "nri_pick": true,
+      "desc": "A slick cat-and-mouse thriller about counterfeit currency. Shahid Kapoor at his best. Vijay Sethupathi as the cop is unforgettable. Season 2 confirmed."
+    },
+    {
+      "title": "The Buckingham Murders",
+      "platform": "netflix",
+      "platform_label": "Netflix",
+      "language": "English",
+      "genre": "Crime Thriller",
+      "stars": "Kareena Kapoor Khan",
+      "director": "Hansal Mehta",
+      "year": 2024,
+      "rating": "7.8",
+      "nri_pick": false,
+      "desc": "Kareena Kapoor's OTT debut — a British whodunit with an Indian detective. Understated and atmospheric. Great for fans of slow-burn crime dramas."
+    },
+    {
+      "title": "Taaza Khabar Season 2",
+      "platform": "hotstar",
+      "platform_label": "Hotstar",
+      "language": "Hindi",
+      "genre": "Comedy Drama",
+      "stars": "Bhuvan Bam, Shriya Pilgaonkar",
+      "director": "Himank Gaur",
+      "year": 2024,
+      "rating": "8.0",
+      "nri_pick": false,
+      "desc": "The feel-good series about a Mumbai drain worker granted a superpower returns. Fun, warm, and binge-worthy."
+    },
+    {
+      "title": "Dhurandhar",
+      "platform": "netflix",
+      "platform_label": "Netflix",
+      "language": "Hindi",
+      "genre": "Action",
+      "stars": "Ranveer Singh, Sanjay Dutt, R. Madhavan",
+      "director": "Karan Johar",
+      "year": 2026,
+      "rating": "7.5",
+      "nri_pick": false,
+      "desc": "Ranveer Singh's high-octane action film now streaming on Netflix after a successful theatrical run. Great for a Saturday night action binge."
+    }
+  ],
+  "new_this_week": [
+    {
+      "title": "Border 2",
+      "platform": "prime",
+      "platform_label": "Prime Video",
+      "premiere_date": "Mar 28, 2026",
+      "language": "Hindi",
+      "genre": "War Drama"
+    },
+    {
+      "title": "Kasaragod Embassy",
+      "platform": "netflix",
+      "platform_label": "Netflix",
+      "premiere_date": "Mar 26, 2026",
+      "language": "Malayalam",
+      "genre": "Drama"
+    },
+    {
+      "title": "Peaky Blinders: The Immortal Man",
+      "platform": "netflix",
+      "platform_label": "Netflix",
+      "premiere_date": "Mar 22, 2026",
+      "language": "English",
+      "genre": "Crime Drama"
+    }
+  ]
+}

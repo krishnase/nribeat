@@ -3,65 +3,294 @@
 <head>
 <meta charset="UTF-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/>
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4033090815890643" crossorigin="anonymous"></script>
+<meta name="description" content="Bollywood box office tracker, best OTT movies on Netflix/Prime/Hotstar, celebrity news — curated for the Indian-American diaspora. Updated daily."/>
 <title>Bollywood, OTT & Indian Cinema | NRIBeat</title>
 <link rel="preconnect" href="https://fonts.googleapis.com"/><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
 <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,300&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet"/>
 <link rel="stylesheet" href="css/style.css"/>
 <style>
+/* ── Page hero ── */
 .page-hero{padding:40px 0 32px;border-bottom:1px solid var(--navy-border);margin-bottom:36px}
 .page-eyebrow{font-size:11px;font-weight:600;letter-spacing:1.2px;text-transform:uppercase;color:var(--pink);margin-bottom:10px}
 .page-title{font-family:'DM Serif Display',serif;font-size:40px;line-height:1.15;color:var(--white);margin-bottom:10px}
 .page-desc{font-size:15px;color:var(--white-dim);max-width:600px;line-height:1.65}
-.ott-calendar{background:var(--navy-card);border:1px solid var(--navy-border);border-radius:16px;padding:24px;margin-bottom:36px}
-.ott-cal-title{font-size:15px;font-weight:600;color:var(--white);margin-bottom:16px}
-.ott-rows{display:flex;flex-direction:column;gap:0}
-.ott-row{display:flex;align-items:center;gap:16px;padding:12px 0;border-bottom:1px solid rgba(30,48,86,.5)}
-.ott-row:last-child{border-bottom:none}
-.ott-date{font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--white-muted);width:60px;flex-shrink:0}
-.ott-platform{font-size:11px;font-weight:600;padding:2px 8px;border-radius:20px;flex-shrink:0}
-.ott-platform.netflix{background:rgba(229,9,20,.15);color:#E50914}
-.ott-platform.prime{background:rgba(0,168,225,.12);color:#00A8E1}
-.ott-platform.hotstar{background:rgba(17,67,166,.15);color:#1143A6}
-.ott-title-text{font-size:14px;color:var(--white);font-weight:500}
-.ott-genre{font-size:11px;color:var(--white-muted)}
+/* ── Quick stats ── */
+.movie-stats{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-bottom:36px}
+.ms-card{background:var(--navy-card);border:1px solid var(--navy-border);border-radius:12px;padding:16px 18px;text-align:center}
+.ms-num{font-family:'DM Serif Display',serif;font-size:26px;color:var(--pink);margin-bottom:2px}
+.ms-label{font-size:11px;color:var(--white-muted);line-height:1.4}
+/* ── Box office table ── */
+.bo-wrap{background:var(--navy-card);border:1px solid var(--navy-border);border-radius:16px;overflow:hidden;margin-bottom:40px}
+.bo-header{display:flex;align-items:center;justify-content:space-between;padding:18px 20px 14px;border-bottom:1px solid var(--navy-border)}
+.bo-title{font-size:16px;font-weight:600;color:var(--white)}
+.bo-updated{font-size:11px;color:var(--white-muted)}
+.bo-table{width:100%;border-collapse:collapse;font-size:13px}
+.bo-table th{text-align:left;font-size:10px;font-weight:600;color:var(--white-muted);text-transform:uppercase;letter-spacing:.5px;padding:10px 14px;background:var(--navy-mid);border-bottom:1px solid var(--navy-border)}
+.bo-table td{padding:12px 14px;border-bottom:1px solid rgba(30,48,86,.5);color:var(--white-dim);vertical-align:middle}
+.bo-table tr:last-child td{border-bottom:none}
+.bo-table tr:hover td{background:rgba(255,255,255,.03);color:var(--white)}
+.rank-num{font-family:'JetBrains Mono',monospace;font-size:13px;font-weight:600;color:var(--white-muted);width:28px;display:inline-block}
+.rank-num.top3{color:var(--saffron)}
+.movie-title-cell{font-weight:600;color:var(--white);font-size:14px}
+.movie-stars-cell{font-size:11px;color:var(--white-muted);margin-top:2px}
+.collection-cell{font-family:'JetBrains Mono',monospace;font-size:13px;font-weight:600;color:var(--green)}
+.status-pill{display:inline-flex;align-items:center;font-size:10px;font-weight:700;padding:3px 9px;border-radius:20px;letter-spacing:.3px}
+.status-pill.hit{background:rgba(45,184,122,.15);color:var(--green)}
+.status-pill.average{background:rgba(245,183,49,.12);color:var(--amber)}
+.status-pill.flop{background:rgba(232,74,130,.12);color:var(--pink)}
+.lang-pill{font-size:10px;font-weight:600;color:var(--white-muted);background:var(--navy-mid);padding:2px 8px;border-radius:20px}
+.badge-new{font-size:10px;font-weight:600;color:var(--pink);background:rgba(232,74,130,.1);padding:2px 7px;border-radius:20px}
+/* ── OTT section ── */
+.ott-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;margin-bottom:40px}
+.ott-card{background:var(--navy-card);border:1px solid var(--navy-border);border-radius:14px;padding:20px;display:flex;flex-direction:column;gap:10px;transition:all .2s;cursor:pointer}
+.ott-card:hover{border-color:var(--pink);transform:translateY(-2px)}
+.ott-card-top{display:flex;align-items:flex-start;justify-content:space-between;gap:12px}
+.ott-platform-badge{font-size:10px;font-weight:700;padding:3px 10px;border-radius:20px;flex-shrink:0}
+.ott-platform-badge.netflix{background:rgba(229,9,20,.15);color:#E50914}
+.ott-platform-badge.prime{background:rgba(0,168,225,.12);color:#00A8E1}
+.ott-platform-badge.hotstar{background:rgba(17,67,166,.15);color:#7B9EFF}
+.ott-card-title{font-size:15px;font-weight:600;color:var(--white);line-height:1.3}
+.ott-card-meta{font-size:11px;color:var(--white-muted)}
+.ott-card-desc{font-size:13px;color:var(--white-dim);line-height:1.6}
+.ott-card-footer{display:flex;align-items:center;gap:10px;margin-top:4px}
+.ott-rating{font-family:'JetBrains Mono',monospace;font-size:12px;font-weight:600;color:var(--saffron)}
+.nri-pick-badge{font-size:10px;font-weight:600;background:rgba(232,102,26,.15);color:var(--saffron);padding:2px 8px;border-radius:20px}
+/* ── New this week ── */
+.new-this-week{background:var(--navy-card);border:1px solid var(--navy-border);border-radius:14px;padding:20px;margin-bottom:40px}
+.ntw-title{font-size:14px;font-weight:600;color:var(--white);margin-bottom:14px;display:flex;align-items:center;gap:8px}
+.ntw-row{display:flex;align-items:center;gap:14px;padding:10px 0;border-bottom:1px solid rgba(30,48,86,.4)}
+.ntw-row:last-child{border-bottom:none}
+.ntw-date{font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--white-muted);min-width:72px}
+.ntw-title-text{font-size:14px;font-weight:500;color:var(--white);flex:1}
+.ntw-genre{font-size:11px;color:var(--white-muted)}
+/* ── Celebrity cards ── */
+.celeb-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;margin-bottom:40px}
+.celeb-card{background:var(--navy-card);border:1px solid var(--navy-border);border-radius:14px;padding:20px;display:flex;gap:16px;align-items:flex-start;transition:all .2s}
+.celeb-card:hover{border-color:var(--pink);transform:translateY(-2px)}
+.celeb-emoji{font-size:32px;flex-shrink:0;width:48px;height:48px;display:flex;align-items:center;justify-content:center;background:var(--navy-mid);border-radius:12px}
+.celeb-cat{font-size:10px;font-weight:700;letter-spacing:.6px;text-transform:uppercase;color:var(--pink);margin-bottom:5px}
+.celeb-headline{font-size:14px;font-weight:600;color:var(--white);line-height:1.4;margin-bottom:6px}
+.celeb-summary{font-size:12px;color:var(--white-muted);line-height:1.55}
+/* ── News grid ── */
 .news-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:2px;border-radius:16px;overflow:hidden;background:var(--navy-border);margin-bottom:40px}
-@media(max-width:900px){.news-grid{grid-template-columns:1fr 1fr}}
-@media(max-width:600px){.news-grid{grid-template-columns:1fr}.page-title{font-size:28px}.ott-row{flex-wrap:wrap}}
+/* ── Responsive ── */
+@media(max-width:900px){
+  .movie-stats{grid-template-columns:1fr 1fr}
+  .ott-grid{grid-template-columns:1fr}
+  .celeb-grid{grid-template-columns:1fr}
+  .news-grid{grid-template-columns:1fr 1fr}
+  .bo-table .hide-mobile{display:none}
+}
+@media(max-width:600px){
+  .page-title{font-size:28px}
+  .movie-stats{grid-template-columns:1fr 1fr}
+  .news-grid{grid-template-columns:1fr}
+  .bo-table{font-size:12px}
+  .bo-table th,.bo-table td{padding:9px 10px}
+}
 </style>
 </head>
 <body>
 <div class="ticker-wrap"><div class="ticker-label">Live</div><div class="ticker-track" id="tickerTrack"><span>Loading latest headlines...</span></div></div>
-<header><div class="header-inner"><a href="index.html" class="logo">NRI<span class="beat">Beat</span><div class="logo-dot"></div></a><nav><a href="index.html">Home</a><a href="immigration.html">Immigration</a><a href="ai-tools.html">AI & Tech</a><a href="cricket.html">Cricket</a><a href="movies.html" class="active">Movies</a><a href="layoffs.html">Layoffs</a><a href="index.html#newsletter" class="nav-cta">Get Daily Digest</a></nav><div class="hamburger" onclick="toggleNav()"><span></span><span></span><span></span></div></div><div class="mobile-nav" id="mobileNav"><a href="index.html">Home</a><a href="immigration.html">Immigration</a><a href="ai-tools.html">AI & Tech</a><a href="cricket.html">Cricket</a><a href="movies.html">Movies</a><a href="layoffs.html">Layoffs</a></div></header>
+<header><div class="header-inner"><a href="index.html" class="logo">NRI<span class="beat">Beat</span><div class="logo-dot"></div></a><nav><a href="index.html">Home</a><a href="immigration.html">Immigration</a><a href="ai-tools.html">AI &amp; Tech</a><a href="cricket.html">Cricket</a><a href="movies.html" class="active">Movies</a><a href="layoffs.html">Layoffs</a><a href="index.html#newsletter" class="nav-cta">Get Daily Digest</a></nav><div class="hamburger" onclick="toggleNav()"><span></span><span></span><span></span></div></div><div class="mobile-nav" id="mobileNav"><a href="index.html">Home</a><a href="immigration.html">Immigration</a><a href="ai-tools.html">AI &amp; Tech</a><a href="cricket.html">Cricket</a><a href="movies.html">Movies</a><a href="layoffs.html">Layoffs</a></div></header>
+
 <main class="page">
-  <div class="page-hero"><div class="page-eyebrow">🎬 Movies & OTT</div><h1 class="page-title">Bollywood, OTT & Indian Cinema</h1><p class="page-desc">New Bollywood releases, Netflix/Prime/Hotstar India OTT schedule, film reviews, and streaming picks for the Indian diaspora in the US.</p></div>
-  <div class="ott-calendar">
-    <div class="ott-cal-title" id="ottCalTitle">📅 New OTT Releases This Week</div>
-    <div class="ott-rows" id="ottRows"><div style="color:var(--white-muted);font-size:13px;padding:12px 0">Pipeline updates this weekly with the latest OTT releases.</div></div>
+  <!-- HERO -->
+  <div class="page-hero">
+    <div class="page-eyebrow">🎬 Movies & OTT</div>
+    <h1 class="page-title">Bollywood, OTT &amp; Indian Cinema</h1>
+    <p class="page-desc">Live box office tracker, best Indian movies on Netflix / Prime / Hotstar, celebrity buzz, and OTT premieres — curated for the Indian diaspora.</p>
   </div>
-  <div class="section-header"><div class="section-label" style="font-size:18px">📰 Latest Film & OTT News</div></div>
-  <div class="news-grid" id="newsGrid"><div class="article-card" style="grid-column:1/-1;text-align:center;color:var(--white-muted);padding:40px">Loading...</div></div>
-  <section class="newsletter" id="newsletter"><div class="nl-eyebrow">🎬 OTT Weekly Digest</div><h2 class="nl-title">New releases, every <em>Friday</em></h2><p class="nl-sub">Weekly OTT release roundup, Bollywood box office, and streaming picks for the Indian diaspora — every Friday morning.</p><div class="nl-form"><input class="nl-input" type="email" placeholder="your@email.com" id="emailInput"/><button class="nl-btn" onclick="subscribe()">Subscribe Free</button></div><p class="nl-note" id="subMsg"><span>Free forever</span> · No spam, ever</p></section>
+
+  <!-- QUICK STATS -->
+  <div class="movie-stats">
+    <div class="ms-card"><div class="ms-num" id="statNo1">—</div><div class="ms-label">Top Box Office<br>Film Right Now</div></div>
+    <div class="ms-card"><div class="ms-num" id="statWW">—</div><div class="ms-label">Top Film<br>Worldwide Gross</div></div>
+    <div class="ms-card"><div class="ms-num" id="statOTT">—</div><div class="ms-label">Top OTT Pick<br>This Week</div></div>
+    <div class="ms-card"><div class="ms-num" id="statNewReleases">—</div><div class="ms-label">New OTT<br>Premieres This Week</div></div>
+  </div>
+
+  <!-- BOX OFFICE DASHBOARD -->
+  <div class="section-header"><div class="section-label" style="font-size:18px">🏆 Top 10 Indian Films — Box Office Dashboard</div></div>
+  <div class="bo-wrap">
+    <div class="bo-header">
+      <div class="bo-title">India Box Office Tracker · 2025–2026</div>
+      <div class="bo-updated" id="boUpdated">Loading...</div>
+    </div>
+    <div style="overflow-x:auto">
+      <table class="bo-table" id="boTable">
+        <thead>
+          <tr>
+            <th style="width:36px">#</th>
+            <th>Film</th>
+            <th class="hide-mobile">Language</th>
+            <th>India Collection</th>
+            <th>Worldwide</th>
+            <th class="hide-mobile">Status</th>
+            <th class="hide-mobile">Weeks</th>
+          </tr>
+        </thead>
+        <tbody id="boTableBody">
+          <tr><td colspan="7" style="text-align:center;color:var(--white-muted);padding:32px">Loading...</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- NEW THIS WEEK OTT -->
+  <div class="section-header"><div class="section-label" style="font-size:18px">🆕 New OTT Premieres This Week</div><span class="see-all" id="ottWeekLabel" style="font-size:12px;color:var(--white-muted)"></span></div>
+  <div class="new-this-week" id="newThisWeek">
+    <div style="color:var(--white-muted);font-size:13px">Loading...</div>
+  </div>
+
+  <!-- BEST OTT PICKS -->
+  <div class="section-header"><div class="section-label" style="font-size:18px">🍿 Best Indian Movies on OTT Right Now</div><a href="#" class="see-all">View all →</a></div>
+  <div class="ott-grid" id="ottGrid">
+    <div style="grid-column:1/-1;text-align:center;color:var(--white-muted);padding:32px">Loading...</div>
+  </div>
+
+  <!-- CELEBRITY BUZZ -->
+  <div class="section-header"><div class="section-label" style="font-size:18px">⭐ Celebrity Buzz — Weddings, Babies &amp; Big Moves</div></div>
+  <div class="celeb-grid" id="celebGrid">
+    <div style="grid-column:1/-1;text-align:center;color:var(--white-muted);padding:32px">Loading...</div>
+  </div>
+
+  <!-- LATEST MOVIE NEWS -->
+  <div class="section-header"><div class="section-label" style="font-size:18px">📰 Latest Film &amp; OTT News</div><a href="#" class="see-all">View all →</a></div>
+  <div class="news-grid" id="newsGrid">
+    <div class="article-card" style="grid-column:1/-1;text-align:center;color:var(--white-muted);padding:40px">Loading...</div>
+  </div>
+
+  <!-- NEWSLETTER -->
+  <section class="newsletter" id="newsletter">
+    <div class="nl-eyebrow">🎬 OTT Weekly Digest</div>
+    <h2 class="nl-title">New releases, every <em>Friday</em></h2>
+    <p class="nl-sub">Weekly OTT release roundup, Bollywood box office, celebrity news, and streaming picks for the Indian-American diaspora — every Friday morning.</p>
+    <div class="nl-form"><input class="nl-input" type="email" placeholder="your@email.com" id="emailInput"/><button class="nl-btn" onclick="subscribe()">Subscribe Free</button></div>
+    <p class="nl-note" id="subMsg"><span>Free forever</span> · No spam, ever</p>
+  </section>
 </main>
-<footer><div class="footer-inner"><div class="footer-top"><div><div class="footer-logo">NRI<span>Beat</span></div><p class="footer-tagline">The daily pulse for Indian Americans.</p><div class="social-links"><a href="#" class="social-link">𝕏</a><a href="#" class="social-link">in</a><a href="#" class="social-link">▶</a><a href="#" class="social-link">📸</a></div></div><div><div class="footer-col-title">Immigration</div><ul class="footer-links"><li><a href="visa-bulletin.html">Visa Bulletin</a></li><li><a href="immigration.html">H1B Guide</a></li></ul></div><div><div class="footer-col-title">More</div><ul class="footer-links"><li><a href="ai-tools.html">AI Tools</a></li><li><a href="cricket.html">Cricket</a></li><li><a href="layoffs.html">Layoffs</a></li></ul></div><div><div class="footer-col-title">Company</div><ul class="footer-links"><li><a href="#">About</a></li><li><a href="#">Advertise</a></li><li><a href="#">Contact</a></li></ul></div></div><div class="footer-bottom"><span>© <span id="yr"></span> NRIBeat.com</span><span>Made with ❤️ for the Indian-American community</span></div></div></footer>
+
+<footer><div class="footer-inner"><div class="footer-top"><div><div class="footer-logo">NRI<span>Beat</span></div><p class="footer-tagline">The daily pulse for Indian Americans.</p><div class="social-links"><a href="#" class="social-link">𝕏</a><a href="#" class="social-link">in</a><a href="#" class="social-link">▶</a><a href="#" class="social-link">📸</a></div></div><div><div class="footer-col-title">Immigration</div><ul class="footer-links"><li><a href="visa-bulletin.html">Visa Bulletin</a></li><li><a href="immigration.html">H1B Guide</a></li><li><a href="immigration.html">OPT &amp; STEM OPT</a></li></ul></div><div><div class="footer-col-title">More</div><ul class="footer-links"><li><a href="ai-tools.html">AI Tools</a></li><li><a href="cricket.html">Cricket</a></li><li><a href="layoffs.html">Layoffs</a></li></ul></div><div><div class="footer-col-title">Company</div><ul class="footer-links"><li><a href="#">About</a></li><li><a href="#">Advertise</a></li><li><a href="#">Contact</a></li></ul></div></div><div class="footer-bottom"><span>© <span id="yr"></span> NRIBeat.com</span><span>Made with ❤️ for the Indian-American community</span></div></div></footer>
+
 <script>
 function toggleNav(){document.getElementById('mobileNav').classList.toggle('open')}
-(function(){const now=new Date();const day=now.getDay();const mon=new Date(now);mon.setDate(now.getDate()-day+1);const sun=new Date(mon);sun.setDate(mon.getDate()+6);const fmt=d=>d.toLocaleDateString('en-US',{month:'short',day:'numeric'});document.getElementById('ottCalTitle').textContent='📅 New OTT Releases This Week — '+fmt(mon)+'–'+fmt(sun)+', '+sun.getFullYear();})()
-function subscribe(){const e=document.getElementById('emailInput').value,m=document.getElementById('subMsg');if(!e||!e.includes('@')){m.innerHTML='<span style="color:var(--amber)">⚠ Valid email required.</span>';return}m.innerHTML='<span style="color:var(--green)">✓ You\'re in!</span>';document.getElementById('emailInput').value=''}
+function subscribe(){var e=document.getElementById('emailInput').value,m=document.getElementById('subMsg');if(!e||!e.includes('@')){m.innerHTML='<span style="color:var(--amber)">Valid email required.</span>';return}m.innerHTML='<span style="color:var(--green)">You\'re in!</span>';document.getElementById('emailInput').value=''}
+
+// ── OTT week label ──────────────────────────────────────────────────────────
+(function(){
+  var now=new Date(),day=now.getDay();
+  var mon=new Date(now); mon.setDate(now.getDate()-day+1);
+  var sun=new Date(mon); sun.setDate(mon.getDate()+6);
+  var fmt=function(d){return d.toLocaleDateString('en-US',{month:'short',day:'numeric'})};
+  document.getElementById('ottWeekLabel').textContent=fmt(mon)+'–'+fmt(sun)+', '+sun.getFullYear();
+})();
+
+// ── Box office ──────────────────────────────────────────────────────────────
+fetch('data/movies-boxoffice.json').then(r=>r.json()).then(d=>{
+  document.getElementById('boUpdated').textContent='Updated: '+d.updated;
+  var top=d.films[0];
+  if(top){
+    document.getElementById('statNo1').textContent=top.title.split(':')[0].split(' ').slice(0,2).join(' ');
+    document.getElementById('statWW').textContent=top.collection_worldwide_usd;
+  }
+  var rows=d.films.map(function(f){
+    var rankClass=f.rank<=3?'top3':'';
+    var badge=f.badge?'<span class="badge-new">'+f.badge+'</span>':'';
+    return '<tr>'
+      +'<td><span class="rank-num '+rankClass+'">'+f.rank+'</span></td>'
+      +'<td><div class="movie-title-cell">'+f.title+' '+badge+'</div><div class="movie-stars-cell">'+f.director+' · '+f.stars.split(',').slice(0,2).join(',')+'</div></td>'
+      +'<td class="hide-mobile"><span class="lang-pill">'+f.language+'</span></td>'
+      +'<td><span class="collection-cell">'+f.collection_india+'</span></td>'
+      +'<td><span class="collection-cell">'+f.collection_worldwide+'</span><div style="font-size:10px;color:var(--white-muted)">'+f.collection_worldwide_usd+'</div></td>'
+      +'<td class="hide-mobile"><span class="status-pill '+f.status_class+'">'+f.status+'</span></td>'
+      +'<td class="hide-mobile" style="color:var(--white-muted);font-size:11px">'+f.weeks+'</td>'
+      +'</tr>';
+  }).join('');
+  document.getElementById('boTableBody').innerHTML=rows;
+}).catch(function(){
+  document.getElementById('boTableBody').innerHTML='<tr><td colspan="7" style="text-align:center;color:var(--white-muted);padding:24px">Box office data unavailable — pipeline updates this daily.</td></tr>';
+});
+
+// ── OTT data ────────────────────────────────────────────────────────────────
+fetch('data/movies-ott.json').then(r=>r.json()).then(d=>{
+  // New this week
+  var ntw=d.new_this_week||[];
+  document.getElementById('statNewReleases').textContent=ntw.length;
+  document.getElementById('newThisWeek').innerHTML=ntw.length?ntw.map(function(f){
+    return '<div class="ntw-row">'
+      +'<span class="ntw-date">'+f.premiere_date+'</span>'
+      +'<div style="flex:1"><span class="ntw-title-text">'+f.title+'</span><span class="ntw-genre" style="margin-left:8px">· '+f.genre+'</span></div>'
+      +'<span class="ott-platform-badge '+f.platform+'">'+f.platform_label+'</span>'
+      +'</div>';
+  }).join(''):'<div style="color:var(--white-muted);font-size:13px;padding:8px 0">No new releases this week — check back Friday.</div>';
+
+  // Best picks
+  var nriPick=d.picks.filter(function(p){return p.nri_pick}).slice(0,1);
+  if(nriPick.length) document.getElementById('statOTT').textContent=nriPick[0].title.split(':')[0].split(' ').slice(0,2).join(' ');
+
+  document.getElementById('ottGrid').innerHTML=d.picks.slice(0,8).map(function(p){
+    return '<div class="ott-card">'
+      +'<div class="ott-card-top">'
+      +'<div style="flex:1">'
+      +'<div class="ott-card-title">'+p.title+'</div>'
+      +'<div class="ott-card-meta">'+p.language+' · '+p.genre+' · '+p.year+'</div>'
+      +'</div>'
+      +'<span class="ott-platform-badge '+p.platform+'">'+p.platform_label+'</span>'
+      +'</div>'
+      +'<div class="ott-card-desc">'+p.desc+'</div>'
+      +'<div class="ott-card-footer">'
+      +'<span class="ott-rating">★ '+p.rating+'</span>'
+      +(p.nri_pick?'<span class="nri-pick-badge">NRI Pick</span>':'')
+      +'<span style="font-size:11px;color:var(--white-muted);margin-left:auto">'+p.stars.split(',').slice(0,2).join(',')+'</span>'
+      +'</div>'
+      +'</div>';
+  }).join('');
+}).catch(function(){
+  document.getElementById('newThisWeek').innerHTML='<div style="color:var(--white-muted);font-size:13px">Pipeline updates this weekly.</div>';
+  document.getElementById('ottGrid').innerHTML='<div style="grid-column:1/-1;text-align:center;color:var(--white-muted);padding:32px">OTT data unavailable.</div>';
+});
+
+// ── Celebrity buzz ──────────────────────────────────────────────────────────
+fetch('data/movies-celebrity.json').then(r=>r.json()).then(d=>{
+  document.getElementById('celebGrid').innerHTML=d.stories.slice(0,8).map(function(s){
+    return '<div class="celeb-card">'
+      +'<div class="celeb-emoji">'+s.image_emoji+'</div>'
+      +'<div style="flex:1">'
+      +'<div class="celeb-cat">'+s.category+'</div>'
+      +'<div class="celeb-headline">'+s.headline+'</div>'
+      +'<div class="celeb-summary">'+s.summary+'</div>'
+      +'</div>'
+      +'</div>';
+  }).join('');
+}).catch(function(){
+  document.getElementById('celebGrid').innerHTML='<div style="grid-column:1/-1;text-align:center;color:var(--white-muted);padding:24px">Celebrity news unavailable.</div>';
+});
+
+// ── Article news grid ───────────────────────────────────────────────────────
 fetch('data/article-index.json').then(r=>r.json()).then(data=>{
-  const articles=(data.articles||[]).filter(a=>a.category==='movies').slice(0,6);
-  const grid=document.getElementById('newsGrid');
-  if(!articles.length){grid.innerHTML='<div class="article-card" style="grid-column:1/-1;text-align:center;color:var(--white-muted);padding:40px">No movies articles yet.</div>';return;}
-  grid.innerHTML=articles.map(a=>`<div class="article-card" onclick="location.href='${a.url}'"><div class="ac-cat movies"><div class="cat-dot"></div>Movies & OTT</div><h2 class="ac-title">${a.title}</h2><p class="ac-excerpt">${a.excerpt||''}</p><div class="ac-footer"><span>${a.date||''} · ${a.reading_time||'5 min'}</span>${(a.tags||[]).slice(0,1).map(t=>`<span class="ac-tag">${t}</span>`).join('')}</div></div>`).join('');
-}).catch(()=>{});
+  var articles=(data.articles||[]).filter(function(a){return a.category==='movies'}).slice(0,6);
+  var grid=document.getElementById('newsGrid');
+  if(!articles.length){grid.innerHTML='<div class="article-card" style="grid-column:1/-1;text-align:center;color:var(--white-muted);padding:40px">No movie articles yet — pipeline runs daily.</div>';return;}
+  grid.innerHTML=articles.map(function(a){
+    return '<div class="article-card" onclick="location.href=\''+a.url+'\'">'
+      +'<div class="ac-cat movies"><div class="cat-dot"></div>Movies &amp; OTT</div>'
+      +'<h2 class="ac-title">'+a.title+'</h2>'
+      +'<p class="ac-excerpt">'+(a.excerpt||'')+'</p>'
+      +'<div class="ac-footer"><span>'+(a.date||'')+' · '+(a.reading_time||'5 min')+'</span>'
+      +(a.tags||[]).slice(0,1).map(function(t){return '<span class="ac-tag">'+t+'</span>'}).join('')
+      +'</div></div>';
+  }).join('');
+}).catch(function(){});
 </script>
 <script>document.getElementById("yr").textContent=new Date().getFullYear();</script>
-<script id="tickerScript">
+<script>
 fetch('data/latest-articles.json').then(r=>r.json()).then(data=>{
-  const items=(data.articles||[]).slice(0,8).map(a=>a.title);
-  if(!items.length) return;
-  const doubled=[...items,...items];
-  document.getElementById('tickerTrack').innerHTML=doubled.map(t=>`<span>${t}</span>`).join('');
-}).catch(()=>{});
+  var items=(data.articles||[]).slice(0,8).map(function(a){return a.title});
+  if(!items.length)return;
+  var doubled=[...items,...items];
+  document.getElementById('tickerTrack').innerHTML=doubled.map(function(t){return'<span>'+t+'</span>'}).join('');
+}).catch(function(){});
 </script>
 </body>
 </html>
