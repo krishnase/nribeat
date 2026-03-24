@@ -40,6 +40,29 @@
 .status-pill.flop{background:rgba(232,74,130,.12);color:var(--pink)}
 .lang-pill{font-size:10px;font-weight:600;color:var(--white-muted);background:var(--navy-mid);padding:2px 8px;border-radius:20px}
 .badge-new{font-size:10px;font-weight:600;color:var(--pink);background:rgba(232,74,130,.1);padding:2px 7px;border-radius:20px}
+/* ── Releases section ── */
+.releases-wrap{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-bottom:40px}
+.releases-col-title{font-size:13px;font-weight:700;letter-spacing:.5px;text-transform:uppercase;margin-bottom:14px;display:flex;align-items:center;gap:8px}
+.release-card{background:var(--navy-card);border:1px solid var(--navy-border);border-radius:14px;padding:16px 18px;margin-bottom:12px;transition:border-color .2s}
+.release-card:last-child{margin-bottom:0}
+.release-card:hover{border-color:var(--pink)}
+.rc-top{display:flex;align-items:flex-start;justify-content:space-between;gap:10px;margin-bottom:8px}
+.rc-title{font-size:15px;font-weight:600;color:var(--white);line-height:1.3}
+.rc-date{font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--white-muted);white-space:nowrap;margin-top:2px}
+.rc-cast{font-size:12px;color:var(--white-muted);margin-bottom:6px}
+.rc-desc{font-size:12px;color:var(--white-dim);line-height:1.55;margin-bottom:10px}
+.rc-footer{display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+.lang-badge{font-size:10px;font-weight:700;padding:2px 9px;border-radius:20px}
+.lang-badge.tel{background:rgba(45,184,122,.15);color:var(--green)}
+.lang-badge.tam{background:rgba(232,74,130,.15);color:var(--pink)}
+.lang-badge.hin{background:rgba(232,102,26,.15);color:var(--saffron)}
+.lang-badge.other{background:var(--navy-mid);color:var(--white-muted)}
+.buzz-badge{font-size:10px;font-weight:600;padding:2px 9px;border-radius:20px}
+.buzz-badge.High{background:rgba(232,102,26,.15);color:var(--saffron)}
+.buzz-badge.Medium{background:rgba(245,183,49,.1);color:var(--amber)}
+.rc-collection{font-family:'JetBrains Mono',monospace;font-size:12px;font-weight:600;color:var(--green)}
+.countdown-days{font-size:10px;font-weight:700;color:var(--pink);background:rgba(232,74,130,.1);padding:2px 9px;border-radius:20px}
+@media(max-width:700px){.releases-wrap{grid-template-columns:1fr}}
 /* ── OTT section ── */
 .ott-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;margin-bottom:40px}
 .ott-card{background:var(--navy-card);border:1px solid var(--navy-border);border-radius:14px;padding:20px;display:flex;flex-direction:column;gap:10px;transition:all .2s;cursor:pointer}
@@ -137,6 +160,19 @@
     </div>
   </div>
 
+  <!-- THEATRICAL RELEASES -->
+  <div class="section-header"><div class="section-label" style="font-size:18px">🎥 Now Playing &amp; Coming Soon — Telugu · Hindi · Tamil</div></div>
+  <div class="releases-wrap">
+    <div>
+      <div class="releases-col-title"><span style="color:var(--green)">▶</span> Now Playing <span style="font-size:11px;font-weight:400;color:var(--white-muted);text-transform:none;letter-spacing:0">(last 7 days)</span></div>
+      <div id="nowPlayingList"><div style="color:var(--white-muted);font-size:13px;padding:16px 0">Loading...</div></div>
+    </div>
+    <div>
+      <div class="releases-col-title"><span style="color:var(--pink)">⏳</span> Coming Soon <span style="font-size:11px;font-weight:400;color:var(--white-muted);text-transform:none;letter-spacing:0">(next 7 days)</span></div>
+      <div id="comingSoonList"><div style="color:var(--white-muted);font-size:13px;padding:16px 0">Loading...</div></div>
+    </div>
+  </div>
+
   <!-- NEW THIS WEEK OTT -->
   <div class="section-header"><div class="section-label" style="font-size:18px">🆕 New OTT Premieres This Week</div><span class="see-all" id="ottWeekLabel" style="font-size:12px;color:var(--white-muted)"></span></div>
   <div class="new-this-week" id="newThisWeek">
@@ -210,6 +246,59 @@ fetch('data/movies-boxoffice.json').then(r=>r.json()).then(d=>{
   document.getElementById('boTableBody').innerHTML=rows;
 }).catch(function(){
   document.getElementById('boTableBody').innerHTML='<tr><td colspan="7" style="text-align:center;color:var(--white-muted);padding:24px">Box office data unavailable — pipeline updates this daily.</td></tr>';
+});
+
+// ── Theatrical releases ──────────────────────────────────────────────────────
+fetch('data/movies-releases.json').then(r=>r.json()).then(d=>{
+  var langClass=function(l){
+    var m={Telugu:'tel',Tamil:'tam',Hindi:'hin'};
+    return m[l]||'other';
+  };
+  var langBadge=function(f){
+    var langs=[f.language].concat(f.also_in||[]);
+    return langs.map(function(l){return '<span class="lang-badge '+langClass(l)+'">'+l+'</span>';}).join('');
+  };
+  var today=new Date(); today.setHours(0,0,0,0);
+  var daysUntil=function(iso){
+    var d=new Date(iso); d.setHours(0,0,0,0);
+    return Math.round((d-today)/(86400000));
+  };
+
+  // Now Playing
+  var np=d.now_playing||[];
+  document.getElementById('nowPlayingList').innerHTML=np.length?np.map(function(f){
+    return '<div class="release-card">'
+      +'<div class="rc-top">'
+      +'<div><div class="rc-title">'+f.title+'</div><div class="rc-date">Released '+f.release_date+'</div></div>'
+      +'<span class="status-pill '+f.verdict_class+'">'+f.verdict+'</span>'
+      +'</div>'
+      +'<div class="rc-cast">'+f.director+' · '+f.cast.split(',').slice(0,2).join(',')+'</div>'
+      +'<div class="rc-desc">'+f.desc+'</div>'
+      +'<div class="rc-footer">'+langBadge(f)
+      +'<span class="buzz-badge '+f.buzz+'">'+f.buzz+' Buzz</span>'
+      +(f.collection_india?'<span class="rc-collection">'+f.collection_india+'</span>':'')
+      +'</div>'
+      +'</div>';
+  }).join(''):'<div class="release-card" style="color:var(--white-muted);font-size:13px">No major releases this week.</div>';
+
+  // Coming Soon
+  var cs=d.coming_soon||[];
+  document.getElementById('comingSoonList').innerHTML=cs.length?cs.map(function(f){
+    var days=daysUntil(f.release_date_iso);
+    var daysLabel=days<=0?'Today!':days===1?'Tomorrow':'In '+days+' days';
+    return '<div class="release-card">'
+      +'<div class="rc-top">'
+      +'<div><div class="rc-title">'+f.title+'</div><div class="rc-date">'+f.release_date+'</div></div>'
+      +'<span class="countdown-days">'+daysLabel+'</span>'
+      +'</div>'
+      +'<div class="rc-cast">'+f.director+' · '+f.cast.split(',').slice(0,2).join(',')+'</div>'
+      +'<div class="rc-desc">'+f.desc+'</div>'
+      +'<div class="rc-footer">'+langBadge(f)+'<span class="buzz-badge '+f.buzz+'">'+f.buzz+' Buzz</span></div>'
+      +'</div>';
+  }).join(''):'<div class="release-card" style="color:var(--white-muted);font-size:13px">No major releases upcoming this week.</div>';
+}).catch(function(){
+  document.getElementById('nowPlayingList').innerHTML='<div style="color:var(--white-muted);font-size:13px;padding:16px 0">Release data unavailable.</div>';
+  document.getElementById('comingSoonList').innerHTML='<div style="color:var(--white-muted);font-size:13px;padding:16px 0">Release data unavailable.</div>';
 });
 
 // ── OTT data ────────────────────────────────────────────────────────────────

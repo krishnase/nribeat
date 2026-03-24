@@ -566,6 +566,7 @@ def publish_movies_data():
         ("data/movies-boxoffice.json",  "nribeat/data/movies-boxoffice.json"),
         ("data/movies-ott.json",        "nribeat/data/movies-ott.json"),
         ("data/movies-celebrity.json",  "nribeat/data/movies-celebrity.json"),
+        ("data/movies-releases.json",   "nribeat/data/movies-releases.json"),
     ]
 
     # Resolve path relative to the repo root (one level up from pipeline/)

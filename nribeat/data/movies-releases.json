@@ -1,0 +1,104 @@
+{
+  "updated": "2026-03-24",
+  "note": "Popular Telugu, Hindi, Tamil theatrical releases — last 7 days and next 7 days. Updated weekly by pipeline.",
+  "now_playing": [
+    {
+      "title": "Hari Hara Veera Mallu",
+      "language": "Telugu",
+      "also_in": ["Hindi"],
+      "genre": "Period Action",
+      "cast": "Pawan Kalyan, Nidhhi Agerwal, Bobby Deol",
+      "director": "Krish Jagarlamudi",
+      "release_date": "Mar 20, 2026",
+      "release_date_iso": "2026-03-20",
+      "verdict": "Hit",
+      "verdict_class": "hit",
+      "buzz": "High",
+      "desc": "The long-awaited period epic starring Pawan Kalyan as a daring thief in 17th-century India. Lavish sets, mass action — a big-screen treat for fans.",
+      "collection_india": "₹145 Cr",
+      "weeks_running": 1
+    },
+    {
+      "title": "Kubera",
+      "language": "Tamil",
+      "also_in": ["Telugu"],
+      "genre": "Crime Drama",
+      "cast": "Dhanush, Nagarjuna, Jim Sarbh, Rashmika Mandanna",
+      "director": "Sekhar Kammula",
+      "release_date": "Mar 18, 2026",
+      "release_date_iso": "2026-03-18",
+      "verdict": "Hit",
+      "verdict_class": "hit",
+      "buzz": "High",
+      "desc": "Sekhar Kammula's pan-India crime epic — Dhanush plays a man seduced by the underworld. Nagarjuna is electrifying as the antagonist. Strong reviews.",
+      "collection_india": "₹98 Cr",
+      "weeks_running": 1
+    },
+    {
+      "title": "Jaat",
+      "language": "Hindi",
+      "also_in": [],
+      "genre": "Action",
+      "cast": "Sunny Deol, Randeep Hooda, Regina Cassandra",
+      "director": "Gopichand Malineni",
+      "release_date": "Mar 17, 2026",
+      "release_date_iso": "2026-03-17",
+      "verdict": "Average",
+      "verdict_class": "average",
+      "buzz": "Medium",
+      "desc": "Sunny Deol's high-octane action film directed by Gopichand Malineni — the director behind Beast. Mass entertainer aimed at single-screen audiences.",
+      "collection_india": "₹42 Cr",
+      "weeks_running": 1
+    }
+  ],
+  "coming_soon": [
+    {
+      "title": "Coolie",
+      "language": "Tamil",
+      "also_in": ["Hindi", "Telugu"],
+      "genre": "Action",
+      "cast": "Rajinikanth, Nagarjuna, Upendra, Shruti Haasan",
+      "director": "Lokesh Kanagaraj",
+      "release_date": "Apr 1, 2026",
+      "release_date_iso": "2026-04-01",
+      "buzz": "High",
+      "desc": "The most-anticipated Tamil film of 2026 — Rajinikanth + Lokesh Kanagaraj, the team that wanted to make Thalapathy but didn't. Early buzz is through the roof."
+    },
+    {
+      "title": "RC16",
+      "language": "Telugu",
+      "also_in": ["Hindi"],
+      "genre": "Sports Drama",
+      "cast": "Ram Charan, Janhvi Kapoor, S. J. Suryah",
+      "director": "Buchi Babu Sana",
+      "release_date": "Apr 10, 2026",
+      "release_date_iso": "2026-04-10",
+      "buzz": "High",
+      "desc": "Ram Charan plays a kabaddi player in this mass sports drama from the director of Uppena. Janhvi Kapoor's biggest Telugu film to date. Pan-India release."
+    },
+    {
+      "title": "Maatrubhumi",
+      "language": "Hindi",
+      "also_in": [],
+      "genre": "War Drama",
+      "cast": "Salman Khan, Chitrangada Singh, Sooraj Pancholi",
+      "director": "Ravi Jadhav",
+      "release_date": "Mar 27, 2026",
+      "release_date_iso": "2026-03-27",
+      "buzz": "High",
+      "desc": "Salman Khan's tribute to the Galwan Valley soldiers — a patriotic war epic releasing just ahead of the fiscal year end. One of 2026's most-watched releases."
+    },
+    {
+      "title": "Retro",
+      "language": "Tamil",
+      "also_in": [],
+      "genre": "Action Thriller",
+      "cast": "Suriya, Pooja Hegde, Jayaram",
+      "director": "Karthik Subbaraj",
+      "release_date": "Apr 4, 2026",
+      "release_date_iso": "2026-04-04",
+      "buzz": "High",
+      "desc": "Suriya and Karthik Subbaraj's much-hyped collaboration. Promises to blend stylized action with an intense emotional core — among the most-tracked Tamil films of 2026."
+    }
+  ]
+}
