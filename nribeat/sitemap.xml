@@ -5,45 +5,93 @@
         http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
   <url>
     <loc>https://nribeat.com/</loc>
-    <lastmod>2026-03-24</lastmod>
+    <lastmod>2026-03-25</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>https://nribeat.com/immigration.html</loc>
-    <lastmod>2026-03-24</lastmod>
+    <lastmod>2026-03-25</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://nribeat.com/visa-bulletin.html</loc>
-    <lastmod>2026-03-24</lastmod>
+    <lastmod>2026-03-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://nribeat.com/cricket.html</loc>
-    <lastmod>2026-03-24</lastmod>
+    <lastmod>2026-03-25</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://nribeat.com/movies.html</loc>
-    <lastmod>2026-03-24</lastmod>
+    <lastmod>2026-03-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://nribeat.com/layoffs.html</loc>
-    <lastmod>2026-03-24</lastmod>
+    <lastmod>2026-03-25</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://nribeat.com/ai-tools.html</loc>
-    <lastmod>2026-03-24</lastmod>
+    <lastmod>2026-03-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://nribeat.com/articles/movies/seema-sajdeh-the-traitors-season-2-india-2026.html</loc>
+    <lastmod>2026-03-25</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://nribeat.com/articles/ai-tech/kleiner-perkins-3-5b-ai-fund-indian-engineers-2026.html</loc>
+    <lastmod>2026-03-25</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://nribeat.com/articles/ai-tech/drone-technology-police-helicopters-career-impact-2026.html</loc>
+    <lastmod>2026-03-25</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://nribeat.com/articles/cricket/coney-tiffen-nzc-hall-of-fame-2026-cricket-legends.html</loc>
+    <lastmod>2026-03-25</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://nribeat.com/articles/cricket/rcb-sold-1-78-billion-aditya-birla-times-of-india-2026.html</loc>
+    <lastmod>2026-03-25</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://nribeat.com/articles/cricket/spencer-johnson-replaces-ellis-csk-ipl-2025.html</loc>
+    <lastmod>2026-03-25</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://nribeat.com/articles/immigration/march-2026-visa-bulletin-eb2-india-priority-date.html</loc>
+    <lastmod>2026-03-25</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://nribeat.com/articles/immigration/april-2026-visa-bulletin-eb2-india-priority-date.html</loc>
+    <lastmod>2026-03-24</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
   </url>
   <url>
     <loc>https://nribeat.com/articles/movies/khana-dil-se-hansal-mehta-ai-culinary-series-streaming.html</loc>
@@ -76,12 +124,6 @@
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://nribeat.com/articles/immigration/march-2026-visa-bulletin-eb2-india-priority-date.html</loc>
-    <lastmod>2026-03-24</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
     <loc>https://nribeat.com/articles/ai-tech/bernie-sanders-ai-video-chatbot-safety.html</loc>
     <lastmod>2026-03-23</lastmod>
     <changefreq>weekly</changefreq>
@@ -95,55 +137,55 @@
   </url>
   <url>
     <loc>https://nribeat.com/articles/movies/banijay-asia-alliance-prime-video-india-hindi.html</loc>
-    <lastmod>2026-03-24</lastmod>
+    <lastmod>2026-03-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://nribeat.com/articles/cricket/james-harris-retires-cricket-career.html</loc>
-    <lastmod>2026-03-24</lastmod>
+    <lastmod>2026-03-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://nribeat.com/articles/cricket/england-tests-australia-india-significant-priorities.html</loc>
-    <lastmod>2026-03-24</lastmod>
+    <lastmod>2026-03-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://nribeat.com/articles/cricket/kkr-saurabh-dubey-replaces-akash-deep-ipl.html</loc>
-    <lastmod>2026-03-24</lastmod>
+    <lastmod>2026-03-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://nribeat.com/articles/ai-tech/bernie-sanders-ai-video-chatbot-limitations.html</loc>
-    <lastmod>2026-03-24</lastmod>
+    <lastmod>2026-03-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://nribeat.com/articles/ai-tech/zipline-200m-funding-drone-delivery-tech-careers.html</loc>
-    <lastmod>2026-03-24</lastmod>
+    <lastmod>2026-03-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://nribeat.com/articles/immigration/march-2026-visa-bulletin-eb2-india-priority-date-update.html</loc>
-    <lastmod>2026-03-24</lastmod>
+    <lastmod>2026-03-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://nribeat.com/articles/ai-tech/ai-chatbots-compliance-problem-tech-professionals.html</loc>
-    <lastmod>2026-03-24</lastmod>
+    <lastmod>2026-03-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://nribeat.com/articles/ai-tech/zipline-200-million-funding-drone-delivery-tech-jobs.html</loc>
-    <lastmod>2026-03-24</lastmod>
+    <lastmod>2026-03-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
