@@ -1,113 +1,80 @@
 {
-  "date": "2026-03-26T11:01:31.837677",
+  "date": "2026-03-26T11:01:43.461815",
   "articles": [
     {
-      "title": "March 2026 Visa Bulletin: EB-2 India Final Action Date Holds Steady to September 15, 2013",
-      "slug": "march-2026-visa-bulletin-eb2-india-priority-date",
-      "category": "immigration",
+      "title": "Australia Cricket Crisis: IPL Money Luring Players Away in 2026",
+      "slug": "australia-cricket-crisis-ipl-money-players-2026",
+      "category": "cricket",
+      "what_this_means": "Australia's captain warns that IPL and franchise cricket are tempting players with sums Cricket Australia can't match\u2014risking an exodus that weakens Test cricket and international competition. For Indian cricket fans in the US, this means potentially weaker opponents for India, reshaping the global cricket landscape as financial power shifts from national boards to T20 leagues.",
+      "reading_time": "5 min read",
+      "tags": [
+        "IPL 2025",
+        "Australia Cricket",
+        "India vs Australia"
+      ],
       "date": "March 26, 2026",
-      "reading_time": "5 min read",
-      "excerpt": "March 2026 Visa Bulletin: EB-2 India Final Action Date holds steady to September 15, 2013; EB-3 India to November 15, 2013. Dates for Filing: EB-2 November 01, 2014, EB-3 August 15, 2014. No movement this month \u2014 monitor the next bulletin closely.",
-      "tags": [
-        "Visa Bulletin",
-        "EB-2 India",
-        "EB-3 India",
-        "Final Action Date",
-        "Dates for Filing"
-      ],
-      "seo_score": 88,
-      "url": "/articles/immigration/march-2026-visa-bulletin-eb2-india-priority-date.html",
-      "what_this_means": "March 2026 Visa Bulletin: EB-2 India Final Action Date holds steady to September 15, 2013; EB-3 India to November 15, 2013. Dates for Filing: EB-2 November 01, 2014, EB-3 August 15, 2014. No movement this month \u2014 monitor the next bulletin closely."
+      "seo_score": 75,
+      "url": "/articles/cricket/australia-cricket-crisis-ipl-money-players-2026.html"
     },
     {
-      "title": "Spencer Johnson Replaces Ellis at CSK for IPL 2025 Season",
-      "slug": "spencer-johnson-replaces-ellis-csk-ipl-2025",
+      "title": "India Cricket 2026-27: Zimbabwe Tour Returns After 24 Years",
+      "slug": "india-zimbabwe-cricket-2026-27-bengaluru-tour",
       "category": "cricket",
-      "what_this_means": "Spencer Johnson, Australian pace bowler, replaces injured Ellis at CSK for IPL 2025's final stages (arriving late April). After a year-long back injury absence, Johnson's comeback carries both tactical advantage (left-arm pace) and fitness questions for the reigning champions' playoff push.",
+      "what_this_means": "Zimbabwe cricket returns to India for the first bilateral tour since 2002 during an action-packed 2026-27 season. Bengaluru is hosting matches, offering convenient US viewing times for NRI fans tracking every India cricket score.",
       "reading_time": "5 min read",
       "tags": [
-        "IPL 2025",
-        "CSK Cricket",
-        "Spencer Johnson"
+        "India Cricket 2026-27",
+        "Zimbabwe Tour India",
+        "India vs Zimbabwe"
       ],
-      "date": "March 25, 2026",
-      "seo_score": 70,
-      "url": "/articles/cricket/spencer-johnson-replaces-ellis-csk-ipl-2025.html"
+      "date": "March 26, 2026",
+      "seo_score": 75,
+      "url": "/articles/cricket/india-zimbabwe-cricket-2026-27-bengaluru-tour.html"
     },
     {
-      "title": "RCB Sold for $1.78B: What It Means for IPL 2025 & India Cricket",
-      "slug": "rcb-sold-1-78-billion-aditya-birla-times-of-india-2026",
-      "category": "cricket",
-      "what_this_means": "Royal Challengers Bangalore has been sold to a consortium of Aditya Birla Group and Times of India for $1.78 billion\u2014the largest IPL franchise valuation ever. The deal explicitly includes both men's and women's teams, signaling major investment in women's cricket and suggesting expanded media coverage for US-based Indian cricket fans in IPL 2025.",
-      "reading_time": "6 min read",
-      "tags": [
-        "IPL 2025",
-        "RCB ownership",
-        "India cricket"
-      ],
-      "date": "March 25, 2026",
-      "seo_score": 70,
-      "url": "/articles/cricket/rcb-sold-1-78-billion-aditya-birla-times-of-india-2026.html"
-    },
-    {
-      "title": "Coney & Tiffen NZC Hall of Fame 2026: Cricket Legends Honored",
-      "slug": "coney-tiffen-nzc-hall-of-fame-2026-cricket-legends",
-      "category": "cricket",
-      "what_this_means": "New Zealand cricket icons Coney and Tiffen have been inducted into the prestigious NZC Hall of Fame, with their formal ceremony happening at the New Zealand Cricket Awards. For Indian cricket fans in the US, this honor highlights how cricket's greatest achievements transcend borders, reminding us that excellence in the sport comes from every nation and era.",
-      "reading_time": "6 min read",
-      "tags": [
-        "NZC Hall of Fame",
-        "Cricket Legends",
-        "New Zealand Cricket"
-      ],
-      "date": "March 25, 2026",
-      "seo_score": 55,
-      "url": "/articles/cricket/coney-tiffen-nzc-hall-of-fame-2026-cricket-legends.html"
-    },
-    {
-      "title": "Drone Tech for Police: Game-Changer for Public Safety Jobs [2026]",
-      "slug": "drone-technology-police-helicopters-career-impact-2026",
-      "category": "ai_tech",
-      "what_this_means": "Brinc launched a 911 drone to replace police helicopters, creating immediate demand for ML, robotics, and backend engineers. Indian tech professionals can pivot into this high-pay public safety sector ($140K\u2013$240K for mid-senior roles) by building drone + ML projects now. This is one of the few AI growth areas not threatened by ChatGPT alternatives.",
-      "reading_time": "5 min read",
-      "tags": [
-        "AI Tools for Developers",
-        "Machine Learning Salary",
-        "Robotics Career"
-      ],
-      "date": "March 25, 2026",
-      "seo_score": 50,
-      "url": "/articles/ai-tech/drone-technology-police-helicopters-career-impact-2026.html"
-    },
-    {
-      "title": "Kleiner Perkins $3.5B AI Fund: What It Means for Your Tech Career [2026]",
-      "slug": "kleiner-perkins-3-5b-ai-fund-indian-engineers-2026",
-      "category": "ai_tech",
-      "what_this_means": "Kleiner Perkins' $3.5B AI fund signals a massive hiring surge for AI-skilled engineers starting mid-2026. Machine learning salaries are about to rise, and ChatGPT alternatives will compete for dominance. Indian engineers should start learning Claude and Llama now\u2014skills in these tools become job-market essentials.",
-      "reading_time": "5 min read",
-      "tags": [
-        "AI Tools for Developers",
-        "Machine Learning Salary",
-        "ChatGPT Alternatives"
-      ],
-      "date": "March 25, 2026",
-      "seo_score": 45,
-      "url": "/articles/ai-tech/kleiner-perkins-3-5b-ai-fund-indian-engineers-2026.html"
-    },
-    {
-      "title": "Seema Sajdeh The Traitors Season 2 India 2026",
-      "slug": "seema-sajdeh-the-traitors-season-2-india-2026",
+      "title": "Toaster: Rajkummar Rao Netflix Dark Comedy April 15, 2026",
+      "slug": "toaster-rajkummar-rao-sanya-malhotra-netflix-april-2026",
       "category": "movies",
-      "what_this_means": "Seema Sajdeh from Fabulous Lives of Bollywood Wives is being considered for The Traitors India Season 2, Netflix's hit reality psychological thriller format. The show, which begins filming later in 2026, is expected to premiere in late 2026 and will stream globally on Netflix\u2014making it accessible to Indian diaspora viewers across the US.",
+      "what_this_means": "Toaster, a dark comedy starring Rajkummar Rao and Sanya Malhotra, drops on Netflix April 15, 2026. This quirky Netflix India original turns a wedding gift into an instrument of chaos. Streaming in the US now requires only a Netflix subscription\u2014perfect for NRIs seeking experimental Indian cinema beyond traditional Bollywood.",
       "reading_time": "5 min read",
       "tags": [
-        "The Traitors India",
-        "Netflix India originals",
-        "Reality TV 2026"
+        "Netflix India Originals",
+        "New Bollywood Movies 2026",
+        "Rajkummar Rao"
       ],
-      "date": "March 25, 2026",
-      "seo_score": 45,
-      "url": "/articles/movies/seema-sajdeh-the-traitors-season-2-india-2026.html"
+      "date": "March 26, 2026",
+      "seo_score": 55,
+      "url": "/articles/movies/toaster-rajkummar-rao-sanya-malhotra-netflix-april-2026.html"
+    },
+    {
+      "title": "Australia's Molineux Shines Beyond Bowling in West Indies Tour 2026",
+      "slug": "australia-molineux-non-bowling-west-indies-2026",
+      "category": "cricket",
+      "what_this_means": "Australia's coaching staff has discovered that Josh Molineux offers massive value beyond his bowling statistics\u2014his captaincy and leadership potential during the West Indies tour have impressed ahead of the T20 World Cup 2026. As India cricket scores dominate headlines and the India vs Australia rivalry intensifies, Australia's focus on developing smarter leaders (not just skilled bowlers) could be the edge they need in upcoming tournaments.",
+      "reading_time": "5 min read",
+      "tags": [
+        "Australia Cricket 2026",
+        "Molineux West Indies",
+        "T20 World Cup Prep"
+      ],
+      "date": "March 26, 2026",
+      "seo_score": 50,
+      "url": "/articles/cricket/australia-molineux-non-bowling-west-indies-2026.html"
+    },
+    {
+      "title": "Project Hail Mary IMAX Screens India 2025: What Happened?",
+      "slug": "project-hail-mary-imax-screens-india-2025",
+      "category": "movies",
+      "what_this_means": "Project Hail Mary secured only 6 of India's 34 IMAX screens due to competition from Dhurandhar The Revenge's blockbuster success. The film will likely stream on Netflix, Prime Video, or Disney+ Hotstar within 60 days of theatrical release. US-based Indian diaspora audiences can expect high-quality sci-fi content even if it skips premium formats.",
+      "reading_time": "6 min read",
+      "tags": [
+        "Bollywood movies 2025",
+        "Indian cinema news",
+        "IMAX releases India"
+      ],
+      "date": "March 26, 2026",
+      "seo_score": 50,
+      "url": "/articles/movies/project-hail-mary-imax-screens-india-2025.html"
     }
   ]
 }
