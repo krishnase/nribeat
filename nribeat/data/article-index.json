@@ -1,6 +1,111 @@
 {
   "articles": [
     {
+      "title": "Project Hail Mary Gets All 34 IMAX Screens in India 2026",
+      "slug": "project-hail-mary-imax-screens-india-2026",
+      "category": "movies",
+      "date": "March 27, 2026",
+      "reading_time": "5 min read",
+      "excerpt": "Fan power just secured Project Hail Mary on all 34 IMAX screens in India after Sony Pictures initially landed only 6. Mumbai's Eros Cinema added a rare 3:45 AM weekend show, proving audience demand drives theatrical strategy. Streaming comes later; catch it in IMAX now.",
+      "tags": [
+        "Project Hail Mary",
+        "IMAX India",
+        "Hollywood Movies India"
+      ],
+      "seo_score": 55,
+      "url": "/articles/movies/project-hail-mary-imax-screens-india-2026.html"
+    },
+    {
+      "title": "Mohanlal Gets Delhi Court Protection for Personality Rights 2026",
+      "slug": "mohanlal-delhi-high-court-personality-rights-protection-2026",
+      "category": "movies",
+      "date": "March 27, 2026",
+      "reading_time": "5 min read",
+      "excerpt": "Malayalam star Mohanlal just won interim protection for his personality rights from India's Delhi High Court\u2014a landmark ruling that affects how streaming platforms handle celebrity images across Netflix, Prime, and Hotstar. This strengthens legal protections for all Indian actors in the digital age and ensures more authentic content for diaspora audiences.",
+      "tags": [
+        "Mohanlal",
+        "Delhi High Court",
+        "Personality Rights"
+      ],
+      "seo_score": 55,
+      "url": "/articles/movies/mohanlal-delhi-high-court-personality-rights-protection-2026.html"
+    },
+    {
+      "title": "AI Gender Gap 2026: How It's Affecting Your Tech Career",
+      "slug": "ai-gender-gap-2026-tech-career-impact",
+      "category": "ai_tech",
+      "date": "March 27, 2026",
+      "reading_time": "5 min read",
+      "excerpt": "New data shows AI adoption is widening the gender gap in tech\u2014but Indian engineers who master AI tools for developers, learn fairness/bias concepts, and position themselves as AI architects (not replacements) are securing premium salaries and job security. Your move: skill up in prompt engineering and responsible AI now; it's worth 15-22% more in machine learning salaries.",
+      "tags": [
+        "AI Gender Gap",
+        "Machine Learning Salary",
+        "AI Tools for Developers"
+      ],
+      "seo_score": 55,
+      "url": "/articles/ai-tech/ai-gender-gap-2026-tech-career-impact.html"
+    },
+    {
+      "title": "Real Estate Stock Crash 2026: Should Tech Professionals Invest Now?",
+      "slug": "real-estate-stocks-crash-2026-tech-professionals-invest",
+      "category": "ai_tech",
+      "date": "March 27, 2026",
+      "reading_time": "5 min read",
+      "excerpt": "Real estate stocks have crashed 22-32% in 2026 due to IT layoffs and geopolitical tensions. Indian tech professionals should consider selective purchases of quality large-cap players, with April's RBI MPC meeting serving as a key decision point that could trigger a recovery in valuations and mortgage affordability.",
+      "tags": [
+        "Real Estate Investing",
+        "Stock Market 2026",
+        "IT Layoffs Impact"
+      ],
+      "seo_score": 55,
+      "url": "/articles/ai-tech/real-estate-stocks-crash-2026-tech-professionals-invest.html"
+    },
+    {
+      "title": "AI in Education: Global Strategies & Your Career Impact 2026",
+      "slug": "ai-education-strategies-career-impact-2026",
+      "category": "ai_tech",
+      "date": "March 27, 2026",
+      "reading_time": "5 min read",
+      "excerpt": "Global governments are finalizing AI-in-education policies faster than before. For Indian tech professionals in the US, this creates opportunities in EdTech ML roles\u2014especially if you understand both policy and code. Machine learning salaries in education are rising for specialized engineers who can handle privacy, compliance, and ChatGPT alternatives.",
+      "tags": [
+        "AI in Education",
+        "Machine Learning Careers",
+        "Global AI Strategies"
+      ],
+      "seo_score": 55,
+      "url": "/articles/ai-tech/ai-education-strategies-career-impact-2026.html"
+    },
+    {
+      "title": "Australia Cricket Crisis: IPL Money Threatening Test Cricket 2026",
+      "slug": "australia-cricket-crisis-ipl-money-test-cricket-2026",
+      "category": "cricket",
+      "date": "March 27, 2026",
+      "reading_time": "5 min read",
+      "excerpt": "Australia's captain is warning that franchise cricket money\u2014especially from the IPL\u2014is pulling players away from Test cricket contracts. If Cricket Australia can't compete financially with the IPL, their national teams will suffer, potentially weakening future India vs Australia test series and threatening the survival of Test cricket globally.",
+      "tags": [
+        "Australia Cricket",
+        "IPL 2025",
+        "Cricket Australia"
+      ],
+      "seo_score": 75,
+      "url": "/articles/cricket/australia-cricket-crisis-ipl-money-test-cricket-2026.html"
+    },
+    {
+      "title": "Thushara Fails IPL 2026 Fitness Test, RCB Denied NOC",
+      "slug": "thushara-fails-fitness-test-rcb-ipl-2026",
+      "category": "cricket",
+      "date": "March 27, 2026",
+      "reading_time": "6 min read",
+      "excerpt": "Sri Lankan pacer Thushara has been blocked from joining RCB for IPL 2026 after failing BCCI's mandatory fitness test. Meanwhile, KKR's Pathirana and LSG's Hasaranga are still awaiting their test results, making this a developing story that could reshape the entire IPL 2026 season for overseas player availability.",
+      "tags": [
+        "IPL 2026",
+        "RCB",
+        "Thushara Fitness Test"
+      ],
+      "seo_score": 75,
+      "url": "/articles/cricket/thushara-fails-fitness-test-rcb-ipl-2026.html"
+    },
+    {
       "title": "March 2026 Visa Bulletin: EB-2 India Final Action Date Holds Steady to September 15, 2013",
       "slug": "march-2026-visa-bulletin-eb2-india-priority-date",
       "category": "immigration",
