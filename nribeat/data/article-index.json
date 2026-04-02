@@ -1,6 +1,111 @@
 {
   "articles": [
     {
+      "title": "KiloClaw: Enterprise AI Security for Indian Tech Teams in 2026",
+      "slug": "kiloclaw-enterprise-ai-security-indian-engineers",
+      "category": "ai_tech",
+      "date": "April 02, 2026",
+      "reading_time": "5 min read",
+      "excerpt": "Kilo's KiloClaw addresses the \"shadow AI\" problem where developers use unauthorized AI tools on personal infrastructure. For Indian engineers in US tech roles, this is critical: it creates a legal way to use powerful AI without risking compliance violations or job security. Early adoption signals seniority and could directly impact your next role and salary negotiations.",
+      "tags": [
+        "AI Tools for Engineers",
+        "Enterprise AI Security",
+        "ChatGPT Alternatives"
+      ],
+      "seo_score": 50,
+      "url": "/articles/ai-tech/kiloclaw-enterprise-ai-security-indian-engineers.html"
+    },
+    {
+      "title": "Anthropic's GitHub Takedown: What It Means for AI Engineers in 2026",
+      "slug": "anthropic-github-takedown-ai-engineers-2025",
+      "category": "ai_tech",
+      "date": "April 02, 2026",
+      "reading_time": "5 min read",
+      "excerpt": "Anthropic accidentally mass-removed thousands of GitHub repos while targeting its leaked source code\u2014a mistake now retracted. For you: API users are safe, but this accelerates the shift toward open-source AI tools like Llama. If you're building your ML career in 2026, multi-tool expertise (not single-platform dependency) is now the competitive advantage.",
+      "tags": [
+        "Anthropic",
+        "AI Tools",
+        "GitHub"
+      ],
+      "seo_score": 55,
+      "url": "/articles/ai-tech/anthropic-github-takedown-ai-engineers-2025.html"
+    },
+    {
+      "title": "EB-2 India May 2026 Visa Bulletin Prediction: Modest Forward Movement Expected",
+      "slug": "eb2-india-may-2026-visa-bulletin-prediction",
+      "category": "immigration",
+      "date": "April 02, 2026",
+      "reading_time": "6 min read",
+      "excerpt": "We predict EB-2 India will advance 10-16 days in May 2026, landing around July 25-31, 2014, with 72% confidence. This represents typical May-period steady movement with low retrogression risk, as the fiscal year is still in mid-phase.",
+      "tags": [
+        "Visa Bulletin",
+        "EB-2 India",
+        "Priority Date"
+      ],
+      "seo_score": 65,
+      "url": "/articles/immigration/eb2-india-may-2026-visa-bulletin-prediction.html"
+    },
+    {
+      "title": "Bollywood vs Hollywood: IMAX Screen Wars Heat Up in 2025",
+      "slug": "imax-screen-sharing-dhurandhar-project-hail-mary-2025",
+      "category": "movies",
+      "date": "April 02, 2026",
+      "reading_time": "6 min read",
+      "excerpt": "Project Hail Mary, Dhurandhar: The Revenge Round 2, and The Super Mario Galaxy Movie are battling for IMAX screens in India. For NRIs in the US, these films will arrive on streaming platforms (Disney+ Hotstar, Netflix, Prime Video) within 30-90 days of theatrical release. Expect Bollywood entries on Hotstar first.",
+      "tags": [
+        "IMAX releases 2025",
+        "Bollywood movies streaming",
+        "New releases India"
+      ],
+      "seo_score": 70,
+      "url": "/articles/movies/imax-screen-sharing-dhurandhar-project-hail-mary-2025.html"
+    },
+    {
+      "title": "Rassie van der Dussen Retires: Impact on India Cricket & IPL 2025",
+      "slug": "rassie-van-der-dussen-retires-international-cricket-2026",
+      "category": "cricket",
+      "date": "April 02, 2026",
+      "reading_time": "5 min read",
+      "excerpt": "South African batter Rassie van der Dussen has retired from international cricket but will continue playing franchise cricket (potentially IPL 2025) and mentoring young cricketers. This marks a shift in how elite players structure their careers post-international cricket. US-based cricket fans should watch for his potential IPL involvement, which offers more convenient viewing times than international tours.",
+      "tags": [
+        "Cricket Retirement",
+        "IPL 2025",
+        "South Africa Cricket"
+      ],
+      "seo_score": 70,
+      "url": "/articles/cricket/rassie-van-der-dussen-retires-international-cricket-2026.html"
+    },
+    {
+      "title": "Australia Zimbabwe ODI Series 2026: India Cricket Context",
+      "slug": "australia-zimbabwe-odi-series-2026-india-cricket",
+      "category": "cricket",
+      "date": "April 02, 2026",
+      "reading_time": "5 min read",
+      "excerpt": "Australia tours Zimbabwe for 3 ODIs in September 2026\u2014their first visit in 8 years. While not directly India cricket, this series impacts global rankings and Australian squad planning ahead of future India vs Australia matches. Indian diaspora fans should track it for context on upcoming tournaments.",
+      "tags": [
+        "Australia Cricket",
+        "ODI Series 2026",
+        "India vs Australia"
+      ],
+      "seo_score": 75,
+      "url": "/articles/cricket/australia-zimbabwe-odi-series-2026-india-cricket.html"
+    },
+    {
+      "title": "England Women's New Spin Coach: What It Means for India Cricket 2026",
+      "slug": "england-women-spin-coach-tom-smith-india-cricket-2026",
+      "category": "cricket",
+      "date": "April 02, 2026",
+      "reading_time": "5 min read",
+      "excerpt": "England Women hired former Gloucestershire spinner Tom Smith as their new spin-bowling coach to work with Sophie Ecclestone and other elite spinners ahead of the T20 World Cup. This signals how seriously top teams are investing in specialized coaching\u2014a trend that will impact India cricket and women's international competition in 2026.",
+      "tags": [
+        "England Women Cricket",
+        "Tom Smith Spin Coach",
+        "T20 World Cup 2026"
+      ],
+      "seo_score": 75,
+      "url": "/articles/cricket/england-women-spin-coach-tom-smith-india-cricket-2026.html"
+    },
+    {
       "title": "April 2026 Visa Bulletin: EB-2 India Final Action Date Holds Steady to July 15, 2014",
       "slug": "april-2026-visa-bulletin-eb2-india-priority-date",
       "category": "immigration",
