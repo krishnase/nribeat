@@ -1,83 +1,65 @@
 {
-  "date": "2026-04-06T11:07:03.224198",
+  "date": "2026-04-06T11:07:10.281665",
   "articles": [
     {
-      "title": "April 2026 Visa Bulletin: EB-2 India Final Action Date Holds Steady to July 15, 2014",
-      "slug": "april-2026-visa-bulletin-eb2-india-priority-date",
-      "category": "immigration",
-      "date": "April 06, 2026",
-      "reading_time": "5 min read",
-      "excerpt": "April 2026 Visa Bulletin: EB-2 India Final Action Date holds steady to July 15, 2014; EB-3 India to November 15, 2013. Dates for Filing: EB-2 January 15, 2015, EB-3 January 15, 2015. No movement this month \u2014 monitor the next bulletin closely.",
+      "title": "RCB Crushes CSK: Tim David & Rajat Patidar's IPL 2025 Masterclass",
+      "slug": "rcb-crushes-csk-tim-david-rajat-patidar-ipl-2025",
+      "category": "cricket",
+      "what_this_means": "RCB dismantled CSK with a record-breaking 250/3\u2014the highest score ever against Chennai in IPL history. Tim David and Rajat Patidar led a brutal batting assault that left CSK helpless. If you missed the 1:30 AM US broadcast, catch the full highlights on Willow TV or YouTube next morning.",
+      "reading_time": "6 min read",
       "tags": [
-        "Visa Bulletin",
-        "EB-2 India",
-        "EB-3 India",
-        "Final Action Date",
-        "Dates for Filing"
+        "IPL 2025",
+        "RCB vs CSK",
+        "Tim David"
       ],
-      "seo_score": 88,
-      "url": "/articles/immigration/april-2026-visa-bulletin-eb2-india-priority-date.html",
-      "what_this_means": "April 2026 Visa Bulletin: EB-2 India Final Action Date holds steady to July 15, 2014; EB-3 India to November 15, 2013. Dates for Filing: EB-2 January 15, 2015, EB-3 January 15, 2015. No movement this month \u2014 monitor the next bulletin closely."
+      "date": "April 06, 2026",
+      "seo_score": 70,
+      "url": "/articles/cricket/rcb-crushes-csk-tim-david-rajat-patidar-ipl-2025.html"
     },
     {
-      "title": "GT Bowlers Need Consistency: Hayden's IPL 2026 Reality Check",
-      "slug": "gt-bowlers-consistency-hayden-ipl-2026-rajasthan-royals",
-      "category": "cricket",
-      "what_this_means": "Gujarat Titans need urgent course correction. Matthew Hayden is demanding discipline from bowlers (nine wides is too many) and aggressive batting (seven sixes isn't enough). In IPL 2026, these basics will determine if GT stays competitive.",
+      "title": "Jackie Shroff & Suniel Shetty Team Up? 2025 Bollywood News",
+      "slug": "jackie-shroff-suniel-shetty-teaming-up-2025",
+      "category": "movies",
+      "what_this_means": "Jackie Shroff and Suniel Shetty just posted a cryptic WhatsApp-style reel hinting at a major collaboration, sparking wild speculation among fans. No official details yet, but it's likely a film or OTT series announcement coming soon. We'll update you the moment it's confirmed.",
       "reading_time": "5 min read",
+      "tags": [
+        "Jackie Shroff",
+        "Suniel Shetty",
+        "New Bollywood Movies 2025"
+      ],
+      "date": "April 06, 2026",
+      "seo_score": 70,
+      "url": "/articles/movies/jackie-shroff-suniel-shetty-teaming-up-2025.html"
+    },
+    {
+      "title": "AI Semiconductor Boom: What It Means for Your Tech Career in 2026",
+      "slug": "ai-semiconductor-revenue-surge-2026-tech-jobs",
+      "category": "ai_tech",
+      "what_this_means": "Goldman Sachs projects sharp semiconductor revenue growth through 2026 driven by AI demand, creating urgent hiring in GPU optimization, MLOps, and AI infrastructure roles. Indian engineers who specialize in these areas will see 20-40% salary premiums\u2014but only if they position themselves now. The window for career pivots is open through mid-2026.",
+      "reading_time": "5 min read",
+      "tags": [
+        "AI Jobs 2026",
+        "Semiconductor Industry",
+        "Machine Learning Salary"
+      ],
+      "date": "April 06, 2026",
+      "seo_score": 50,
+      "url": "/articles/ai-tech/ai-semiconductor-revenue-surge-2026-tech-jobs.html"
+    },
+    {
+      "title": "CSK's Brevis Injury Update: Will He Play Delhi Capitals?",
+      "slug": "csk-brevis-injury-update-delhi-capitals-ipl-2026",
+      "category": "cricket",
+      "what_this_means": "CSK's Ryan Brevis is expected to be fit for the Delhi Capitals match after missing IPL 2026's opening three games. This is a significant boost for CSK's middle-order depth and tournament ambitions. US fans can catch all the action via Willow TV or YouTube highlights.",
+      "reading_time": "6 min read",
       "tags": [
         "IPL 2026",
-        "Gujarat Titans",
-        "Rajasthan Royals"
+        "CSK Cricket",
+        "Brevis Injury Update"
       ],
-      "date": "April 05, 2026",
-      "seo_score": 75,
-      "url": "/articles/cricket/gt-bowlers-consistency-hayden-ipl-2026-rajasthan-royals.html"
-    },
-    {
-      "title": "Ranveer Singh's Pralay: New Bollywood Movie 2025 Post-Apocalyptic Epic",
-      "slug": "ranveer-singh-pralay-new-bollywood-movie-2025-hansal-mehta",
-      "category": "movies",
-      "what_this_means": "Ranveer Singh's upcoming film Prayal is an original post-apocalyptic concept (not an adaptation) directed by Hansal Mehta. This ambitious new Bollywood movie 2025 will likely hit theaters first before streaming on Netflix India or Prime Video. For diaspora audiences, it promises fresh, large-scale Indian storytelling unlike typical Bollywood fare.",
-      "reading_time": "5 min read",
-      "tags": [
-        "New Bollywood Movies 2025",
-        "Ranveer Singh",
-        "Pralay Movie"
-      ],
-      "date": "April 05, 2026",
-      "seo_score": 65,
-      "url": "/articles/movies/ranveer-singh-pralay-new-bollywood-movie-2025-hansal-mehta.html"
-    },
-    {
-      "title": "Bangladesh Cricket: Mehidy, Litton Captains Until 2027 World Cups",
-      "slug": "bangladesh-mehidy-litton-captains-world-cups-2026",
-      "category": "cricket",
-      "what_this_means": "Bangladesh locks in Mehidy Hasan Miraz and Litton Das as ODI and T20I captains until 2027 World Cups, signaling strategic stability. Mohammad Rafique joins as spin consultant for one year. For US-based Indian diaspora fans, this move shows how South Asian cricket boards are investing in long-term planning and specialized coaching.",
-      "reading_time": "5 min read",
-      "tags": [
-        "Bangladesh Cricket",
-        "Cricket Captaincy",
-        "ODI T20I News"
-      ],
-      "date": "April 05, 2026",
+      "date": "April 06, 2026",
       "seo_score": 50,
-      "url": "/articles/cricket/bangladesh-mehidy-litton-captains-world-cups-2026.html"
-    },
-    {
-      "title": "Grok AI Prompt Generator: Best AI Tool for 2026",
-      "slug": "grok-ai-prompt-generator-best-tool-2026",
-      "category": "ai_tech",
-      "what_this_means": "Grok AI now auto-generates detailed prompts for image and video creation, making visual content generation 2-3x faster. For Indian engineers in the US, this is a productivity lever that affects portfolio building, side projects, and machine learning salary conversations. It's also a real alternative to ChatGPT for creative workflow automation in 2026.",
-      "reading_time": "5 min read",
-      "tags": [
-        "AI Tools for Developers",
-        "Grok AI",
-        "ChatGPT Alternatives"
-      ],
-      "date": "April 05, 2026",
-      "seo_score": 45,
-      "url": "/articles/ai-tech/grok-ai-prompt-generator-best-tool-2026.html"
+      "url": "/articles/cricket/csk-brevis-injury-update-delhi-capitals-ipl-2026.html"
     }
   ]
 }
