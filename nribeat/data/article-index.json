@@ -1,6 +1,126 @@
 {
   "articles": [
     {
+      "title": "Meta's $21B AI Infrastructure Deal: What It Means for Your Machine Learning Salary in 2026",
+      "slug": "meta-21-billion-coreweave-ai-infrastructure-2026",
+      "category": "ai_tech",
+      "date": "April 11, 2026",
+      "reading_time": "5 min read",
+      "excerpt": "Meta's $21B CoreWeave investment signals a major shift in AI infrastructure. For Indian engineers in the US: machine learning salaries will stay elevated (especially for infrastructure roles), demand for GPU optimization expertise will spike, and roles building on top of these platforms will expand. If you specialize in compute efficiency, your negotiating power just increased significantly.",
+      "tags": [
+        "AI Infrastructure",
+        "Machine Learning Salary",
+        "AI Tools for Developers"
+      ],
+      "seo_score": 45,
+      "url": "/articles/ai-tech/meta-21-billion-coreweave-ai-infrastructure-2026.html"
+    },
+    {
+      "title": "Indian Courts Ban AI in Judging: What It Means for Your Tech Career [2026]",
+      "slug": "indian-courts-ban-ai-judging-tech-career-2026",
+      "category": "ai_tech",
+      "date": "April 11, 2026",
+      "reading_time": "5 min read",
+      "excerpt": "Indian high courts have banned AI from judicial decision-making but approved it for administrative tasks. This signals institutional clarity on AI boundaries that's reshaping enterprise adoption and creating premium career opportunities for engineers who build compliant, responsible AI systems. Roles emphasizing AI governance are growing 40% faster than generic ML positions, with higher salaries and better long-term stability.",
+      "tags": [
+        "AI Tools for Developers",
+        "Machine Learning Salary",
+        "ChatGPT Alternatives"
+      ],
+      "seo_score": 50,
+      "url": "/articles/ai-tech/indian-courts-ban-ai-judging-tech-career-2026.html"
+    },
+    {
+      "title": "Ranbir Kapoor's Ramayana 2026: Ravie Dubey Shares Behind-the-Scenes",
+      "slug": "ranbir-kapoor-ramayana-2026-ravie-dubey",
+      "category": "movies",
+      "date": "April 11, 2026",
+      "reading_time": "5 min read",
+      "excerpt": "Ranbir Kapoor is bringing mythological epic Ramayana to life under director Ravie Dubey, who praises the actor's deep commitment to the role. The film is positioned as a serious, character-driven take on the legendary narrative and will likely hit US theaters followed by streaming on Netflix, Prime Video, or Hotstar. This is one of 2026's most anticipated Bollywood releases.",
+      "tags": [
+        "Ranbir Kapoor",
+        "Ramayana 2026",
+        "New Bollywood Movies 2025"
+      ],
+      "seo_score": 55,
+      "url": "/articles/movies/ranbir-kapoor-ramayana-2026-ravie-dubey.html"
+    },
+    {
+      "title": "Meta's Muse Spark: New AI Tool for Developers in 2026",
+      "slug": "meta-muse-spark-ai-tool-developers-2026",
+      "category": "ai_tech",
+      "date": "April 11, 2026",
+      "reading_time": "5 min read",
+      "excerpt": "Meta's new Muse Spark AI model from Superintelligence Labs is now available, offering Indian developers a new ChatGPT alternative for coding and system design tasks. Early adoption could strengthen your productivity narrative and career positioning in 2026, though the real value lies in mastering tool selection and integration rather than depending on any single AI platform.",
+      "tags": [
+        "AI Tools for Developers",
+        "Machine Learning",
+        "ChatGPT Alternatives"
+      ],
+      "seo_score": 55,
+      "url": "/articles/ai-tech/meta-muse-spark-ai-tool-developers-2026.html"
+    },
+    {
+      "title": "EB-2 India May 2026 Visa Bulletin Prediction: Moderate Movement Expected",
+      "slug": "eb2-india-may-2026-visa-bulletin-prediction",
+      "category": "immigration",
+      "date": "April 11, 2026",
+      "reading_time": "6 min read",
+      "excerpt": "EB-2 India is expected to move forward by 12-18 days in May 2026, bringing the Final Action Date to approximately July 28, 2014, continuing the steady monthly progression pattern of the last five months. Retrogression risk remains very low for May, though applicants should monitor July-September carefully as the fiscal year quota becomes constrained.",
+      "tags": [
+        "Visa Bulletin",
+        "EB-2 India",
+        "Priority Date"
+      ],
+      "seo_score": 60,
+      "url": "/articles/immigration/eb2-india-may-2026-visa-bulletin-prediction.html"
+    },
+    {
+      "title": "IPL 2025: Prabharya vs Travishek Opener Battle in Chandigarh",
+      "slug": "ipl-2025-prabharya-travishek-opener-battle-chandigarh",
+      "category": "cricket",
+      "date": "April 11, 2026",
+      "reading_time": "5 min read",
+      "excerpt": "IPL 2025 brings an epic showdown between openers Prabharya and Travishek in New Chandigarh. This guide covers the match details, how to watch from the US despite the early morning time slot, and why these two batters are redefining T20 cricket.",
+      "tags": [
+        "IPL 2025",
+        "India cricket score",
+        "IPL openers"
+      ],
+      "seo_score": 70,
+      "url": "/articles/cricket/ipl-2025-prabharya-travishek-opener-battle-chandigarh.html"
+    },
+    {
+      "title": "IPL 2026 Orange Cap: Sooryavanshi Takes Lead from Jaiswal",
+      "slug": "ipl-2026-orange-cap-sooryavanshi-jaiswal-match-16",
+      "category": "cricket",
+      "date": "April 11, 2026",
+      "reading_time": "5 min read",
+      "excerpt": "Sooryavanshi has taken the Orange Cap in IPL 2026 after Match 16, dethroning Jaiswal from the top spot in the tournament's leading run-scorer race. US-based Indian cricket fans can catch all the action through Disney+ Hotstar and YouTube highlights.",
+      "tags": [
+        "IPL 2026",
+        "Orange Cap Race",
+        "India Cricket Score"
+      ],
+      "seo_score": 75,
+      "url": "/articles/cricket/ipl-2026-orange-cap-sooryavanshi-jaiswal-match-16.html"
+    },
+    {
+      "title": "Bangladesh ODI Squad vs New Zealand: 2026 Cricket Updates",
+      "slug": "bangladesh-squad-new-zealand-odi-2026",
+      "category": "cricket",
+      "date": "April 11, 2026",
+      "reading_time": "5 min read",
+      "excerpt": "Bangladesh kept their ODI squad unchanged for the New Zealand series opener, though five PSL-contracted players will join later. For Indian diaspora cricket fans in the US tracking India cricket news and IPL updates, this shows how global cricket schedules create complex juggling acts across leagues and international matches. Watch via Willow TV, ESPN+, or YouTube from the US.",
+      "tags": [
+        "Bangladesh Cricket",
+        "ODI Series 2026",
+        "New Zealand vs Bangladesh"
+      ],
+      "seo_score": 75,
+      "url": "/articles/cricket/bangladesh-squad-new-zealand-odi-2026.html"
+    },
+    {
       "title": "April 2026 Visa Bulletin: EB-2 India Final Action Date Holds Steady to July 15, 2014",
       "slug": "april-2026-visa-bulletin-eb2-india-priority-date",
       "category": "immigration",
