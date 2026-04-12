@@ -1,6 +1,111 @@
 {
   "articles": [
     {
+      "title": "Karan Johar Meets Meryl Streep & Anne Hathaway in Tokyo 2025",
+      "slug": "karan-johar-meryl-streep-anne-hathaway-tokyo-devil-wears-prada",
+      "category": "movies",
+      "date": "April 12, 2026",
+      "reading_time": "5 min read",
+      "excerpt": "Karan Johar had an exclusive meeting with Meryl Streep and Anne Hathaway in Tokyo that's gone viral on social media. The full conversation will be released soon on platforms like YouTube, Netflix, or Disney+ Hotstar. This rare Bollywood-Hollywood interaction highlights Indian cinema's growing global influence.",
+      "tags": [
+        "Karan Johar",
+        "Meryl Streep",
+        "Anne Hathaway"
+      ],
+      "seo_score": 50,
+      "url": "/articles/movies/karan-johar-meryl-streep-anne-hathaway-tokyo-devil-wears-prada.html"
+    },
+    {
+      "title": "AI Job Displacement: What Indian Tech Pros Need to Know in 2026",
+      "slug": "ai-job-displacement-indian-tech-professionals-2026",
+      "category": "ai_tech",
+      "date": "April 12, 2026",
+      "reading_time": "5 min read",
+      "excerpt": "OpenAI's post-AI economy framework signals major disruption for junior-to-mid level engineering roles. Indian tech professionals should pivot toward AI-assisted expertise, specialized domain knowledge, and strategic roles. ChatGPT alternatives and AI tools will eliminate commodity coding work, but create demand for engineers who can architect and direct AI systems.",
+      "tags": [
+        "AI Job Impact",
+        "Machine Learning Careers",
+        "ChatGPT Alternatives"
+      ],
+      "seo_score": 55,
+      "url": "/articles/ai-tech/ai-job-displacement-indian-tech-professionals-2026.html"
+    },
+    {
+      "title": "Akshay Kumar Real Estate Move 2025: What It Means for Bollywood Stars",
+      "slug": "akshay-kumar-andheri-duplex-lease-2025",
+      "category": "movies",
+      "date": "April 12, 2026",
+      "reading_time": "5 min read",
+      "excerpt": "Akshay Kumar leases his premium Mumbai duplex for Rs 1.44 lakh monthly to aircraft commander Anny Divya, showcasing how Bollywood stars diversify wealth through real estate. Meanwhile, new Bollywood movies 2025 continue streaming on Netflix, Disney+ Hotstar, and Prime Video, keeping fans connected to their favorite actors both on and off-screen.",
+      "tags": [
+        "Akshay Kumar",
+        "Bollywood News 2025",
+        "Celebrity Real Estate"
+      ],
+      "seo_score": 70,
+      "url": "/articles/movies/akshay-kumar-andheri-duplex-lease-2025.html"
+    },
+    {
+      "title": "RR Manager Bhinder Caught With Mobile in IPL 2025 Dugout",
+      "slug": "rr-manager-bhinder-mobile-phone-dugout-ipl-2025",
+      "category": "cricket",
+      "date": "April 12, 2026",
+      "reading_time": "5 min read",
+      "excerpt": "RR manager Bhinder was caught using a mobile phone in the IPL 2025 dugout, violating strict BCCI protocols that ban cell phones during matches to prevent match-fixing and ensure fair play. The BCCI has confirmed the breach, and penalties for the franchise are expected soon.",
+      "tags": [
+        "IPL 2025",
+        "India cricket rules",
+        "BCCI protocol violation"
+      ],
+      "seo_score": 70,
+      "url": "/articles/cricket/rr-manager-bhinder-mobile-phone-dugout-ipl-2025.html"
+    },
+    {
+      "title": "Nitish Rana Fined for Obscenity in CSK vs DC IPL 2025 Match",
+      "slug": "nitish-rana-fined-obscenity-csk-dc-ipl-2025",
+      "category": "cricket",
+      "date": "April 12, 2026",
+      "reading_time": "5 min read",
+      "excerpt": "Nitish Rana faces a fine for audible obscenity during the CSK vs DC match, while captain Ruturaj Gaikwad also got penalized for slow over-rates in IPL 2025. The incident highlights how the league is tightening discipline beyond just cricket performance.",
+      "tags": [
+        "IPL 2025",
+        "India Cricket Score",
+        "CSK vs DC"
+      ],
+      "seo_score": 70,
+      "url": "/articles/cricket/nitish-rana-fined-obscenity-csk-dc-ipl-2025.html"
+    },
+    {
+      "title": "Pathirana Joins KKR: IPL 2025 Game-Changer for Struggling Team",
+      "slug": "pathirana-joins-kkr-ipl-2025-noc-sri-lanka",
+      "category": "cricket",
+      "date": "April 12, 2026",
+      "reading_time": "5 min read",
+      "excerpt": "KKR's fortunes in IPL 2025 just took a positive turn with Matheesha Pathirana joining after Sri Lanka Cricket granted NOC approval. The young Sri Lankan pacer gives the struggling franchise the fast bowling reinforcement they desperately need after zero wins in four games\u2014a move that could spark their campaign turnaround.",
+      "tags": [
+        "IPL 2025",
+        "KKR Cricket",
+        "Pathirana"
+      ],
+      "seo_score": 70,
+      "url": "/articles/cricket/pathirana-joins-kkr-ipl-2025-noc-sri-lanka.html"
+    },
+    {
+      "title": "AI Tools in College 2026: What Indian Tech Pros Need to Know",
+      "slug": "ai-tools-college-students-2026-career-impact",
+      "category": "ai_tech",
+      "date": "April 12, 2026",
+      "reading_time": "5 min read",
+      "excerpt": "San Diego State's survey reveals near-universal AI adoption among college students entering the workforce, combined with concerns about job security and accuracy. For Indian software engineers in the US, this signals an accelerating market demand for AI-fluent technical talent\u2014and a competitive advantage for those who use AI strategically rather than passively. Machine learning salaries and career advancement increasingly favor engineers who master these tools.",
+      "tags": [
+        "AI Tools for Developers",
+        "Machine Learning Salary",
+        "ChatGPT Alternatives"
+      ],
+      "seo_score": 75,
+      "url": "/articles/ai-tech/ai-tools-college-students-2026-career-impact.html"
+    },
+    {
       "title": "April 2026 Visa Bulletin: EB-2 India Final Action Date Holds Steady to July 15, 2014",
       "slug": "april-2026-visa-bulletin-eb2-india-priority-date",
       "category": "immigration",
