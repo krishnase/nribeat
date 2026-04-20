@@ -1,6 +1,96 @@
 {
   "articles": [
     {
+      "title": "Google Cloud AI Agents: What It Means for Your Career in 2026",
+      "slug": "google-cloud-ai-agents-career-impact-2026",
+      "category": "ai_tech",
+      "date": "April 20, 2026",
+      "reading_time": "5 min read",
+      "excerpt": "Google Cloud's move to agentic AI is forcing a fundamental reset in how enterprises build systems. For Indian engineers in the US, this means your skills are shifting from tool mastery to autonomous system design\u2014and your salary is likely to follow. Start building with Google Cloud agents now to stay ahead of the curve.",
+      "tags": [
+        "Google Cloud AI",
+        "AI Tools for Developers",
+        "Machine Learning Salary Trends"
+      ],
+      "seo_score": 50,
+      "url": "/articles/ai-tech/google-cloud-ai-agents-career-impact-2026.html"
+    },
+    {
+      "title": "Varun Dhawan's Hai Jawani Toh Ishq Hona Hai: New Bollywood Comedy 2025",
+      "slug": "varun-dhawan-hai-jawani-toh-ishq-hona-hai-streaming-where-to-watch",
+      "category": "movies",
+      "date": "April 20, 2026",
+      "reading_time": "6 min read",
+      "excerpt": "Varun Dhawan stars in Hai Jawani Toh Ishq Hona Hai, a new David Dhawan comedy arriving in 2025. The TIPS Films production will hit theaters first, then move to streaming platforms like Netflix or Prime Video in the US. Perfect for comedy lovers in the diaspora.",
+      "tags": [
+        "New Bollywood Movies 2025",
+        "Varun Dhawan",
+        "Streaming Movies USA"
+      ],
+      "seo_score": 70,
+      "url": "/articles/movies/varun-dhawan-hai-jawani-toh-ishq-hona-hai-streaming-where-to-watch.html"
+    },
+    {
+      "title": "Cooper Connolly IPL 2025: Punjab Kings' Batting Maestro",
+      "slug": "cooper-connolly-ipl-2025-punjab-kings-batting",
+      "category": "cricket",
+      "date": "April 20, 2026",
+      "reading_time": "5 min read",
+      "excerpt": "Cooper Connolly's explosive IPL 2025 debut with Punjab Kings\u2014where he's the franchise's leading run-getter\u2014shows how new partnerships and mutual learning between batters can transform a team's fortunes. His chemistry with Arya has already yielded two victories, making this Australian's first season one to watch closely.",
+      "tags": [
+        "IPL 2025",
+        "Cooper Connolly",
+        "Punjab Kings"
+      ],
+      "seo_score": 70,
+      "url": "/articles/cricket/cooper-connolly-ipl-2025-punjab-kings-batting.html"
+    },
+    {
+      "title": "PBKS Bowling Attack IPL 2026: Multiple Guns, One Strategy",
+      "slug": "pbks-bowling-attack-ipl-2026-jansen-chahal-arshdeep",
+      "category": "cricket",
+      "date": "April 20, 2026",
+      "reading_time": "5 min read",
+      "excerpt": "PBKS's IPL 2026 bowling attack is built on variety, not star power. With five different bowlers \u2014 pacer Jansen, spinner Chahal, youth sensation Arshdeep, and international options Bartlett and Vyshak \u2014 they can 'pull different triggers' at different stages. This strategic depth could be their biggest advantage as they chase the title.",
+      "tags": [
+        "IPL 2026",
+        "PBKS Bowling",
+        "India Cricket"
+      ],
+      "seo_score": 70,
+      "url": "/articles/cricket/pbks-bowling-attack-ipl-2026-jansen-chahal-arshdeep.html"
+    },
+    {
+      "title": "Purple Cap Race Heats Up: Prince Yadav Enters Top 3 in IPL 2026",
+      "slug": "prince-yadav-purple-cap-top-three-ipl-2026",
+      "category": "cricket",
+      "date": "April 20, 2026",
+      "reading_time": "5 min read",
+      "excerpt": "Prince Yadav has broken into the Purple Cap top three after Sunday's IPL 2026 double-header between KKR vs RR and PBKS vs LSG. The bowling race is heating up with multiple contenders pushing hard, and for US-based Indian cricket fans, Willow TV and JIO TV remain your best options for catching live action or highlights at convenient times.",
+      "tags": [
+        "IPL 2026",
+        "Purple Cap",
+        "Prince Yadav"
+      ],
+      "seo_score": 75,
+      "url": "/articles/cricket/prince-yadav-purple-cap-top-three-ipl-2026.html"
+    },
+    {
+      "title": "Claude AI & ChatGPT Alternatives: What Changed in 2026",
+      "slug": "claude-ai-chatgpt-alternatives-2026",
+      "category": "ai_tech",
+      "date": "April 20, 2026",
+      "reading_time": "5 min read",
+      "excerpt": "Claude Mythos challenges ChatGPT's dominance in developer tools, but the bigger story is AI security and governance becoming compliance requirements. Indian engineers who can architect safe, multi-model AI systems are commanding 15-20% salary premiums in 2026.",
+      "tags": [
+        "ChatGPT Alternatives",
+        "Claude AI",
+        "AI Tools for Developers"
+      ],
+      "seo_score": 75,
+      "url": "/articles/ai-tech/claude-ai-chatgpt-alternatives-2026.html"
+    },
+    {
       "title": "April 2026 Visa Bulletin: EB-2 India Final Action Date Holds Steady to July 15, 2014",
       "slug": "april-2026-visa-bulletin-eb2-india-priority-date",
       "category": "immigration",
