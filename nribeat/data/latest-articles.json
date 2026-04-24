@@ -1,128 +1,95 @@
 {
-  "date": "2026-04-24T11:15:11.204721",
+  "date": "2026-04-24T11:15:22.775789",
   "articles": [
     {
-      "title": "April 2026 Visa Bulletin: EB-2 India Final Action Date Holds Steady to July 15, 2014",
-      "slug": "april-2026-visa-bulletin-eb2-india-priority-date",
-      "category": "immigration",
+      "title": "Claude AI Degradation 2026: What Changed & How It Affects You",
+      "slug": "claude-ai-degradation-2026-anthropic-explains",
+      "category": "ai_tech",
+      "what_this_means": "Anthropic revealed that Claude's recent performance drop was caused by changes to the model's training harnesses and system instructions\u2014not a conspiracy. Indian engineers using Claude for code generation and system design should test ChatGPT alternatives and consider a multi-tool strategy while waiting for Anthropic's fixes.",
+      "reading_time": "5 min read",
+      "tags": [
+        "Claude AI",
+        "ChatGPT Alternatives",
+        "AI Tools for Developers"
+      ],
       "date": "April 24, 2026",
-      "reading_time": "5 min read",
-      "excerpt": "April 2026 Visa Bulletin: EB-2 India Final Action Date holds steady to July 15, 2014; EB-3 India to November 15, 2013. Dates for Filing: EB-2 January 15, 2015, EB-3 January 15, 2015. No movement this month \u2014 monitor the next bulletin closely.",
-      "tags": [
-        "Visa Bulletin",
-        "EB-2 India",
-        "EB-3 India",
-        "Final Action Date",
-        "Dates for Filing"
-      ],
-      "seo_score": 88,
-      "url": "/articles/immigration/april-2026-visa-bulletin-eb2-india-priority-date.html",
-      "what_this_means": "April 2026 Visa Bulletin: EB-2 India Final Action Date holds steady to July 15, 2014; EB-3 India to November 15, 2013. Dates for Filing: EB-2 January 15, 2015, EB-3 January 15, 2015. No movement this month \u2014 monitor the next bulletin closely."
+      "seo_score": 75,
+      "url": "/articles/ai-tech/claude-ai-degradation-2026-anthropic-explains.html"
     },
     {
-      "title": "Why Smart Engineers Are Ditching AI Coding Tools in 2025 [2026]",
-      "slug": "why-engineers-ditching-ai-coding-tools-2025",
-      "category": "ai_tech",
-      "what_this_means": "Engineers who aggressively adopted AI coding tools early are now stepping back. The issue isn't that the tools don't work\u2014it's that outsourcing thinking to AI atrophies the skills that actually drive career growth. Use AI strategically for mechanical work, not for learning. Your irreplaceability depends on judgment, not speed.",
-      "reading_time": "5 min read",
-      "tags": [
-        "AI Coding Tools",
-        "Best AI Tools 2025",
-        "Software Engineer Career"
-      ],
-      "date": "April 23, 2026",
-      "seo_score": 80,
-      "url": "/articles/ai-tech/why-engineers-ditching-ai-coding-tools-2025.html"
-    },
-    {
-      "title": "CSK Signs Akash Madhwal to Replace Ayush Mhatre | IPL 2025",
-      "slug": "csk-akash-madhwal-ayush-mhatre-replacement-ipl-2025",
+      "title": "IPL 2026 Orange Cap: Samson Climbs to No. 3, Kamboj Takes Purple Cap",
+      "slug": "ipl-2026-orange-cap-samson-kamboj-purple-cap",
       "category": "cricket",
-      "what_this_means": "CSK have signed fast bowler Akash Madhwal to replace Ayush Mhatre, bringing the experienced MI net bowler into their IPL 2025 squad. This mid-tournament signing strengthens Chennai's bowling options as they push through the competition, offering Indian cricket fans in the US another storyline to follow in the franchise league.",
-      "reading_time": "5 min read",
-      "tags": [
-        "IPL 2025",
-        "CSK Cricket",
-        "Akash Madhwal"
-      ],
-      "date": "April 23, 2026",
-      "seo_score": 70,
-      "url": "/articles/cricket/csk-akash-madhwal-ayush-mhatre-replacement-ipl-2025.html"
-    },
-    {
-      "title": "Shanto Century Powers Bangladesh to 265: India Cricket Score Update",
-      "slug": "shanto-century-bangladesh-265-chattogram-2026",
-      "category": "cricket",
-      "what_this_means": "Shanto's brilliant century and Litton Das's comeback fifty helped Bangladesh post a competitive 265 in Chattogram. The 160-run partnership between these two was the turning point\u2014once they got going, they controlled the chase. For India cricket fans in the US tracking this series, it's a reminder that solid middle-order batting can rebuild any innings.",
-      "reading_time": "5 min read",
-      "tags": [
-        "India Cricket Score",
-        "Bangladesh ODI",
-        "Shanto Century"
-      ],
-      "date": "April 23, 2026",
-      "seo_score": 70,
-      "url": "/articles/cricket/shanto-century-bangladesh-265-chattogram-2026.html"
-    },
-    {
-      "title": "AI Funding for Engineers: Securing Grants & Career Growth in 2026",
-      "slug": "ai-funding-grants-engineers-2026",
-      "category": "ai_tech",
-      "what_this_means": "Philanthropic AI funding is expanding in 2026, creating genuine alternatives to VC for Indian engineers in the US. Unlike venture capital, grant funding doesn't require equity, offers stable multi-year support, and comes with research credibility that boosts future salaries by 15\u201325%. If you have a research idea or want to build AI infrastructure, now is the time to explore foundation grants from organizations like Simons Foundation and OpenPhilanthropy.",
-      "reading_time": "5 min read",
-      "tags": [
-        "AI Funding",
-        "Research Grants",
-        "Software Engineer Career"
-      ],
-      "date": "April 23, 2026",
-      "seo_score": 65,
-      "url": "/articles/ai-tech/ai-funding-grants-engineers-2026.html"
-    },
-    {
-      "title": "AI Chatbots & Your Career: What the 2026 Regulations Mean",
-      "slug": "ai-chatbots-regulations-2026-career-impact",
-      "category": "ai_tech",
-      "what_this_means": "California is tightening AI chatbot regulations following a 2025 tragedy, creating new demand for compliance-minded engineers. Indian tech pros who learn AI safety frameworks and audit their tool stacks now will command 15-20% higher salaries and access better job opportunities. Your move: Start evaluating alternatives to ChatGPT (Claude, Gemini) and position yourself as compliance-aware.",
-      "reading_time": "5 min read",
-      "tags": [
-        "AI Regulations 2026",
-        "ChatGPT Safety",
-        "Software Engineer Career"
-      ],
-      "date": "April 23, 2026",
-      "seo_score": 65,
-      "url": "/articles/ai-tech/ai-chatbots-regulations-2026-career-impact.html"
-    },
-    {
-      "title": "Akshay Kumar & Vidya Balan's Kerala Film Schedule 2026",
-      "slug": "akshay-kumar-vidya-balan-kerala-film-anees-bazmee-2026",
-      "category": "movies",
-      "what_this_means": "Akshay Kumar and Vidya Balan are reuniting after 15 years for an Anees Bazmee film, with the next shooting schedule happening in Kerala. The project is generating major buzz in Bollywood, and Indian diaspora viewers in the US should expect it on major streaming platforms like Netflix, Prime Video, or Hotstar once released.",
-      "reading_time": "5 min read",
-      "tags": [
-        "Akshay Kumar",
-        "Vidya Balan",
-        "Anees Bazmee"
-      ],
-      "date": "April 23, 2026",
-      "seo_score": 65,
-      "url": "/articles/movies/akshay-kumar-vidya-balan-kerala-film-anees-bazmee-2026.html"
-    },
-    {
-      "title": "Nuwan Thusara Withdraws Lawsuit Against Sri Lanka Cricket 2026",
-      "slug": "nuwan-thusara-withdraws-lawsuit-sri-lanka-cricket-2026",
-      "category": "cricket",
-      "what_this_means": "Nuwan Thusara drops his legal battle with Sri Lanka Cricket, but the bigger mystery remains: will he actually show up for his IPL 2026 commitment with RCB? The franchise is keeping quiet on replacements, suggesting they're hoping he arrives soon. For Indian cricket fans in the US, it's another reminder of how off-field drama can shake up franchise seasons\u2014stay tuned for updates.",
+      "what_this_means": "Sanju Samson's climb to No. 3 in the IPL 2026 Orange Cap and Kamboj's Purple Cap reclamation after CSK's big win over MI signal shifting momentum in the tournament. These leaderboard moves matter for playoff positioning and individual performance trends as we enter the business end of the season.",
       "reading_time": "5 min read",
       "tags": [
         "IPL 2026",
-        "Sri Lanka Cricket",
-        "RCB Cricket"
+        "Orange Cap",
+        "Purple Cap"
       ],
-      "date": "April 23, 2026",
+      "date": "April 24, 2026",
+      "seo_score": 75,
+      "url": "/articles/cricket/ipl-2026-orange-cap-samson-kamboj-purple-cap.html"
+    },
+    {
+      "title": "Arijit Singh's 'Laiyaan' 2025: Independent Music & OTT",
+      "slug": "arijit-singh-laiyaan-independent-music-ott-streaming",
+      "category": "movies",
+      "what_this_means": "Arijit Singh releases independent single 'Laiyaan' with Ruaa Kayy after stepping back from Bollywood. Available on Spotify, Apple Music, YouTube Music, and more. A major shift signaling how Indian artists are moving beyond film music in 2025.",
+      "reading_time": "5 min read",
+      "tags": [
+        "Arijit Singh",
+        "Laiyaan Song",
+        "Independent Music 2025"
+      ],
+      "date": "April 24, 2026",
+      "seo_score": 60,
+      "url": "/articles/movies/arijit-singh-laiyaan-independent-music-ott-streaming.html"
+    },
+    {
+      "title": "Redwood Materials Layoffs 2026: What It Means for AI Jobs",
+      "slug": "redwood-materials-layoffs-2026-ai-jobs-impact",
+      "category": "ai_tech",
+      "what_this_means": "Redwood Materials' COO retirement and VP departures signal wider clean-tech restructuring. Indian engineers should monitor their company's leadership stability, focus on niche ML expertise, and expect machine learning salary growth to flatten. Market is shifting from growth-at-all-costs to operational efficiency \u2014 start documenting your business impact now.",
+      "reading_time": "5 min read",
+      "tags": [
+        "AI Layoffs",
+        "Machine Learning Salary",
+        "Tech Industry Restructuring"
+      ],
+      "date": "April 24, 2026",
       "seo_score": 55,
-      "url": "/articles/cricket/nuwan-thusara-withdraws-lawsuit-sri-lanka-cricket-2026.html"
+      "url": "/articles/ai-tech/redwood-materials-layoffs-2026-ai-jobs-impact.html"
+    },
+    {
+      "title": "MI's Big Loss to CSK: Jayawardene Points to Powerplay Collapse",
+      "slug": "mi-csk-loss-jayawardene-powerplay-ipl-2026",
+      "category": "cricket",
+      "what_this_means": "Mumbai Indians' loss to CSK in IPL 2026 reveals a critical weakness: powerplay inconsistency. Coach Mahela Jayawardene identified that MI is giving away too many big overs in the opening six overs\u2014a structural problem that needs fixing before playoffs. For Indian fans in the US, catch the highlights on Hotstar or YouTube without losing sleep!",
+      "reading_time": "5 min read",
+      "tags": [
+        "IPL 2026",
+        "Mumbai Indians",
+        "CSK vs MI"
+      ],
+      "date": "April 24, 2026",
+      "seo_score": 50,
+      "url": "/articles/cricket/mi-csk-loss-jayawardene-powerplay-ipl-2026.html"
+    },
+    {
+      "title": "Bangladesh Beats India: Mustafizur's 5-Wicket Haul Changes Momentum 2026",
+      "slug": "bangladesh-beats-india-mustafizur-rahman-five-wickets-2026",
+      "category": "cricket",
+      "what_this_means": "Bangladesh pulled off a stunning upset over India with Mustafizur Rahman's 5-wicket haul. The victory marks a momentum shift in their series and shows Bangladesh can compete at the highest level. For Indian cricket fans in the US, here's how to catch the next matches and stay updated on India cricket scores.",
+      "reading_time": "5 min read",
+      "tags": [
+        "India cricket score",
+        "Bangladesh vs India",
+        "ODI highlights"
+      ],
+      "date": "April 24, 2026",
+      "seo_score": 45,
+      "url": "/articles/cricket/bangladesh-beats-india-mustafizur-rahman-five-wickets-2026.html"
     }
   ]
 }
